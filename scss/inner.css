@@ -1,0 +1,279 @@
+@-webkit-keyframes search {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 40px, 0);
+            transform: translate3d(0, 40px, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+
+@keyframes search {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 40px, 0);
+            transform: translate3d(0, 40px, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+
+/********************** home menu text ***********************/
+/********************** home menu text ***********************/
+@-webkit-keyframes slider {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+
+@keyframes slider {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+
+/********************** home menu text ***********************/
+/********************** home menu text ***********************/
+@-webkit-keyframes product {
+  0% {
+    height: 190px;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    height: 100%;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+
+@keyframes product {
+  0% {
+    height: 190px;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+  100% {
+    height: 100%;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+
+/********************** home menu text ***********************/
+/********************** home menu text ***********************/
+/**************************/
+.page_name {
+  height: 220px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 50px;
+}
+
+.page_name > div {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.page_name > div h1 {
+  color: #fff;
+  top: 40%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+}
+
+.page_name > div .nav-wrapper {
+  float: left;
+  width: 100%;
+  top: 38%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  position: relative;
+  text-align: center;
+}
+
+.page_name > div .nav-wrapper > div {
+  display: inline-block;
+  background: #d62369;
+  width: initial !important;
+  float: initial;
+  padding: 5px 20px;
+}
+
+.page_name > div .nav-wrapper > div a:before:first-child {
+  display: none !important;
+}
+
+.page_name > div .nav-wrapper .breadcrumb:before {
+  content: '/';
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  margin: 0 10px 0 8px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page_name img {
+  margin-top: -200px;
+}
+
+.product_box {
+  margin-bottom: 40px;
+}
+
+.inner_body {
+  padding: 0px;
+  margin-bottom: 25px;
+  background: #fff;
+  position: relative;
+}
+
+.product_details img {
+  width: initial !important;
+  max-width: 100%;
+}
+
+.product_details p {
+  float: left;
+  width: 100%;
+  margin: 20px 0px;
+  text-align: left;
+}
+
+.product_details .quick_product h2 {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.product_details .addcart {
+  background: #989898;
+  color: #fff;
+  padding: 8px 10px;
+  min-width: 120px;
+  margin: 10px 0px;
+  float: left;
+  width: 90%;
+  font-size: 18px;
+}
+
+.product_details .addwish {
+  background: #d62369;
+  color: #fff;
+  padding: 8px 10px;
+  min-width: 120px;
+  margin: 10px 0px;
+  float: left;
+  width: 90%;
+  font-size: 18px;
+}
+
+.product_details .large {
+  width: 275px;
+  height: 275px;
+  position: absolute;
+  border-radius: 100%;
+  /*Multiple box shadows to achieve the glass effect*/
+  -webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+  /*hide the glass by default*/
+  display: none;
+}
+
+.related_products {
+  border-top: 1px solid #f1f2f2;
+  margin-top: 20px;
+  padding-top: 30px !important;
+}
+
+.offers {
+  background: #fcfcfc;
+  padding-bottom: 25px;
+  margin-bottom: -25px;
+}
+
+.pagination li.active {
+  background-color: #d62369;
+}
+
+.pagination li .fa-chevron-right {
+  color: #d62369;
+  display: inline-block;
+  font-size: 18px;
+}
+
+.pagination li .fa-chevron-right i {
+  font-size: 18px;
+}
+
+.pagination li .fa-chevron-left {
+  font-size: 18px;
+}
+
+.pagination li .fa-chevron-left i {
+  font-size: 18px;
+}
+
+/******************************************************************************************/
+/*Some CSS*/
+.magnify {
+  margin: 20px auto;
+  position: relative;
+  cursor: none;
+}
+
+/*Lets create the magnifying glass*/
+.large {
+  width: 175px;
+  height: 175px;
+  position: absolute;
+  border-radius: 100%;
+  /*Multiple box shadows to achieve the glass effect*/
+  -webkit-box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 0 0 7px 7px rgba(0, 0, 0, 0.25), inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+  /*hide the glass by default*/
+  display: none;
+}
+
+/*To solve overlap bug at the edges during magnification*/
+.small {
+  display: block;
+}
+/*# sourceMappingURL=inner.css.map */

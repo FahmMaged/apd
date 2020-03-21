@@ -1,0 +1,46 @@
+{
+  "aboutTitle": {
+    "en": "About ",
+    "ar": "عن اللجنة"
+  },
+  "newsTitle": {
+    "en": "Our News",
+    "ar": "أخرأخبارنا"
+  },
+  "eventsTitle": {
+    "en": "Upcoming Events",
+    "ar": "الفاعليات القادمة"
+  },
+  "videoTitle": {
+    "en": "Contact Us",
+    "ar": "اتصل بنا"
+  },
+  "allNewsButton": {
+    "en": "All News",
+    "ar": "كل الأخبار"
+  },
+  "allEventsButton": {
+    "en": "All Events",
+    "ar": "كل الفاعليات"
+  },
+  "readMore": {
+    "en": "Read More",
+    "ar": "اقرا المزيد"
+  },
+  "videos": {
+    "en": "Videos",
+    "ar": "الفيديوهات"
+  },
+  "facebook": {
+    "en": "Facebook",
+    "ar": "فيسبوك"
+  },
+  "twitter": {
+    "en": "Twitter",
+    "ar": "تويتر"
+  },
+  "view": {
+    "en": "View",
+    "ar": "مشاهدة"
+  }
+}

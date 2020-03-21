@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model package="nccpim" baseClass="xPDOObject" platform="mysql" defaultEngine="MyISAM" version="1.1">
+	<object class="AboutMembers" table="AboutMembers" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="AboutPartners" table="AboutPartners" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="AboutUs" table="AboutUs" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="FirstTitle_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="FirstDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="FirstTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FirstDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="SecondTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="SecondDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="ThirdTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="ThirdTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="ThirdDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="ThirdDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="FourthTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FourthTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FourthDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="FourthDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="FirstImage" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondImage" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Admins" table="Admins" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="FirstName" dbtype="varchar" precision="40" phptype="string" null="false" />
+		<field key="LastName" dbtype="varchar" precision="40" phptype="string" null="false" />
+		<field key="Email" dbtype="varchar" precision="128" phptype="string" null="false" />
+		<field key="Password" dbtype="varchar" precision="128" phptype="string" null="false" />
+		<field key="ResetHash" dbtype="varchar" precision="128" phptype="string" null="true" />
+		<field key="IsActive" dbtype="tinyint" precision="1" phptype="integer" null="false" default="1" />
+		<field key="UpdatedBy" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Alternatives" table="Alternatives" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="FirstTitle_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="FirstDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="FirstTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FirstDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="SecondTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="SecondDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="ThirdTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="ThirdTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="ThirdDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="ThirdDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="FourthTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FourthTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FourthDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="FourthDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="FirstImage" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondImage" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Awareness" table="Awareness" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="PageID" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="File" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Books" table="Books" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="BooksSubmissions" table="BooksSubmissions" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="FirstName" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="LastName" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Email" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Phone" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Message" dbtype="text" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="ContactUsSubmission" table="ContactUsSubmission" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Name" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Email" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Phone" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Message" dbtype="text" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Events" table="Events" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="LocationID" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="PublishDate" dbtype="date" phptype="date" null="true" />
+		<field key="StartTime" dbtype="varchar" precision="155" phptype="string" null="true" />
+		<field key="EndTime" dbtype="varchar" precision="155" phptype="string" null="true" />
+		<field key="InHome" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+		<field key="IsActive" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+		<field key="Alias_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Alias_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="EventsLocations" table="EventsLocations" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CreatedBy" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="255" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Files" table="Files" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="AwarenessID" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="Title" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="File" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Home" table="Home" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="Link" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="NumberOfViews" dbtype="varchar" precision="11" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Images" table="Images" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="MainImages" table="MainImages" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="AboutUs" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Members" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Awareness" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Events" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Media" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="News" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Books" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="OurWork" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Questions" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="ContactUs" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Search" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Members" table="Members" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="JobTitle_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="JobTitle_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="MetaTags" table="MetaTags" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="AboutTitle_en" dbtype="text" phptype="string" null="true" />
+		<field key="AboutDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="AboutTitle_ar" dbtype="text" phptype="string" null="true" />
+		<field key="AboutDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="HomeTitle_en" dbtype="text" phptype="string" null="true" />
+		<field key="HomeDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="HomeTitle_ar" dbtype="text" phptype="string" null="true" />
+		<field key="HomeDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="FacilitiesTitle_en" dbtype="text" phptype="string" null="true" />
+		<field key="FacilitiesDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="FacilitiesTitle_ar" dbtype="text" phptype="string" null="true" />
+		<field key="FacilitiesDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="NewsTitle_en" dbtype="text" phptype="string" null="true" />
+		<field key="NewsDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="NewsTitle_ar" dbtype="text" phptype="string" null="true" />
+		<field key="NewsDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="GalleryTitle_en" dbtype="text" phptype="string" null="true" />
+		<field key="GalleryDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="GalleryTitle_ar" dbtype="text" phptype="string" null="true" />
+		<field key="GalleryDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="ContactTitle_en" dbtype="text" phptype="string" null="true" />
+		<field key="ContactDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="ContactTitle_ar" dbtype="text" phptype="string" null="true" />
+		<field key="ContactDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="PageID" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="UpdatedBy" dbtype="varchar" precision="150" phptype="string" null="false" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="News" table="News" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Intro_en" dbtype="varchar" precision="300" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="Intro_ar" dbtype="varchar" precision="300" phptype="string" null="true" />
+		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="PublishDate" dbtype="date" phptype="date" null="false" />
+		<field key="InHome" dbtype="tinyint" precision="1" phptype="integer" null="false" />
+		<field key="IsActive" dbtype="tinyint" precision="1" phptype="integer" null="false" />
+		<field key="IsFeature" dbtype="tinyint" precision="2" phptype="integer" null="false" default="0" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="Alias_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Alias_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="OurWork" table="OurWork" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Questions" table="Questions" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Services" table="Services" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="Description_en" dbtype="text" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="SliderItems" table="SliderItems" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="SubTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SubTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="Link" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="ButtonText_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="ButtonText_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="false" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="false" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="SliderVideos" table="SliderVideos" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Link" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="Videos" table="Videos" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="Link" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="CreatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+	<object class="YourProject" table="YourProject" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="SecondTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SecondDescription_ar" dbtype="text" phptype="string" null="false" />
+		<field key="SecondDescription_en" dbtype="text" phptype="string" null="false" />
+		<field key="SecondImage" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
+</model>

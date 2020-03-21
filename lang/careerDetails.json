@@ -1,0 +1,19 @@
+{
+	"description":
+	{
+		"en":"Description","ar":"الوصف"
+	
+	},
+
+	"flavours":
+	{
+		"en":"Flavours","ar":"نكهات"
+	
+	},
+
+	"relatedProducts":
+	{
+		"en":"Related Products","ar":"منتجات ذات صله"
+	
+	}
+}

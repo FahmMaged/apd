@@ -1,0 +1,67 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M512 6.827c-278.756 0-505.173 226.418-505.173 505.173s226.418 505.173 505.173 505.173c278.756 0 505.173-226.418 505.173-505.173s-226.418-505.173-505.173-505.173zM512 947.769c-241.209 0-435.769-194.56-435.769-435.769s194.56-435.769 435.769-435.769c241.209 0 435.769 195.698 435.769 435.769s-194.56 435.769-435.769 435.769zM747.52 482.418l-344.747-199.111c-10.24-5.689-23.893-5.689-34.133 0s-17.067 17.067-17.067 29.582v397.084c0 12.516 6.827 23.893 17.067 29.582 5.689 3.413 11.378 4.551 17.067 4.551s12.516-1.138 17.067-4.551l344.747-199.111c10.24-5.689 17.067-17.067 17.067-29.582 0-11.378-6.827-22.756-17.067-28.444zM419.84 650.809v-277.618l241.209 138.809-241.209 138.809z"
+        ],
+        "attrs": [
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "play icon"
+        ]
+      },
+      "attrs": [
+        {}
+      ],
+      "properties": {
+        "order": 8,
+        "id": 1,
+        "name": "play-icon",
+        "prevSize": 32,
+        "code": 59648
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16
+  }
+}

@@ -1,0 +1,44 @@
+{
+	"pageTitle":
+	{
+		"en":"Events","ar":"الفاعليات"
+	
+	},
+
+	"headerTitle":
+	{
+		"en":"Events","ar":"الفاعليات"
+	
+	},
+
+	"dateText":
+	{
+		"en":"Month","ar":"الشهر"
+	
+	},
+
+	"timeText":
+	{
+		"en":"Time","ar":"التوقيت"
+	},
+
+	"locationText":
+    {
+ 	    "en":"Location","ar":"المكان"
+    },
+
+    "details":
+    {
+ 	    "en":"Details","ar":"شرح الحدث"
+    },
+
+    "month2":
+    {
+ 	    "en":"","ar":"شهر"
+    },
+
+    "filter":
+    {
+ 	    "en":"Filter By Month","ar":"اختار الشهر"
+    }
+}

@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+@import "web_animation";
+
+    $main_color1:#d62369;
+    $main_color2:#040707;
+    $main_color3:#989898;
+    $btn_color3:#a8a8a8;
+/**************************/
+.page_name{
+    >div{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        h1{
+            color: #fff;
+        top: 40%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+            position: relative;
+        }
+        .nav-wrapper {
+            float: left;
+            width: 100%;
+            top: 38%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            position: relative;
+            text-align: center;
+            >div{
+                display: inline-block;
+                background: $main_color1;
+                width: initial !important;
+                float: initial;
+                padding: 5px 20px;
+                a{
+                    &:before:first-child{
+                        display: none !important;
+                    }
+                }
+            }
+            .breadcrumb:before {
+                content: '/';
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 14px;
+                margin: 0 10px 0 8px;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+    }
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    
+    img{
+       margin-top: -200px;
+    }
+}
+
+.product_box{
+    margin-bottom: 40px;
+}
+
+.inner_body{
+        padding: 0px;
+        margin-bottom: 25px;
+    background: #fff; 
+    position: relative;
+}
+.product_details{
+    img{
+        width: initial !important;
+        max-width: 100%;
+    }
+    p{
+        float: left;
+        width: 100%;
+        margin: 20px 0px;
+        text-align: left;
+    }
+    .quick_product h2 {
+        margin-top: 20px;
+        text-align: left;
+    }
+    .addcart{ 
+                background: $main_color3;
+                color: #fff;
+                padding: 8px 10px;
+                min-width: 120px;
+                margin: 10px 0px;
+                float: left;
+                width: 90%;
+                font-size: 18px;
+    }
+    .addwish{
+                background: $main_color1;
+                color: #fff;
+                padding: 8px 10px;
+                min-width: 120px;
+                margin: 10px 0px;
+                float: left;
+                width: 90%;
+                font-size: 18px;
+        
+    }
+    .large {
+        width: 275px; height: 275px;
+        position: absolute;
+        border-radius: 100%;
+
+        /*Multiple box shadows to achieve the glass effect*/
+        box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+        0 0 7px 7px rgba(0, 0, 0, 0.25), 
+        inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+
+        /*hide the glass by default*/
+        display: none;
+    }
+
+}
+.related_products{
+    border-top: 1px solid #f1f2f2;
+    margin-top: 20px;
+    padding-top: 30px !important;
+}
+.offers {
+        background: #fcfcfc;
+        padding-bottom: 25px;
+    margin-bottom: -25px;
+}
+.pagination li.active {
+    background-color:$main_color1;
+}
+.pagination li .fa-chevron-right {
+    color:$main_color1;
+    display: inline-block;
+    font-size: 18px;
+    i{
+        font-size: 18px;
+    }
+}
+.pagination li .fa-chevron-left { 
+    font-size: 18px;
+    i{
+        font-size: 18px;
+    }
+}
+
+/******************************************************************************************/
+/*Some CSS*/ 
+.magnify { margin: 20px auto; position: relative; cursor: none}
+
+/*Lets create the magnifying glass*/
+.large {
+	width: 175px; height: 175px;
+	position: absolute;
+	border-radius: 100%;
+	
+	/*Multiple box shadows to achieve the glass effect*/
+	box-shadow: 0 0 0 7px rgba(255, 255, 255, 0.85), 
+	0 0 7px 7px rgba(0, 0, 0, 0.25), 
+	inset 0 0 40px 2px rgba(0, 0, 0, 0.25);
+	
+	/*hide the glass by default*/
+	display: none;
+}
+
+/*To solve overlap bug at the edges during magnification*/
+.small { display: block; }

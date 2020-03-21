@@ -1,0 +1,31 @@
+@-webkit-keyframes search {
+  0% {
+    opacity: 0;
+    bottom: 0px;
+    animation-timing-function: ease-in; }
+  100% {
+    opacity: 1;
+    bottom: 70px;
+    animation-timing-function: ease-in; } }
+@-moz-keyframes search {
+  0% {
+    opacity: 0;
+    bottom: 0px;
+    animation-timing-function: ease-in; }
+  100% {
+    opacity: 1;
+    bottom: 70px;
+    animation-timing-function: ease-in; } }
+@keyframes search {
+  0% {
+    opacity: 0;
+    bottom: 0px;
+    animation-timing-function: ease-in; }
+  100% {
+    opacity: 1;
+    bottom: 70px;
+    animation-timing-function: ease-in; } }
+/********************** home menu text ***********************/
+/********************** home menu text ***********************/
+
+/*# sourceMappingURL=web_animation.css.map */
