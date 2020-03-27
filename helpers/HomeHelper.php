@@ -235,4 +235,26 @@ class HomeHelper extends BaseHelper
                                                                     ), '../');
         return json_encode(array('output' => $this->urlHelper->changeToAlias($eventsSectionTpl)));
     }
+
+    public function GetServicesSection(){
+
+        global $xpdo;
+        $lang  = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
+        $langFile  = json_decode(file_get_contents('../lang/home.json'), true);
+        $query = $xpdo->newQuery('Services');
+        $query->sortby('Sort', 'ASC');
+        $aboutItems = $xpdo->getCollection('Services', $query);
+        foreach ($aboutItems as $aboutItem) {
+            $aboutItemsTPL  .= new LoadChunk('servicesItem', 'front/home', array(
+                                                                        'title'       => $aboutItem->get('Title_'.$lang),
+                                                                        'description' => $aboutItem->get('Description_'.$lang),
+                                                                        'image'       => $aboutItem->get('Image')
+                                                                        ), '../');
+        }
+        $aboutSectionTpl  = new LoadChunk('servicesSection', 'front/home', array(
+            // 'aboutItemsTPL' => $aboutItemsTPL,
+            'aboutTitle'    => $langFile['aboutTitle'][$lang]
+        ), '../');
+        return json_encode(array('output' => $this->urlHelper->changeToAlias($aboutSectionTpl)));
+    }
 }

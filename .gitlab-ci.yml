@@ -1,0 +1,8 @@
+deploy_prod:
+  stage: deploy
+  environment: production
+  only:
+    - master
+  script:
+    # - rsync -av . /home/kijamiid/egt-beta/ --exclude .git --exclude 'lang'
+    # - chown -R kijamiid:kijamiid /home/kijamiid/egt-beta/

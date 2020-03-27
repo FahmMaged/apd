@@ -4,7 +4,7 @@
 <!-- <div id="sliderVideo"></div> -->
 <!-- [[+sliderVideoTpl]] -->
 <div id="aboutUsSection"></div>
-<!-- <div id="newsSection"></div>
-<div id="eventsSection"></div> -->
+<div id="servicesSection"></div>
+<!--<div id="eventsSection"></div> -->
 
 [[+footer]][[+scripts]]

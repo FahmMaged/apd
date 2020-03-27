@@ -3,6 +3,7 @@
     fnGetSliderItems();
     fnGetAboutSection();
     fnGetNewsSection();
+    fnGetServicesSection();
     fnGetEventsSection();
   });
   //get all items
@@ -72,6 +73,29 @@
       }
     });
   }
+
+  //get services section
+  function fnGetServicesSection() {
+    $("#loadingContainer").show();
+    $.ajax({
+      url: "handlers/HomeHandler.php",
+      type: "POST",
+      data: {
+        operation: "getServicesSection",
+        lang: $("#lang").val()
+      },
+      success: function(data) {
+        var data = JSON.parse(data);
+
+        $("#servicesSection").html("");
+        $("#servicesSection").html(data.output);
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        console.log(xhr.responseText);
+      }
+    });
+  }
+
   //get events section
   function fnGetEventsSection() {
     $.ajax({
