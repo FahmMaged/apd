@@ -114,6 +114,21 @@ class HomeHelper extends BaseHelper
         $langFile  = json_decode(file_get_contents('../lang/home.json'), true);
         $newsItemsTPL    = '';
         $featuredNewsItemTPL = '';
+        // Arabic months
+        $months = array(
+            "Jan" => "يناير",
+            "Feb" => "فبراير",
+            "Mar" => "مارس",
+            "Apr" => "أبريل",
+            "May" => "مايو",
+            "Jun" => "يونيو",
+            "Jul" => "يوليو",
+            "Aug" => "أغسطس",
+            "Sep" => "سبتمبر",
+            "Oct" => "أكتوبر",
+            "Nov" => "نوفمبر",
+            "Dec" => "ديسمبر"
+        );
         $currentDate  = date("Y-m-d");
         $query = $xpdo->newQuery('News');
         $query->where(array(
@@ -125,23 +140,23 @@ class HomeHelper extends BaseHelper
         $query->sortby('PublishDate', 'DESC');
         $query->limit(3,0);
 
-        $x = 0; 
-        // Feature one
         $newsItems = $xpdo->getCollection('News', $query);
         foreach ($newsItems as $newsItem) {
-            if ($x == 0) {
-                $featuredNewsItemTPL  .= new LoadChunk('featuredNewsItem', 'front/home', array(
-                                                                            'lang'        => $lang,
-                                                                            'id'          => $newsItem->get('ID'),
-                                                                            'title'       => $newsItem->get('Title_'.$lang),
-                                                                            'alias'       => $newsItem->get('Alias_'.$lang),
-                                                                            'intro'       => $newsItem->get('Intro_'.$lang),
-                                                                            'image'       => $newsItem->get('Image'),
-                                                                            'publishDate' => $newsItem->get('PublishDate'),
-                                                                            'readMore'    => $langFile['readMore'][$lang]
-                                                                        ), '../');
-                $x++;
-            } else {
+            $month = '';
+                $month1 = date("M", strtotime($newsItem->get('PublishDate')));
+                $month_en = date("F", strtotime($newsItem->get('PublishDate')));
+                $year   = date("Y", strtotime($newsItem->get('PublishDate')));
+                $day    = date("d", strtotime($newsItem->get('PublishDate')));
+                if ($lang == 'ar') {
+                foreach ($months as $en => $ar) {
+                if ($en == $month1) {
+                $month = $ar;
+                }
+                }
+                } else{
+                    $month = $month_en;
+                }
+
                 $newsItemsTPL  .= new LoadChunk('newsItem', 'front/home', array(
                                                                             'lang'        => $lang,
                                                                             'id'          => $newsItem->get('ID'),
@@ -149,18 +164,19 @@ class HomeHelper extends BaseHelper
                                                                             'alias'       => $newsItem->get('Alias_'.$lang),
                                                                             'intro'       => $newsItem->get('Intro_'.$lang),
                                                                             'image'       => $newsItem->get('Image'),
-                                                                            'publishDate' => $newsItem->get('PublishDate'),
+                                                                            // 'publishDate' => $newsItem->get('PublishDate'),
+                                                                            'month' => $month,
+                                                                            'day' => $day,
                                                                             'readMore'    => $langFile['readMore'][$lang]
                                                                         ), '../');
-            }
-            
         }
         
         $newsSectionTpl  = new LoadChunk('newsSection', 'front/home', array('lang'        => $lang,
                                                                         'newsItemsTPL'    => $newsItemsTPL,
-                                                                        'featuredNewsItemTPL' => $featuredNewsItemTPL,
-                                                                        'newsTitle'           => $langFile['newsTitle'][$lang],
-                                                                        'allNewsButton'       => $langFile['allNewsButton'][$lang]), '../');
+                                                                        // 'featuredNewsItemTPL' => $featuredNewsItemTPL,
+                                                                        'newsTitle'       => $langFile['newsTitle'][$lang],
+                                                                        'newsSubTitle'    => $langFile['newsSubTitle'][$lang],
+                                                                        'allNewsButton'   => $langFile['allNewsButton'][$lang]), '../');
 
 
         return json_encode(array('output' => $this->urlHelper->changeToAlias($newsSectionTpl)));
@@ -236,6 +252,7 @@ class HomeHelper extends BaseHelper
         return json_encode(array('output' => $this->urlHelper->changeToAlias($eventsSectionTpl)));
     }
 
+    // Services Section
     public function GetServicesSection(){
 
         global $xpdo;
@@ -243,17 +260,42 @@ class HomeHelper extends BaseHelper
         $langFile  = json_decode(file_get_contents('../lang/home.json'), true);
         $query = $xpdo->newQuery('Services');
         $query->sortby('Sort', 'ASC');
-        $aboutItems = $xpdo->getCollection('Services', $query);
-        foreach ($aboutItems as $aboutItem) {
-            $aboutItemsTPL  .= new LoadChunk('servicesItem', 'front/home', array(
-                                                                        'title'       => $aboutItem->get('Title_'.$lang),
-                                                                        'description' => $aboutItem->get('Description_'.$lang),
-                                                                        'image'       => $aboutItem->get('Image')
+        $servicesItems = $xpdo->getCollection('Services', $query);
+        foreach ($servicesItems as $servicesItem) {
+            $servicesItemsTPL  .= new LoadChunk('servicesItem', 'front/home', array(
+                                                                        'title'       => $servicesItem->get('Title_'.$lang),
+                                                                        'description' => $servicesItem->get('Description_'.$lang),
+                                                                        'image'       => $servicesItem->get('Image')
                                                                         ), '../');
         }
         $aboutSectionTpl  = new LoadChunk('servicesSection', 'front/home', array(
-            // 'aboutItemsTPL' => $aboutItemsTPL,
-            'aboutTitle'    => $langFile['aboutTitle'][$lang]
+            'servicesItemsTPL' => $servicesItemsTPL,
+            'servicesTitle'    => $langFile['servicesTitle'][$lang],
+            'servicesSubTitle' => $langFile['servicesSubTitle'][$lang],
+        ), '../');
+        return json_encode(array('output' => $this->urlHelper->changeToAlias($aboutSectionTpl)));
+    }
+    // Testimonial Sectioon
+    public function GetTestimonialSection(){
+
+        global $xpdo;
+        $lang  = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
+        $langFile  = json_decode(file_get_contents('../lang/home.json'), true);
+        $query = $xpdo->newQuery('OurWork');
+        // $query->sortby('Sort', 'ASC');
+        $testimonialItems = $xpdo->getCollection('OurWork', $query);
+        foreach ($testimonialItems as $testimonialItem) {
+            $testimonialItemsTPL  .= new LoadChunk('testimonialItem', 'front/home', array(
+                                                                        'name'        => $testimonialItem->get('Title_'.$lang),
+                                                                        'job_title'   => $testimonialItem->get('JobTitle_'.$lang),
+                                                                        'description' => $testimonialItem->get('Description_'.$lang),
+                                                                        'image'       => $testimonialItem->get('Image')
+                                                                        ), '../');
+        }
+        $aboutSectionTpl  = new LoadChunk('testimonialSection', 'front/home', array(
+            'testimonialItems' => $testimonialItemsTPL,
+            'testimonialTitle'    => $langFile['testimonialTitle'][$lang],
+            'testimonialSubTitle' => $langFile['testimonialSubTitle'][$lang],
         ), '../');
         return json_encode(array('output' => $this->urlHelper->changeToAlias($aboutSectionTpl)));
     }

@@ -15,6 +15,8 @@ class OurWorkHelper extends BaseHelper
         $item = $xpdo->newObject('OurWork');
       
         $fields['Title_en']       = $_POST['title_en'];
+        $fields['JobTitle_en']       = $_POST['job_title_en'];
+        $fields['JobTitle_ar']       = $_POST['job_title_ar'];
         $fields['Description_en'] = $_POST['description_en'];
         $fields['Title_ar']       = $_POST['title_ar'];
         $fields['Description_ar'] = $_POST['description_ar'];
@@ -25,7 +27,7 @@ class OurWorkHelper extends BaseHelper
 
         if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0)
         {
-             $response = $this->UploadFile($_FILES['picture'],'/../uploads/ourWorkItems/', $x = 32);
+             $response = $this->UploadFile($_FILES['picture'],'/../uploads/ourWorkItems/', $x = 500);
              $response = json_decode($response);
 
              if($response->res == 0)
@@ -44,6 +46,8 @@ class OurWorkHelper extends BaseHelper
 
     public function GetItems()
     {
+
+        
         global $xpdo;
 
           $query = $xpdo->newQuery('OurWork');
@@ -78,10 +82,9 @@ class OurWorkHelper extends BaseHelper
           if (empty($allObj)) {
               $output .= new LoadChunk('no-data','admin/master', array(), '../');
           }
-
           foreach($allObj as $currObj)
           {
-              $output .= new LoadChunk('item', 'admin/ourWork', array(
+              $output .= new LoadChunk('item', 'admin/aboutItems', array(
                                                 'totalPages'     =>  $totalpages,
                                                 'name_en'        =>  $currObj->Get('Title_ar'),
                                                 'currID'         =>  $currObj->Get('ID'),
@@ -116,6 +119,8 @@ class OurWorkHelper extends BaseHelper
         $item = $xpdo->getObject('OurWork', array('ID' => $itemID));
         
         $fields['Title_en']       = $_POST['edit_title_en'];
+        $fields['JobTitle_en']    = $_POST['edit_job_title_en'];
+        $fields['JobTitle_ar']    = $_POST['edit_job_title_ar'];
         $fields['Description_en'] = $_POST['edit_description_en'];
         $fields['Title_ar']       = $_POST['edit_title_ar'];
         $fields['Description_ar'] = $_POST['edit_description_ar'];
@@ -125,7 +130,7 @@ class OurWorkHelper extends BaseHelper
         
         if(isset($_FILES['edit_picture']) && $_FILES['edit_picture']['size'] > 0)
         {
-             $response = $this->UploadFile($_FILES['edit_picture'],'/../uploads/ourWorkItems/', $x = 32);
+             $response = $this->UploadFile($_FILES['edit_picture'],'/../uploads/ourWorkItems/', $x = 500);
              $response = json_decode($response);
 
              if($response->res == 0)

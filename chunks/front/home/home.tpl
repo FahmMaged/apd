@@ -5,6 +5,7 @@
 <!-- [[+sliderVideoTpl]] -->
 <div id="aboutUsSection"></div>
 <div id="servicesSection"></div>
-<!--<div id="eventsSection"></div> -->
+<div id="newsSection"></div>
+<div id="testimonialSection"></div>
 
 [[+footer]][[+scripts]]
