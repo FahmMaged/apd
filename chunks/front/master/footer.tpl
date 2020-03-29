@@ -3,34 +3,43 @@
     <div class="rows">
         
     <div class="l4 s6 m4 col imp_links">
-        <h3> روابط مهمة </h3>
-        <div class="s6 col">
+        <h3> روابط سريعة </h3>
+        <div class="s6  col">
             <ul>
-                <a href="#"> <li>   من نحن  </li></a>
-                <a href="#"> <li>الرؤية و الرسالة   </li></a>
-                <a href="#"> <li>القيم الأساسية   </li></a>
-                <a href="#"> <li>   فريق العمل </li></a>
-                <a href="#"> <li> رؤساء الوحدات   </li></a>
+               <li>  <a href="#">  من نحن  </a></li>
+                <a href="#"> <li>الرؤية و الرسالة   </a></li>
+                <a href="#"> <li>القيم الأساسية   </a></li>
+               <li>  <a href="#">  فريق العمل </a></li>
+               <li>  <a href="#">رؤساء الوحدات   </a></li>
             </ul> 
         </div>
         <div class="s6 col">
             <ul>
-                <a href="#"> <li> المركز الاعلامي  </li></a>
-                <a href="#"> <li>النشرة الإخبارية   </li></a>
-                <a href="#"> <li>  بيانات صحفية  </li></a>
-                <a href="#"> <li> الأخبار  </li></a>
-                <a href="#"> <li>   اتصل بنا  </li></a>
+               <li>  <a href="#">المركز الاعلامي  </a></li>
+                <a href="#"> <li>النشرة الإخبارية   </a></li>
+               <li>  <a href="#"> بيانات صحفية  </a></li>
+               <li>  <a href="#">الأخبار  </a></li>
+               <li>  <a href="#">  اتصل بنا  </a></li>
             </ul> 
         </div>
     </div> 
     
     <div class="l4 s12 m4 col  contact-widget">
         <h3> اتصل بنا </h3>
+            <ul class="footer_contatc">
+                <li>  <a href="#"><span> الهاتف </span> 010215151615 </a></li>
+                <li>  <a href="#"><span> الايميل </span> info@sad.com </a></li>
+                <li>  <a href="#"><span> العنوان </span> التجمع الخامس - القاهرة - مصر  </a></li>
+            </ul>
+    </div>
+
+    <div class="l4 s12 m4 col  contact-widget">
+        <h3>  تابعنا علي  </h3>
             <ul class="footer_social">
-                 <a href="#"> <li> <i class="fa fa-facebook"></i>  </li></a>
-                 <a href="#"> <li>  <i class=" fa fa-twitter"></i> </li></a>
-                 <a href="#"> <li>  <i class=" fa fa-linkedin"></i>  </li></a>
-                 <a href="#"> <li> <i class=" fa fa-youtube"></i>   </li> </a>
+                <li>  <a href="#"><i class="fa fa-facebook"></i>  </a></li>
+                <li>  <a href="#"> <i class=" fa fa-twitter"></i> </a></li>
+                <li>  <a href="#"> <i class=" fa fa-linkedin"></i>  </a></li>
+                <li>  <a href="#"><i class=" fa fa-youtube"></i>   </li> </a>
             </ul>
     </div>
         

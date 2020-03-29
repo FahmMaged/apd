@@ -445,6 +445,151 @@ a.button-collapse {
 }
 
 /************************************************/
+footer {
+  background: #418cb5;
+  padding: 20px 0px;
+}
+
+footer h3 {
+  color: #fff;
+  margin-top: 15px;
+}
+
+footer li {
+  margin-bottom: 10px;
+}
+
+footer li a {
+  color: #fff;
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+footer li a:hover {
+  opacity: 1;
+}
+
+footer .footer_contatc {
+  margin: 20px 0px;
+}
+
+footer .footer_social {
+  float: right;
+  padding-top: 50px;
+}
+
+footer .footer_social li {
+  margin: 20px 15px;
+  float: left;
+}
+
+footer .footer_social li a {
+  color: #1a5f86;
+  font-size: 22px;
+}
+
+/**
+ * 1. The `reverse` animation direction plays the animation backwards
+ *    which makes it start at the stroke offset 100 which means displaying
+ *    no stroke at all and animating it to the value defined in the SVG
+ *    via the inline `stroke-dashoffset` attribute.
+ * 2. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
+ */
+.circle-chart__circle {
+  animation: circle-chart-fill 2s reverse;
+  /* 1 */
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  /* 2, 3 */
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  /* 4 */
+  stroke: white;
+}
+
+circle.circle-chart__background {
+  stroke: #0b964f;
+}
+
+text {
+  fill: #fff;
+}
+
+.grid {
+  float: left;
+}
+
+/**
+ * 1. Rotate by -90 degree to make the starting point of the
+ *    stroke the top of the circle.
+ * 2. Scaling mirrors the circle to make the stroke move right
+ *    to mark a positive chart value.
+ * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
+ *    and Edge, use the transform attribute directly on the SVG element as a
+ * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
+ */
+.circle-chart__circle--negative {
+  -webkit-transform: rotate(-90deg) scale(1, -1);
+          transform: rotate(-90deg) scale(1, -1);
+  /* 1, 2, 3 */
+}
+
+.circle-chart__info {
+  -webkit-animation: circle-chart-appear 2s forwards;
+          animation: circle-chart-appear 2s forwards;
+  opacity: 0;
+  -webkit-transform: translateY(0.3em);
+          transform: translateY(0.3em);
+}
+
+@-webkit-keyframes circle-chart-fill {
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@keyframes circle-chart-fill {
+  to {
+    stroke-dasharray: 0 100;
+  }
+}
+
+@-webkit-keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes circle-chart-appear {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+.grid {
+  display: -ms-grid;
+  display: grid;
+  grid-column-gap: 1em;
+  grid-row-gap: 1em;
+  -ms-grid-columns: (1fr)[1];
+      grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 31em) {
+  .grid {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 .the_slider {
   width: 100%;
   float: left;
@@ -980,111 +1125,5 @@ section {
 
 .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
   background: #869791;
-}
-
-footer {
-  background: #418cb5;
-}
-
-/**
- * 1. The `reverse` animation direction plays the animation backwards
- *    which makes it start at the stroke offset 100 which means displaying
- *    no stroke at all and animating it to the value defined in the SVG
- *    via the inline `stroke-dashoffset` attribute.
- * 2. Rotate by -90 degree to make the starting point of the
- *    stroke the top of the circle.
- * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
- *    and Edge, use the transform attribute directly on the SVG element as a
- * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
- */
-.circle-chart__circle {
-  animation: circle-chart-fill 2s reverse;
-  /* 1 */
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  /* 2, 3 */
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  /* 4 */
-  stroke: white;
-}
-
-circle.circle-chart__background {
-  stroke: #0b964f;
-}
-
-text {
-  fill: #fff;
-}
-
-.grid {
-  float: left;
-}
-
-/**
- * 1. Rotate by -90 degree to make the starting point of the
- *    stroke the top of the circle.
- * 2. Scaling mirrors the circle to make the stroke move right
- *    to mark a positive chart value.
- * 3. Using CSS transforms on SVG elements is not supported by Internet Explorer
- *    and Edge, use the transform attribute directly on the SVG element as a
- * .  workaround (https://markus.oberlehner.net/blog/pure-css-animated-svg-circle-chart/#part-4-internet-explorer-strikes-back).
- */
-.circle-chart__circle--negative {
-  -webkit-transform: rotate(-90deg) scale(1, -1);
-          transform: rotate(-90deg) scale(1, -1);
-  /* 1, 2, 3 */
-}
-
-.circle-chart__info {
-  -webkit-animation: circle-chart-appear 2s forwards;
-          animation: circle-chart-appear 2s forwards;
-  opacity: 0;
-  -webkit-transform: translateY(0.3em);
-          transform: translateY(0.3em);
-}
-
-@-webkit-keyframes circle-chart-fill {
-  to {
-    stroke-dasharray: 0 100;
-  }
-}
-
-@keyframes circle-chart-fill {
-  to {
-    stroke-dasharray: 0 100;
-  }
-}
-
-@-webkit-keyframes circle-chart-appear {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes circle-chart-appear {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-.grid {
-  display: -ms-grid;
-  display: grid;
-  grid-column-gap: 1em;
-  grid-row-gap: 1em;
-  -ms-grid-columns: (1fr)[1];
-      grid-template-columns: repeat(1, 1fr);
-}
-
-@media (min-width: 31em) {
-  .grid {
-    -ms-grid-columns: (1fr)[2];
-        grid-template-columns: repeat(2, 1fr);
-  }
 }
 /*# sourceMappingURL=style.css.map */

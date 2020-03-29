@@ -1,0 +1,31 @@
+
+    $font-light:"Cairo-Light";
+    $font-bold:"Cairo-bold";
+    /*************************/
+ @font-face {
+  font-family: "Cairo";
+  src: url("../font/Cairo-Regular.ttf"); 
+  font-weight: normal;
+  font-style: normal; }
+
+   @font-face {
+  font-family: "Cairo-Light";
+  src: url("../font/Cairo-Light.ttf"); 
+  font-weight: normal;
+  font-style: normal; }
+
+   @font-face {
+  font-family: "Cairo-bold";
+  src: url("../font/Cairo-bold.ttf"); 
+  font-weight: normal;
+  font-style: normal; }
+
+body {
+	line-height: 1;
+	color: $main_color3;
+	font: 14px/24px "Cairo", Helvetica, Arial, sans-serif;
+	background: #fff; 
+	background-attachment:fixed;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+}
