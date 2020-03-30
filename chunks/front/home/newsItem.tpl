@@ -1,19 +1,17 @@
-<div class="smallNews">
-    <div class="col s12 m6 l6 newsContent">
-        <!-- <a href="newsDetails.php?id=[[+id]]"><h4>[[+title]] </h4></a> -->
-        <h4> [[+title]] </h4>
-        <h6>
-            <i class="fa fa-calendar"></i>
-            [[+publishDate]]
-        </h6>
-        <p>[[+intro]]</p>
-       <a href="newsDetails.php?id=[[+id]]&alias=[[+alias]]">[[+readMore]]</a>
+<div class="l4 m4 s12 col  animated  ">
+  <div class="news_box">
+    <div class="news_img">
+      <!-- <span class="date"> [[+publishDate]] </span> -->
+      <span class="date">
+        [[+day]]
+        <div>[[+month]]</div>
+      </span>
+      <img src="[[+image]]" />
     </div>
-    <div class="col s12 m6 l6">
-    <a href="newsDetails.php?id=[[+id]]&alias=[[+alias]]">
-        <div class="smallNewsImg bgImg"  style="background-image:url('[[+image]]')">
-                <img src="[[+image]]">
-        </div>
-    </a>
-    </div>
+    <div class="clearfix"></div>
+    <h3>[[+title]]</h3>
+    <p>
+      [[+intro]]
+    </p>
+  </div>
 </div>

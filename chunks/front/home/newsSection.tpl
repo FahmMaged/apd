@@ -1,17 +1,11 @@
-<section class="ourNews" style="direction:rtl">
-    <div class="titles">
-        <h3>
-            <span>[[+newsTitle]]</span>
-        </h3>
-    </div>
-    <div class="container">
-        <div class="row">
-            [[+featuredNewsItemTPL]]
-            <div class="col s12 m6 l6 ">
-                [[+newsItemsTPL]]
 
-            </div>
-        </div>
-        <a href="news.php" class="waves-effect waves-light btn-large">[[+allNewsButton]]</a>
+<section class="news sections ">
+    <div class="rows">
+        <h1 class="headline">  <span> [[+newsTitle]] </h1>
+        <h2  class="headline2">  [[+newsSubTitle]] </h2>
+         <div class="l12 s12 m12 col no_padding statMain">
+            [[+newsItemsTPL]]
+         </div> 
+        
     </div>
 </section>

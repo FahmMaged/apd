@@ -15,9 +15,9 @@ $header  = new LoadChunk('header', 'admin/master', array(), '../');
 
 $sidebar = new LoadChunk('sidebar', 'admin/master', array('name' => $adminName), '../');
 
-$content = new LoadChunk('ourWork', 'admin/ourWork', array(), '../');
+$content = new LoadChunk('aboutItems', 'admin/aboutItems', array(), '../');
 
-$extraScripts 	= new LoadChunk('scripts', 'admin/ourWork',array(),'../');
+$extraScripts 	= new LoadChunk('scripts', 'admin/aboutItems',array(),'../');
 
 $footer  = new LoadChunk('footer', 'admin/master', array('extraScripts' => $extraScripts), '../');
 

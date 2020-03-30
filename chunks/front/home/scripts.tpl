@@ -4,7 +4,7 @@
     fnGetAboutSection();
     fnGetNewsSection();
     fnGetServicesSection();
-    fnGetEventsSection();
+    fnGetTestimonialSection();
   });
   //get all items
   function fnGetSliderItems() {
@@ -97,22 +97,22 @@
   }
 
   //get events section
-  function fnGetEventsSection() {
+  function fnGetTestimonialSection() {
     $.ajax({
       url: "handlers/HomeHandler.php",
       type: "POST",
       data: {
-        operation: "getEventsSection",
+        operation: "getTestimonialSection",
         lang: $("#lang").val()
       },
       success: function(data) {
         var data = JSON.parse(data);
-        var event_height = $(".eventDetails img").height();
-        var event_width = $(".eventDetails img").width();
-        $(".eventDetails").css("height", event_height);
-        $(".eventDetails").css("width", event_width);
-        $("#eventsSection").html("");
-        $("#eventsSection").html(data.output);
+        // var event_height = $(".eventDetails img").height();
+        // var event_width = $(".eventDetails img").width();
+        // $(".eventDetails").css("height", event_height);
+        // $(".eventDetails").css("width", event_width);
+        $("#testimonialSection").html("");
+        $("#testimonialSection").html(data.output);
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);

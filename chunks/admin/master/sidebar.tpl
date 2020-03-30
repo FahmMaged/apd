@@ -202,11 +202,11 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="Our Work"
+      data-tooltip="About Items"
     >
-      <a href="ourWork.php">
+      <a href="aboutItems.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">Our Work</p>
+        <p class="menu-links">About Items</p>
       </a>
     </li>
     <li

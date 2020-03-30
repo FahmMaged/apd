@@ -342,6 +342,8 @@
 		<field key="Description_en" dbtype="text" phptype="string" null="true" />
 		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="Description_ar" dbtype="text" phptype="string" null="true" />
+		<field key="JobTitle_en" dbtype="varchar" precision="191" phptype="string" null="true" />
+		<field key="JobTitle_ar" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="true" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
 		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />

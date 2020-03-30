@@ -11,6 +11,8 @@ $xpdo_meta_map['OurWork']= array (
     'Description_en' => NULL,
     'Title_ar' => NULL,
     'Description_ar' => NULL,
+    'JobTitle_en' => NULL,
+    'JobTitle_ar' => NULL,
     'Image' => NULL,
     'Sort' => 1,
     'CreatedOn' => 'CURRENT_TIMESTAMP',
@@ -52,6 +54,20 @@ $xpdo_meta_map['OurWork']= array (
     'Description_ar' => 
     array (
       'dbtype' => 'text',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'JobTitle_en' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'JobTitle_ar' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
       'phptype' => 'string',
       'null' => true,
     ),

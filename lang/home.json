@@ -4,16 +4,28 @@
     "ar": "عن اللجنة"
   },
   "newsTitle": {
-    "en": "Our News",
-    "ar": "أخرأخبارنا"
+    "en": "Latest News",
+    "ar": "اخر الاخبار"
   },
-  "eventsTitle": {
-    "en": "Upcoming Events",
-    "ar": "الفاعليات القادمة"
+  "newsSubTitle": {
+    "en": "News Sub Title",
+    "ar": "لمركز السعودي لكفاءة الطاقة "
   },
-  "videoTitle": {
-    "en": "Contact Us",
-    "ar": "اتصل بنا"
+  "servicesTitle": {
+    "en": "Services",
+    "ar": "الخدمات"
+  },
+  "servicesSubTitle": {
+    "en": "List of our services",
+    "ar": "قائمة الخدمات التي نقدمها"
+  },
+  "testimonialTitle": {
+    "en": "Testimonial",
+    "ar": " قالوا عن كفاءة الطاقة "
+  },
+  "testimonialSubTitle": {
+    "en": "List of our testimonial",
+    "ar": "  المركز السعودي لكفاءة الطاقة "
   },
   "allNewsButton": {
     "en": "All News",

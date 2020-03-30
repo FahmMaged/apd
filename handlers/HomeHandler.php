@@ -22,8 +22,8 @@ if (isset($_POST['operation'])) {
         case 'getServicesSection':
             echo $homeHelper->GetServicesSection();
             break;
-        case 'getEventsSection':
-            echo $homeHelper->GetEventsSection();
+        case 'getTestimonialSection':
+            echo $homeHelper->GetTestimonialSection();
             break;
         
         default:
