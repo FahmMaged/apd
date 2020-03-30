@@ -1,0 +1,27 @@
+
+.contact_info{
+    li{
+        list-style: none;
+        margin-bottom: 25px;
+        text-align: right;
+        float: right;
+        width: 100%;
+        span{
+            color: $main_color2;
+            margin-right: 3%;
+            float: right;
+            width: 25%;
+            i{
+                margin-left: 15px;
+            }
+        }
+        div{
+            float: right;
+            width: 70%
+        }
+    }
+}
+
+.redBtn{
+    background-color: $main_color2;
+}

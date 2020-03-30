@@ -152,3 +152,71 @@ h1.headline{
         margin-bottom: 20px;
         font-family: $font-light;
 }
+h3.headline{ 
+    padding-bottom: 10px;
+        color: $main_color1;
+        text-align: center;
+        display: inline-block;
+        width: initial;
+        float: initial;
+        position: relative; 
+        font-size: 24px;
+        width: 100%; 
+        margin: 20px 0px; 
+        margin-bottom: 5px;
+}
+/************************************************************************/
+
+.page_name{
+    >div{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        h1{
+            color: #fff;
+        top: 40%;
+        -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        transform: translateY(-50%);
+            position: relative;
+        }
+        .nav-wrapper {
+            float: left;
+            width: 100%;
+            top: 38%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            position: relative;
+            text-align: center;
+            >div{
+                display: inline-block;
+                background: $main_color1;
+                width: initial !important;
+                float: initial;
+                padding: 5px 20px;
+                a{
+                    &:before:first-child{
+                        display: none !important;
+                    }
+                }
+            }
+            .breadcrumb:before {
+                content: '/';
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 14px;
+                margin: 0 10px 0 8px;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+    }
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 50px;
+    
+    img{
+       margin-top: -200px;
+    }
+}
