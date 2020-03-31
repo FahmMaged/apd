@@ -55,3 +55,56 @@
     background-color:$main_color2;
 }
 } 
+
+.eventsInnerPage{
+    h1{
+        margin: 20px 0px;
+        font-size: 34px;
+    }
+    p{
+font-size: 15px;
+    }
+    .stickyBox{
+        position: sticky;
+        top: 0;
+        left: 0;
+        ul{
+            position: relative;
+            float: right;
+            width: 100%;
+            background: #f2f2f2;
+            padding: 20px;
+            border: 1px solid #eee;
+            padding-top: 0px;
+            box-shadow: 0px 0px 5px #ccc;
+        }
+        h2{
+            font-size: 22px;
+            padding: 20px;
+            text-align: center;
+        }
+        h4{
+            font-size: 15px;
+            color: #888;
+        }
+        li{
+            border-bottom: 1px dashed #cccc;
+            padding: 8px 0px;
+        }
+        div{
+            font-size: 13px;
+            color: $main_color1;
+            i{
+                margin-left: 10px;
+            }
+        }
+        button.btn {
+            margin: 15px auto;
+            display: table;
+            width: 60%;
+            background: $main_color2;
+            box-shadow: initial !important;
+        }
+    }
+
+}

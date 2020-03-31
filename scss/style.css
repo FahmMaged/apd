@@ -1287,4 +1287,66 @@ section {
 .eventsPage .pagination li.active {
   background-color: #c42035;
 }
+
+.eventsInnerPage h1 {
+  margin: 20px 0px;
+  font-size: 34px;
+}
+
+.eventsInnerPage p {
+  font-size: 15px;
+}
+
+.eventsInnerPage .stickyBox {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.eventsInnerPage .stickyBox ul {
+  position: relative;
+  float: right;
+  width: 100%;
+  background: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #eee;
+  padding-top: 0px;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+          box-shadow: 0px 0px 5px #ccc;
+}
+
+.eventsInnerPage .stickyBox h2 {
+  font-size: 22px;
+  padding: 20px;
+  text-align: center;
+}
+
+.eventsInnerPage .stickyBox h4 {
+  font-size: 15px;
+  color: #888;
+}
+
+.eventsInnerPage .stickyBox li {
+  border-bottom: 1px dashed #cccc;
+  padding: 8px 0px;
+}
+
+.eventsInnerPage .stickyBox div {
+  font-size: 13px;
+  color: #418cb5;
+}
+
+.eventsInnerPage .stickyBox div i {
+  margin-left: 10px;
+}
+
+.eventsInnerPage .stickyBox button.btn {
+  margin: 15px auto;
+  display: table;
+  width: 60%;
+  background: #c42035;
+  -webkit-box-shadow: initial !important;
+          box-shadow: initial !important;
+}
 /*# sourceMappingURL=style.css.map */
