@@ -47,6 +47,7 @@
     <script type="text/javascript" src="js/materialize.min.js"></script>
     <script type="text/javascript" src="js/jquery.fancybox.js?v=2.1.5"></script>
     <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="admin/css/sweetalert2.css" />
     <!-- ==============================================
 		Favicons
 		=============================================== -->
