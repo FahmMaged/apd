@@ -31,6 +31,7 @@
       </div>
     </div>
     <div class="l12 col no_padding header-body">
+	<input type="hidden" id="lang" value="[[+lang]]" />
       <div class="rows">
         <div class="l3 s6 m4 col">
           <div class="logo"><img src="images/Logo.png" /></div>

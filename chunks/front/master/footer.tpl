@@ -57,6 +57,7 @@
     </div>
   </body>
         <script type="text/javascript" src="js/app.js"></script>  
+        <script type="text/javascript" src="admin/js/sweetalert2.min.js"></script>
         <script>
             $(document).ready(function() {
                 $('select').material_select();
