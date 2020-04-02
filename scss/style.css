@@ -84,6 +84,10 @@ p {
   margin-bottom: 0px !important;
 }
 
+.row .col {
+  padding: 0 0.75rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #418cb5;
   margin: 10px 0px;
@@ -1285,6 +1289,192 @@ section {
 }
 
 .eventsPage .pagination li.active {
+  background-color: #c42035;
+}
+
+.eventsInnerPage h1 {
+  margin: 20px 0px;
+  font-size: 34px;
+}
+
+.eventsInnerPage p {
+  font-size: 15px;
+}
+
+.eventsInnerPage .stickyBox {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.eventsInnerPage .stickyBox ul {
+  position: relative;
+  float: right;
+  width: 100%;
+  background: #f2f2f2;
+  padding: 20px;
+  border: 1px solid #eee;
+  padding-top: 0px;
+  -webkit-box-shadow: 0px 0px 5px #ccc;
+          box-shadow: 0px 0px 5px #ccc;
+}
+
+.eventsInnerPage .stickyBox h2 {
+  font-size: 22px;
+  padding: 20px;
+  text-align: center;
+}
+
+.eventsInnerPage .stickyBox h4 {
+  font-size: 15px;
+  color: #888;
+}
+
+.eventsInnerPage .stickyBox li {
+  border-bottom: 1px dashed #cccc;
+  padding: 8px 0px;
+}
+
+.eventsInnerPage .stickyBox div {
+  font-size: 13px;
+  color: #418cb5;
+}
+
+.eventsInnerPage .stickyBox div i {
+  margin-left: 10px;
+}
+
+.eventsInnerPage .stickyBox button.btn {
+  margin: 15px auto;
+  display: table;
+  width: 60%;
+  background: #c42035;
+  -webkit-box-shadow: initial !important;
+          box-shadow: initial !important;
+}
+
+.instructors .filter {
+  padding: 8px 20px;
+  background: #fff;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px #e8e8e8;
+  float: right;
+  width: 100%;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.13);
+  border: solid 1px #e8e8e8;
+}
+
+.instructors .filter .filterBtn {
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  background: #c42035;
+}
+
+.instructors span.caret {
+  left: 0;
+  right: initial;
+}
+
+.instructors .dropdown-content li {
+  text-align: right;
+}
+
+.instructors .teacher_box {
+  margin-bottom: 50px;
+  float: right;
+  width: 100%;
+}
+
+.instructors .teacher_box .teacher_img {
+  background-position: center;
+  background-size: cover;
+  height: 18vw;
+  min-height: 220px;
+  max-height: 400px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+}
+
+.instructors .teacher_box .details h3 {
+  color: #555555;
+  line-height: 1.5;
+  font-size: 24px;
+  font-family: "Cairo-bold";
+}
+
+.instructors .teacher_box .details h3:hover {
+  color: #c42035;
+}
+
+.instructors .teacher_box .details h5 {
+  color: #555555;
+  font-size: 16px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 15px;
+}
+
+.instructors .teacher_box .bio {
+  float: right;
+  width: 100%;
+}
+
+.instructors .teacher_box .bio h6 {
+  font-size: 14px;
+  color: #418cb5;
+  padding-right: 10px;
+}
+
+.instructors .teacher_box .bio h6 i {
+  margin-left: 10px;
+}
+
+.instructors .teacher_box .bio .teacher_social {
+  float: right;
+}
+
+.instructors .teacher_box .bio .teacher_social li {
+  margin: 0px 10px;
+  float: left;
+}
+
+.instructors .teacher_box .bio .teacher_social li a {
+  color: #555555;
+  font-size: 16px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #555555;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+}
+
+.instructors .teacher_box .bio .teacher_social li a:hover {
+  background: #418cb5;
+  color: #fff;
+  border-color: #418cb5;
+}
+
+.instructors .pagination {
+  margin: 40px 0px;
+}
+
+.instructors .pagination i {
+  font-size: 14px;
+}
+
+.instructors .pagination li.active {
   background-color: #c42035;
 }
 
