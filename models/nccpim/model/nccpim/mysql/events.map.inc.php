@@ -11,11 +11,12 @@ $xpdo_meta_map['Events']= array (
     'Description_en' => NULL,
     'Title_ar' => NULL,
     'Description_ar' => NULL,
-    'LocationID' => 0,
+    'Time_ar' => NULL,
+    'Time_en' => NULL,
+    'Location_ar' => NULL,
+    'Location_en' => NULL,
     'Image' => NULL,
     'PublishDate' => NULL,
-    'StartTime' => NULL,
-    'EndTime' => NULL,
     'InHome' => 0,
     'IsActive' => 0,
     'Sort' => 0,
@@ -63,13 +64,33 @@ $xpdo_meta_map['Events']= array (
       'phptype' => 'string',
       'null' => true,
     ),
-    'LocationID' => 
+    'Time_ar' => 
     array (
-      'dbtype' => 'int',
-      'precision' => '11',
-      'phptype' => 'integer',
-      'null' => false,
-      'default' => 0,
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Time_en' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Location_ar' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Location_en' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
     ),
     'Image' => 
     array (
@@ -82,20 +103,6 @@ $xpdo_meta_map['Events']= array (
     array (
       'dbtype' => 'date',
       'phptype' => 'date',
-      'null' => true,
-    ),
-    'StartTime' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '155',
-      'phptype' => 'string',
-      'null' => true,
-    ),
-    'EndTime' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '155',
-      'phptype' => 'string',
       'null' => true,
     ),
     'InHome' => 
