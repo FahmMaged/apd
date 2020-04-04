@@ -195,6 +195,18 @@
 			<column key="ID" length="" collation="A" null="false" />
 		</index>
 	</object>
+	<object class="EventsSubmissions" table="EventsSubmissions" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Name" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Email" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Phone" dbtype="varchar" precision="256" phptype="string" null="true" />
+		<field key="Message" dbtype="text" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
 	<object class="Files" table="Files" extends="xPDOObject">
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
 		<field key="AwarenessID" dbtype="int" precision="11" phptype="integer" null="false" />

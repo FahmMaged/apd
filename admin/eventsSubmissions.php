@@ -17,9 +17,9 @@ $sidebar = new LoadChunk('sidebar', 'admin/master', array('name' => $adminName),
 
 
 
-$content = new LoadChunk('locations', 'admin/eventsLocations', array(), '../');
+$content = new LoadChunk('submissions', 'admin/eventsSubmissions', array(), '../');
 
-$extraScripts 	= new LoadChunk('scripts', 'admin/eventsLocations',array(),'../');
+$extraScripts 	= new LoadChunk('scripts', 'admin/eventsSubmissions',array(),'../');
 
 $footer  = new LoadChunk('footer', 'admin/master', array('extraScripts' => $extraScripts), '../');
 
