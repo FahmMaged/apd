@@ -344,18 +344,42 @@ class EventsHelper extends BaseHelper
       global $xpdo;
       $lang       = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
       $langFile  = json_decode(file_get_contents('../lang/events.json'), true);
+      $onclickFn  = 'fnGetEvents';
       $eventDate;
       $montheventsTPL = '';
       $eventWithImage = '';
       $eventWithoutImage = '';
       $eventsTPL = '';
 
+      $query1 = $xpdo->newQuery('Events');
+      $query1->where(array('IsActive' => 1));
+      // $query->sortby('PublishDate', 'DESC');
+      $events = $xpdo->getCollection('Events', $query1);
+      $numrows      = count($events);
+
+      $pagination='';
+      $rowsperpage = 1;
+      $totalpages  = ceil($numrows / $rowsperpage);
+      if (isset($_POST['currentpage']) && is_numeric($_POST['currentpage'])) {
+        $currentpage = (int) $_POST['currentpage'];
+      } else {
+        $currentpage = 1;
+      }
+      if ($currentpage > $totalpages) {
+        $currentpage = $totalpages;
+      }
+      if ($currentpage < 1) {
+        $currentpage = 1;
+      }
+      $offset = ($currentpage - 1) * $rowsperpage;
+
       $query = $xpdo->newQuery('Events');
       $query->where(array('IsActive' => 1));
       $query->sortby('PublishDate', 'DESC');
-      $events = $xpdo->getCollection('Events', $query);
+      $query->limit($rowsperpage,$offset);
+      $allEvents = $xpdo->getCollection('Events', $query);
       
-      foreach ($events as $e) {
+      foreach ($allEvents as $e) {
           
           $day  = date("d", strtotime($e->get('PublishDate')));
           $month  = date("m", strtotime($e->get('PublishDate')));
@@ -385,13 +409,33 @@ class EventsHelper extends BaseHelper
             'description' => $description,
             ), '../');
 
-        $montheventsTPL   .= new LoadChunk('monthEvents', 'front/events', array(
-                                   'monthName'  => $month,
-                                   'eventsTPL'  => $eventsTPL,
-                                   'month2'     => $langFile['month2'][$lang],
-                                   ), '../');
+        // Build up the Pagination
+          if ($totalpages > 1) {
+            $pagination .= '<ul class="pagination">';
+
+            if ($currentpage > 1) {
+                $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage - 1) .')"> <i class="fa fa-chevron-right"></i></a></li>';
+            }
+
+            for ($i = 1; $i <= $totalpages; $i++) {
+                if ($i <= $currentpage + 3 && $i >= $currentpage - 2) {
+                    if ($i == $currentpage) {
+                        $pagination.= '<li class="active"><a href="javascript:void(0)">' . $i . '</a></li>';
+                    } else {
+                        $pagination.= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . $i .')">' . $i . '</a></li>';
+                    }
+                }
+            }
+            if ($currentpage != $totalpages) {
+                $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage + 1) .')"><i class="fa fa-chevron-left"></i></a></li>';
+
+                // $pagination .= '<li class="waves-effect waves-dark"><a onclick="'.$onclickFn.'(' . $totalpages . ','.$parentID.')">...</a></li>';
+            }
+
+            $pagination .= '</ul>';
+        }
       }
-      return json_encode(array('output' => $this->urlHelper->changeToAlias($eventsTPL)));
+      return json_encode(array('output' => $this->urlHelper->changeToAlias($eventsTPL), 'pagination' => $this->urlHelper->changeToAlias($pagination)));
     }
 	
 }

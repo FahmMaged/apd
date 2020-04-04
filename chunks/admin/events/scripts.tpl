@@ -45,16 +45,16 @@
           isValid = false;
           return;
         }
-        if ($("#locationID").val() == null || $("#locationID").val() == 0) {
-          swal({
-            title: "Required Fields",
-            text: "You should select a location",
-            type: "error",
-            confirmButtonText: "Close"
-          });
-          isValid = false;
-          return;
-        }
+        // if ($("#locationID").val() == null || $("#locationID").val() == 0) {
+        //   swal({
+        //     title: "Required Fields",
+        //     text: "You should select a location",
+        //     type: "error",
+        //     confirmButtonText: "Close"
+        //   });
+        //   isValid = false;
+        //   return;
+        // }
       });
 
       if (!isValid) return;
@@ -83,9 +83,9 @@
       //   }
       //   values.append("inHome", inHome);
 
-      var locationID = 0;
-      locationID = $("#locationID").val();
-      values.append("locationID", locationID);
+      //   var locationID = 0;
+      //   locationID = $("#locationID").val();
+      //   values.append("locationID", locationID);
 
       $.ajax({
         url: "../handlers/EventsHandler.php",
@@ -161,9 +161,9 @@
       //   }
       //   values.append("edit_inHome", editInHome);
 
-      var editLocationID = 0;
-      editLocationID = $("#editLocationID").val();
-      values.append("edit_locationID", editLocationID);
+      //   var editLocationID = 0;
+      //   editLocationID = $("#editLocationID").val();
+      //   values.append("edit_locationID", editLocationID);
 
       $.ajax({
         url: "../handlers/EventsHandler.php",
