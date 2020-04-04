@@ -56,11 +56,32 @@
                                 </li>
                                 <li>
                                     <h4> [[+share]]</h4>
-                                    <div>  
+                                    <div>
+                                        
+                                            <span>
+                                                    <a href="javascript:fbShare('[[+url]]', '', '', '', '');"
+                                                    ><i class="fa fa-facebook-f"></i>
+                                                  </a>
+                                                </span>
+                                                <span>
+                                                    <a
+                                                        href="https://twitter.com/intent/tweet?url=[[+url]]&text=[[+title]]"
+                                                        target="_blank"
+                                                        ><i class="fa fa-twitter"></i>
+                                                    </a>
+                                                </span>
+                                                <span>
+                                                    <a
+                                                        href="https://www.linkedin.com/shareArticle?mini=true&url=[[+encodedUrl]]
+                                                        "
+                                                        target="_blank"
+                                                        ><i class="fa fa-linkedin"></i>
+                                                    </a>
+                                                </span>
+                                        <!-- <span> <i class="fa fa-facebook"></i>  </span> -->
+                                        <!-- <span> <i class="fa fa-facebook"></i>  </span>
                                         <span> <i class="fa fa-facebook"></i>  </span>
-                                        <span> <i class="fa fa-facebook"></i>  </span>
-                                        <span> <i class="fa fa-facebook"></i>  </span>
-                                        <span> <i class="fa fa-facebook"></i>  </span>
+                                        <span> <i class="fa fa-facebook"></i>  </span> -->
                                     </div>
                                 </li>
                                 <button  data-target="modal2" class="btn modal-trigger waves-effect "> [[+join]] </button>
@@ -203,4 +224,28 @@
         }
       });
     });
+  
+    function fbShare(e, t, a, o, i, n) {
+        var r = screen.height / 2 - n / 2,
+        s = screen.width / 2 - i / 2;
+        window.open(
+        "http://www.facebook.com/sharer.php?s=100&caption=" +
+            t +
+            "&description=" +
+            a +
+            "&picture=" +
+            o +
+            "&u=" +
+            e,
+        "sharer",
+        "top=" +
+            r +
+            ",left=" +
+            s +
+            ",toolbar=0,status=0,width=" +
+            i +
+            ",height=" +
+            n
+        );
+    }
   </script>

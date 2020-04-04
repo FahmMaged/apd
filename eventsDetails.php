@@ -6,6 +6,7 @@ require_once('helpers/AdminUsersHelper.php');
 global $xpdo;
 $newsTPL = '';
 $id      = $_GET['id'];
+$baseHelper      = new BaseHelper();
 // echo $id;
 // exit;
 $langFile  = json_decode(file_get_contents('lang/events.json'), true);
@@ -22,7 +23,8 @@ $head        = new LoadChunk('head', 'front/master', array(
 														   'enLink'    => $enLink
 														   ), '');
 
-
+$url = $baseHelper->Server()."/eventDetails.php?id=".$event->get('ID').'&alias='.$event->get('Alias_'.$lang);
+$encodedUrl = urlencode($url);
 $output = new LoadChunk('eventDetails', 'front/events', array(
 											  		   'head'        => $head,
 											  		   'header'      => $header,
@@ -35,6 +37,8 @@ $output = new LoadChunk('eventDetails', 'front/events', array(
 													   'time'        => $event->get('Time_'.$lang),
 													   'location'    => $event->get('Location_'.$lang),
 											  		   'footer'      => $footer,
+											  		   'url'         => $url,
+											  		   'encodedUrl'  => $encodedUrl,
 											  		   'headerTitle' => $langFile['headerTitle'][$lang],
 											  		   'details'     => $langFile['details'][$lang],
 											  		   'timeText'     => $langFile['timeText'][$lang],

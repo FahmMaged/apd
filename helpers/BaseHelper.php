@@ -66,4 +66,16 @@ class BaseHelper
             }
         }
     }
+
+    public function Server(){
+
+		if ($_SERVER['HTTP_HOST'] != 'localhost') {
+		$server        = $_SERVER['HTTP_HOST'];
+		} else {
+			$fullPath      = explode("\\", __DIR__);
+			$mainDirectory = $fullPath[sizeof($fullPath) - 2];
+			$server        = $_SERVER['HTTP_HOST'] . "/" . $mainDirectory;
+		}
+		return $server;
+	}
 }
