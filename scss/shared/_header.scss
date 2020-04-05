@@ -258,3 +258,13 @@ div#modal2 {
         }
     }
 }
+
+.file-field .btn, .file-field .btn-large {
+    float: right;
+    background-color: $main_color1;
+}
+.file-field .file-path-wrapper {
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+}
