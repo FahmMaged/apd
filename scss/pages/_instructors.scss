@@ -162,3 +162,46 @@ font-size: 15px;
     }
 
 }
+
+
+.videosPage{
+    h3{
+        color: $main_color3;
+    }
+    .news_box{
+        margin-bottom: 40px;
+        float: right;
+    }
+}
+.pdfPage{
+    .pdf_box{
+        float: right;
+        width: 100%;
+        background: #fafafa;
+        margin-bottom: 50px;
+        padding: 20px;
+        border: 1px dashed #ccc;
+    }
+    img{
+        margin: 0 auto;
+        display: table;
+        max-height: 120px;
+    }
+    h3{
+        font-size: 18px;
+        line-height: 1.8;
+        color: $main_color3;
+    }
+    a.btn {
+        margin: 20px auto;
+        display: table;
+        background: $main_color1;
+        min-width: 60%;
+        padding: 4px 10px;
+        box-shadow: initial ;
+        &:hover{
+            background: $main_color2;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12); 
+        }
+    }
+}
