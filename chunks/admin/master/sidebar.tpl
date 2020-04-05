@@ -103,6 +103,17 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
+      data-tooltip="Events Submissions"
+    >
+      <a href="eventsSubmissions.php">
+        <i class="material-icons">accessibility</i>
+        <p class="menu-links">Events Submissions</p>
+      </a>
+    </li>
+    <li
+      class="tooltipped"
+      data-position="right"
+      data-delay="50"
       data-tooltip="Meta Tags"
     >
       <a href="mainMetaTags.php">

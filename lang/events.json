@@ -1,44 +1,46 @@
 {
-	"pageTitle":
-	{
-		"en":"Events","ar":"الفاعليات"
-	
-	},
+  "pageTitle": {
+    "en": "Events",
+    "ar": "الفاعليات"
+  },
 
-	"headerTitle":
-	{
-		"en":"Events","ar":"الفاعليات"
-	
-	},
+  "headerTitle": {
+    "en": "Events",
+    "ar": "الفاعليات"
+  },
 
-	"dateText":
-	{
-		"en":"Month","ar":"الشهر"
-	
-	},
+  "dateText": {
+    "en": "Month",
+    "ar": "الشهر"
+  },
 
-	"timeText":
-	{
-		"en":"Time","ar":"التوقيت"
-	},
+  "timeText": {
+    "en": "Time",
+    "ar": "التوقيت"
+  },
 
-	"locationText":
-    {
- 	    "en":"Location","ar":"المكان"
-    },
+  "locationText": {
+    "en": "Location",
+    "ar": "المكان"
+  },
 
-    "details":
-    {
- 	    "en":"Details","ar":"شرح الحدث"
-    },
+  "details": {
+    "en": "Details",
+    "ar": "شرح الحدث"
+  },
 
-    "month2":
-    {
- 	    "en":"","ar":"شهر"
-    },
+  "share": {
+    "en": "Share",
+    "ar": "شارك"
+  },
 
-    "filter":
-    {
- 	    "en":"Filter By Month","ar":"اختار الشهر"
-    }
+  "date": {
+    "en": "Date",
+    "ar": "التاريخ"
+  },
+
+  "join": {
+    "en": "Join",
+    "ar": "اشتراك"
+  }
 }

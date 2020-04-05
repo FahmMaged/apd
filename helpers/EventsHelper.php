@@ -35,12 +35,16 @@ class EventsHelper extends BaseHelper
 
       $fields['Title_en']    = $_POST['title_en'];
       $fields['Title_ar']    = $_POST['title_ar'];
-      $fields['StartTime']   = $_POST['start'];
-      $fields['EndTime']     = $_POST['end'];
+      $fields['Time_en']    = $_POST['time_en'];
+      $fields['Time_ar']    = $_POST['time_ar'];
+      $fields['Location_en']    = $_POST['location_en'];
+      $fields['Location_ar']    = $_POST['location_ar'];
+      // $fields['StartTime']   = $_POST['start'];
+      // $fields['EndTime']     = $_POST['end'];
       $fields['Sort']        = $_POST['sort'];
-      $fields['InHome']      = $_POST['inHome'];
+      // $fields['InHome']      = $_POST['inHome'];
       $fields['IsActive']    = $_POST['isActive'];
-      $fields['LocationID']  = $_POST['locationID'];
+      // $fields['LocationID']  = $_POST['locationID'];
       $fields['CreatedOn']   = $createdOn;
       if (!empty($_POST['description_en'])) {
         $fields['Description_en'] = $_POST['description_en'];
@@ -162,15 +166,19 @@ class EventsHelper extends BaseHelper
       $fields = array(
                       'Title_en'     => $_POST['edit_title_en'],
                       'Title_ar'     => $_POST['edit_title_ar'],
+                      'Time_en'     => $_POST['edit_time_en'],
+                      'Time_ar'     => $_POST['edit_time_ar'],
+                      'Location_en' => $_POST['edit_location_en'],
+                      'Location_ar' => $_POST['edit_location_ar'],
                       'Description_en'  => $_POST['edit_description_en'],
                       'Description_ar'  => $_POST['edit_description_ar'],
                       'PublishDate'  => $_POST['edit_publish_date'],
-                      'StartTime'    => $_POST['edit_start'],
-                      'EndTime'      => $_POST['edit_end'],
+                      // 'StartTime'    => $_POST['edit_start'],
+                      // 'EndTime'      => $_POST['edit_end'],
                       'Sort'         => $_POST['edit_sort'],
-                      'InHome'       => $_POST['edit_inHome'],
+                      // 'InHome'       => $_POST['edit_inHome'],
                       'IsActive'     => $_POST['edit_isActive'],
-                      'LocationID'   => $_POST['edit_locationID'],
+                      // 'LocationID'   => $_POST['edit_locationID'],
                       'UpdatedOn'    => $updatedOn,
                       'Alias_en'     =>($_POST['edit_alias_en']!="")? $this->urlHelper->getAliasFormat($_POST['edit_alias_en']) : $this->urlHelper->getAliasFormat($_POST['edit_title_en']),
                       'Alias_ar'        =>($_POST['edit_alias_ar']!="")? $this->urlHelper->getAliasFormat($_POST['edit_alias_ar']) : $this->urlHelper->getAliasFormat($_POST['edit_title_ar']),
@@ -336,97 +344,98 @@ class EventsHelper extends BaseHelper
       global $xpdo;
       $lang       = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
       $langFile  = json_decode(file_get_contents('../lang/events.json'), true);
+      $onclickFn  = 'fnGetEvents';
       $eventDate;
       $montheventsTPL = '';
       $eventWithImage = '';
       $eventWithoutImage = '';
+      $eventsTPL = '';
+
+      $query1 = $xpdo->newQuery('Events');
+      $query1->where(array('IsActive' => 1));
+      // $query->sortby('PublishDate', 'DESC');
+      $events = $xpdo->getCollection('Events', $query1);
+      $numrows      = count($events);
+
+      $pagination='';
+      $rowsperpage = 1;
+      $totalpages  = ceil($numrows / $rowsperpage);
+      if (isset($_POST['currentpage']) && is_numeric($_POST['currentpage'])) {
+        $currentpage = (int) $_POST['currentpage'];
+      } else {
+        $currentpage = 1;
+      }
+      if ($currentpage > $totalpages) {
+        $currentpage = $totalpages;
+      }
+      if ($currentpage < 1) {
+        $currentpage = 1;
+      }
+      $offset = ($currentpage - 1) * $rowsperpage;
 
       $query = $xpdo->newQuery('Events');
       $query->where(array('IsActive' => 1));
-      if (isset($_POST['eventMonth'])) {
-        $eventMonth = $_POST['eventMonth'];
-        $query->where(array('MONTH(PublishDate) = ' . $eventMonth));
-      }
-      $query->groupby('MONTH(PublishDate)');
       $query->sortby('PublishDate', 'DESC');
-      $events = $xpdo->getCollection('Events', $query);
+      $query->limit($rowsperpage,$offset);
+      $allEvents = $xpdo->getCollection('Events', $query);
       
-      foreach ($events as $e) {
-        // echo $e->get('ID');
-        // Arabic Months
-          $month    = '';
-          $month1   = date("M", strtotime($e->get('PublishDate')));
-          $month_en = date("F", strtotime($e->get('PublishDate')));
+      foreach ($allEvents as $e) {
+          
+          $day  = date("d", strtotime($e->get('PublishDate')));
+          $month  = date("m", strtotime($e->get('PublishDate')));
           $year     = date("Y", strtotime($e->get('PublishDate')));
           
-           if ($lang == 'ar') {
-             foreach ($months as $en => $ar) {
-            if ($en == $month1) {
-            $month = $ar;
-            }
-            }
-           } else{
-            $month = $month_en;
-           }
-           
-
-        $eventMonth = date("m", strtotime($e->get('PublishDate')));
-        $eventsTPL = '';
-        $hide = '';
-        $query = $xpdo->newQuery('Events');
-        $query->where(array('MONTH(PublishDate) = ' . $eventMonth));
-        $eventsPerMonth = $xpdo->getCollection('Events', $query);
-        
-        foreach ($eventsPerMonth as $em) {
-          $day  = date("d", strtotime($em->get('PublishDate')));
-          $hide = (empty($em->get('StartTime')))? 'hidden' : "";
-          // $x = $em->get('Description_'.$lang);
-          // $description = $lang == "ar"? mb_substr($x,0,100,'utf-8')."...": substr($x,0,100)."...";
-          
-          $size = strlen($em->get('Description_'.$lang));
+          // $hide = (empty($em->get('StartTime')))? 'hidden' : "";
+          $size = strlen($e->get('Description_'.$lang));
           if($size > 100) {
-            $description = mb_substr($em->get('Description_'.$lang), 0, 100,'utf-8').' ...';
+            $description = mb_substr($e->get('Description_'.$lang), 0, 100,'utf-8').' ...';
           } else{
-            $description = mb_substr($em->get('Description_'.$lang), 0, 100,'utf-8');
+            $description = mb_substr($e->get('Description_'.$lang), 0, 100,'utf-8').' ...';
           }
 
-          if (!empty($em->get('Image'))) {
-            
-            $eventsTPL   .= new LoadChunk('eventWithImage', 'front/events', array(
-                                   'id'          => $em->get('ID'),
-                                   'lang'        => $lang,
-                                   'hide'        => $hide,
-                                   'image'       => $em->get('Image'),
-                                   'date'        => $em->get('PublishDate'),
-                                   'start'       => $em->get('StartTime'),
-                                   'end'         => $em->get('EndTime'),
-                                   'title'       => $em->get('Title_'.$lang),
-                                   'alias'       => $em->get('Alias_'.$lang),
-                                   'description' => $description,
-                                   ), '../');
-          } else {
-            $eventsTPL   .= new LoadChunk('eventWithoutImage', 'front/events', array(
-                                   'id'          => $em->get('ID'),
-                                   'lang'        => $lang,
-                                   'hide'        => $hide,
-                                   'monthName'   => $month,
-                                   'day'         => $day,
-                                   'start'       => $em->get('StartTime'),
-                                   'end'         => $em->get('EndTime'),
-                                   'title'       => $em->get('Title_'.$lang),
-                                   'alias'       => $em->get('Alias_'.$lang),
-                                   'description' => $description
-                                   ), '../');
-          }
-          
+          $eventsTPL   .= new LoadChunk('eventWithImage', 'front/events', array(
+            'id'          => $e->get('ID'),
+            'lang'        => $lang,
+            'hide'        => $hide,
+            'image'       => $e->get('Image'),
+            'date'        => $e->get('PublishDate'),
+            'time'       => $e->get('Time_'.$lang),
+            'location'   => $e->get('Location_'.$lang),
+            'title'       => $e->get('Title_'.$lang),
+            'alias'       => $e->get('Alias_'.$lang),
+            'day'         => $day,
+            'month'       => $month,
+            'year'        => $year,
+            'description' => $description,
+            ), '../');
+
+        // Build up the Pagination
+          if ($totalpages > 1) {
+            $pagination .= '<ul class="pagination">';
+
+            if ($currentpage > 1) {
+                $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage - 1) .')"> <i class="fa fa-chevron-right"></i></a></li>';
+            }
+
+            for ($i = 1; $i <= $totalpages; $i++) {
+                if ($i <= $currentpage + 3 && $i >= $currentpage - 2) {
+                    if ($i == $currentpage) {
+                        $pagination.= '<li class="active"><a href="javascript:void(0)">' . $i . '</a></li>';
+                    } else {
+                        $pagination.= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . $i .')">' . $i . '</a></li>';
+                    }
+                }
+            }
+            if ($currentpage != $totalpages) {
+                $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage + 1) .')"><i class="fa fa-chevron-left"></i></a></li>';
+
+                // $pagination .= '<li class="waves-effect waves-dark"><a onclick="'.$onclickFn.'(' . $totalpages . ','.$parentID.')">...</a></li>';
+            }
+
+            $pagination .= '</ul>';
         }
-        $montheventsTPL   .= new LoadChunk('monthEvents', 'front/events', array(
-                                   'monthName'  => $month,
-                                   'eventsTPL'  => $eventsTPL,
-                                   'month2'     => $langFile['month2'][$lang],
-                                   ), '../');
       }
-      return json_encode(array('output' => $this->urlHelper->changeToAlias($montheventsTPL)));
+      return json_encode(array('output' => $this->urlHelper->changeToAlias($eventsTPL), 'pagination' => $this->urlHelper->changeToAlias($pagination)));
     }
 	
 }
