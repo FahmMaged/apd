@@ -226,9 +226,20 @@
       data-delay="50"
       data-tooltip="Videos"
     >
-      <a href="videos.php">
-        <i class="material-icons">view_carousel</i>
+      <a href="pdfs.php">
+        <i class="material-icons">accessibility</i>
         <p class="menu-links">Videos</p>
+      </a>
+    </li>
+    <li
+      class="tooltipped"
+      data-position="right"
+      data-delay="50"
+      data-tooltip="Pdfs"
+    >
+      <a href="pdfs.php">
+        <i class="material-icons">accessibility</i>
+        <p class="menu-links">Pdfs</p>
       </a>
     </li>
     <li
