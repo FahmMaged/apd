@@ -8,7 +8,7 @@
       <a id="deletePrivilegeBtn [[+deleteFlag]]" onclick="fnDel([[+currID]]);"
         class="btn-floating btn-large waves-effect waves-light red float-edit delete-btn [[+deleteFlag]]" style="bottom: 80px; right: 20px;"><i class="material-icons ">delete</i></a>
 
-      <img class="articleImage" src="../[[+image]]">
+      <!-- <img class="articleImage" src="../[[+image]]"> -->
       <!-- <span class="card-title">Program Title</span> -->
     </div>
     <div class="card-content articleContent">
