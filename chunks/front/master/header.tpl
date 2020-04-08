@@ -27,8 +27,13 @@
               <i class="fa fa-phone-square" aria-hidden="true"></i>
             </li>
           </a>
-
-          <a href="#">
+          <input type="hidden" id="lang" value="[[+lang]]" />
+          <a
+            href="javascript:void(0)"
+            onclick="changeLanguage('[[+lang]]')"
+            class="langLink"
+            id="langLink"
+          >
             <li>English <i class="fa fa-flag" aria-hidden="true"></i></li>
           </a>
         </ul>
@@ -119,25 +124,36 @@
 
       <div class="s12 m6 l6 col">
         <h2 class="headline ">التسجيل</h2>
-        <form class="col s12">
+        <form class="col s12" id="register">
+          <input type="hidden" name="operation" value="add" />
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <input id="first_name" type="text" class="validate" />
+              <input
+                id="first_name"
+                name="first_name"
+                type="text"
+                class="validate"
+              />
               <label for="first_name"> الاسم </label>
             </div>
             <div class="input-field col l6 m12 s12">
-              <input id="last_name" type="text" class="validate" />
+              <input
+                id="last_name"
+                name="last_name"
+                type="text"
+                class="validate"
+              />
               <label for="last_name"> اسم العائلة </label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <input id="first_name" type="text" class="validate" />
-              <label for="first_name"> البريد الالكتروني </label>
+              <input id="email" name="email" type="text" class="validate" />
+              <label for="email"> البريد الالكتروني </label>
             </div>
             <div class="input-field col l6 m12 s12">
-              <input id="last_name" type="text" class="validate" />
-              <label for="last_name"> رقم الهاتف</label>
+              <input id="phone" name="phone" type="text" class="validate" />
+              <label for="phone"> رقم الهاتف</label>
             </div>
           </div>
 
@@ -145,7 +161,7 @@
             <div class="file-field input-field">
               <div class="btn">
                 <span>تحميل</span>
-                <input type="file" />
+                <input type="file" name="image" />
               </div>
               <div class="file-path-wrapper">
                 <input
@@ -159,27 +175,37 @@
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <input id="last_name" type="password" class="validate" />
-              <label for="last_name">كلمة المرور</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="validate"
+              />
+              <label for="password">كلمة المرور</label>
             </div>
             <div class="input-field col l6 m12 s12">
-              <input id="last_name" type="password" class="validate" />
-              <label for="last_name"> تاكيد كلمة المرور </label>
+              <input
+                id="confirmPassword"
+                name="confirmPassword"
+                type="password"
+                class="validate"
+              />
+              <label for="confirmPassword"> تاكيد كلمة المرور </label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <select>
-                <option value="" disabled selected>البلد</option>
+              <select id="city" name="city">
+                <option value="0" disabled selected>البلد</option>
                 <option value="1">مصر</option>
                 <option value="2">لبنان</option>
                 <option value="3">الاردن</option>
               </select>
             </div>
             <div class="input-field col l6 m12 s12">
-              <select>
-                <option value="" disabled selected>المحافظة</option>
+              <select id="locationID" name="locationID">
+                <option value="0" disabled selected>المحافظة</option>
                 <option value="1">القاهرة</option>
                 <option value="2">الاسكندرية</option>
                 <option value="3">مرسي مطروح</option>
@@ -188,14 +214,18 @@
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <textarea id="textarea1" class="materialize-textarea"></textarea>
-              <label for="textarea1">معلومات عني</label>
+              <textarea
+                id="bio"
+                name="bio"
+                class="materialize-textarea"
+              ></textarea>
+              <label for="bio">معلومات عني</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-              <button id="textarea1" class="btn left redBtn">تسجيل</button>
+              <button id="btnSend" class="btn left redBtn">تسجيل</button>
             </div>
           </div>
         </form>
@@ -203,3 +233,227 @@
     </div>
   </div>
   <!-- Modal Structure -->
+
+  <script type="text/javascript">
+    $(document).ready(function() {
+      var langu = $("#lang").val();
+
+      if (langu == "ar") $("#langLink").text("English");
+      else $("#langLink").text("عربي");
+    });
+
+    function changeLanguage(lang) {
+      $("#loadingContainer").show();
+
+      $.ajax({
+        url: "handlers/LangHandler.php",
+        type: "POST",
+        data: {
+          operation: "changeLanguage",
+          lang: lang,
+          currentURL: location.href
+        }
+      })
+        .done(function(data) {
+          // return;
+          window.location.href = data;
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          $("#loadingContainer").hide();
+        });
+    }
+
+    //save button in the add News modal
+    $("#btnSend").click(function(event) {
+      event.preventDefault();
+
+      isValid = true;
+
+      //form validations
+      $("#register .validate").each(function() {
+        if ($.trim($(this).val()) == "") {
+          if ($("#lang").val() === "ar") {
+            swal({
+              title: "الحقول المطلوبة",
+              text: "الحقول التي تحتوي على علامة * بجانبها مطلوبة",
+              type: "error",
+              confirmButtonText: "غلق"
+            });
+          } else {
+            swal({
+              title: "Required Fields",
+              text: "Fields has * next to it are required",
+              type: "error",
+              confirmButtonText: "Close"
+            });
+          }
+          isValid = false;
+          return;
+        }
+
+        if ($("#city").val() == null || $("#city").val() == 0) {
+          if ($("#lang").val() === "ar") {
+            swal({
+              title: "الحقول المطلوبة",
+              text: "لابد من اختيار بلد",
+              type: "error",
+              confirmButtonText: "غلق"
+            });
+          } else {
+            swal({
+              title: "Required Fields",
+              text: "you should choose country",
+              type: "error",
+              confirmButtonText: "Close"
+            });
+          }
+          isValid = false;
+          return;
+        }
+
+        if ($("#locationID").val() == null || $("#locationID").val() == 0) {
+          if ($("#lang").val() === "ar") {
+            swal({
+              title: "الحقول المطلوبة",
+              text: "لابد من اختيار مدينة",
+              type: "error",
+              confirmButtonText: "غلق"
+            });
+          } else {
+            swal({
+              title: "Required Fields",
+              text: "you should choose city",
+              type: "error",
+              confirmButtonText: "Close"
+            });
+          }
+          isValid = false;
+          return;
+        }
+      });
+
+      if (!isValid) return;
+
+      //submit the form after validations
+      $("#register").submit();
+    });
+
+    //add News submission
+    $("#register").submit(function(event) {
+      event.preventDefault();
+
+      $("#loadingContainer").show();
+
+      var values = new FormData($(this)[0]);
+      var city = 0;
+      city = $("#city option:selected").text();
+      values.append("cityName", city);
+
+      $.ajax({
+        url: "handlers/MembersHandler.php",
+        type: "POST",
+        data: values,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function(data) {
+          var data = JSON.parse(data);
+          console.log("data: ", data.saved);
+          $("#loadingContainer").hide();
+          if (data.saved === true) {
+            $("#register")[0].reset();
+            if ($("#lang").val() === "ar") {
+              swal(
+                {
+                  title: "تم ارسال طلبك",
+                  text: "نشكرك للتواصل معنا",
+                  type: "success",
+                  confirmButtonText: "تم"
+                },
+                function(isConfirm2) {
+                  if (isConfirm2) location.reload();
+                }
+              );
+            } else {
+              swal(
+                {
+                  title: "Submitted",
+                  text: "Thanks for contact us.",
+                  type: "success",
+                  confirmButtonText: "Close"
+                },
+                function(isConfirm2) {
+                  if (isConfirm2) location.reload();
+                }
+              );
+            }
+          }
+
+          if (data.saved === 2) {
+            if ($("#lang").val() === "ar") {
+              swal(
+                {
+                  title: "هذا البريد الالكتروني موجود بالفعل",
+                  text: "خطأ",
+                  type: "error",
+                  confirmButtonText: "اغلاق"
+                }
+                // function(isConfirm2) {
+                //   if (isConfirm2) location.reload();
+                // }
+              );
+            } else {
+              swal(
+                {
+                  title: "Error",
+                  text: "This e-mail already exist",
+                  type: "error",
+                  confirmButtonText: "Close"
+                }
+                // function(isConfirm2) {
+                //   if (isConfirm2) location.reload();
+                // }
+              );
+            }
+          }
+
+          if (data.saved === 3) {
+            if ($("#lang").val() === "ar") {
+              swal(
+                {
+                  title: "كلمة المرور و تأكيد كلمة المررور غير متطابقين",
+                  text: "خطأ",
+                  type: "error",
+                  confirmButtonText: "اغلاق"
+                }
+                // function(isConfirm2) {
+                //   if (isConfirm2) location.reload();
+                // }
+              );
+            } else {
+              swal(
+                {
+                  title: "Error",
+                  text: "The password and confirm password didn't match",
+                  type: "error",
+                  confirmButtonText: "Close"
+                }
+                // function(isConfirm2) {
+                //   if (isConfirm2) location.reload();
+                // }
+              );
+            }
+          }
+        },
+        error: function(xhr, ajaxOptions, thrownError) {
+          console.log(xhr.responseText);
+
+          $("#loadingContainer").hide();
+        }
+      });
+    });
+  </script>
+</div>

@@ -27,7 +27,9 @@ class LangHelper
 
     public function ChangeLanguage()
     {
- 	    $lang = ( isset( $_POST['lang'] ) ) ? $_POST['lang'] : 'en' ;
+		 $lang = ( isset( $_POST['lang'] ) ) ? $_POST['lang'] : 'en' ;
+		//  echo($_POST['lang']);
+		//  exit;
 		$pageUrl = strtolower( $_POST['currentURL'] );
 		$_SESSION['lang'] = $lang;
 		if ( $lang == "en" ) {

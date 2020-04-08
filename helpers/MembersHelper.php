@@ -1,6 +1,7 @@
 <?php
 if (!isset($_SESSION)) session_start();
 require_once('AdminUsersHelper.php');
+require_once('PasswordHelper.php');
 
 class MembersHelper extends BaseHelper
 {
@@ -14,22 +15,40 @@ class MembersHelper extends BaseHelper
         $createdOn      = date("Y-m-d H:i:s");
 
         $item = $xpdo->newObject('Members');
+        // $xpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        if ($_POST['password'] !== $_POST['confirmPassword'])
+        return json_encode(array('saved' => 3 ));
 
+        $checkUserExistence = $xpdo->getCount('Members', array('Email' => $_POST['email']));
+        if (!empty($checkUserExistence))
+            return json_encode(array('saved' => 2 ));
 
-        $fields['Title_en']       = $_POST['title_en'];
-        $fields['Title_ar']       = $_POST['title_ar'];
-        $fields['Description_en'] = $_POST['description_en'];
-        $fields['Description_ar'] = $_POST['description_ar'];
-        $fields['JobTitle_en']    = $_POST['job_title_en'];
-        $fields['JobTitle_ar']    = $_POST['job_title_ar'];
-        $fields['Sort']           = $_POST['sort'];
-        $fields['UpdatedBy']      = $_SESSION['AdminUser']['Name'];
-        $fields['CreatedBy']      = $_SESSION['AdminUser']['Name'];
-        $fields['CreatedOn']      = $createdOn;
+        $fields['FirstName']     = $_POST['first_name'];
+        $fields['LastName']      = $_POST['last_name'];
+        $fields['Email']         = $_POST['email'];
+        $fields['Phone']         = $_POST['phone'];
+        $fields['Bio']           = $_POST['bio'];
+        $fields['Password']      = password_hash($_POST['password'], PASSWORD_BCRYPT);;
+        $fields['City']          = $_POST['cityName'];
+        $fields['LocationID']    = $_POST['locationID'];
+        $fields['IsActive']      = 0;
+        if(isset($_POST['FacebookLink'])){
+            $fields['FacebookLink']  = $_POST['FacebookLink'];
+        }
+        if(isset($_POST['TwitterLink'])){
+            $fields['TwitterLink']   = $_POST['TwitterLink'];
+        }
+        if(isset($_POST['InstagramLink'])){
+            $fields['InstagramLink'] = $_POST['InstagramLink'];
+        }
+        if(isset($_POST['LinkedinLink'])){
+            $fields['LinkedinLink']  = $_POST['LinkedinLink'];
+        }
+        $fields['CreatedOn']     = $createdOn;
 
-        if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0)
+        if(isset($_FILES['image']) && $_FILES['image']['size'] > 0)
         {
-             $response = $this->UploadFile($_FILES['picture'],'/../uploads/members/', $x = 1920);
+             $response = $this->UploadFile($_FILES['image'],'/../uploads/members/', $x = 1920);
              $response = json_decode($response);
 
              if($response->res == 0)
@@ -37,11 +56,12 @@ class MembersHelper extends BaseHelper
                   return UtilityHelper::Response('error',$response->message);
              }
              else
-                 $fields['Image'] = $response->message;
+                 $fields['File'] = $response->message;
         }
 
         $item->fromArray($fields);
-        $item->save();
+        // return $item->save();
+        return json_encode(array('saved' => $item->save() ));
     }
 
     public function GetItems()
