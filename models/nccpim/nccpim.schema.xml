@@ -282,6 +282,7 @@
 		<field key="Password" dbtype="varchar" precision="191" phptype="string" null="false" />
 		<field key="City" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="LocationID" dbtype="int" precision="11" phptype="integer" null="true" default="0" />
+		<field key="LocationName" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="IsActive" dbtype="tinyint" precision="4" phptype="integer" null="false" default="0" />
 		<field key="FacebookLink" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="TwitterLink" dbtype="varchar" precision="191" phptype="string" null="true" />

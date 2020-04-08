@@ -30,6 +30,7 @@ class MembersHelper extends BaseHelper
         $fields['Bio']           = $_POST['bio'];
         $fields['Password']      = password_hash($_POST['password'], PASSWORD_BCRYPT);;
         $fields['City']          = $_POST['cityName'];
+        $fields['LocationName']  = $_POST['locationName'];
         $fields['LocationID']    = $_POST['locationID'];
         $fields['IsActive']      = 0;
         if(isset($_POST['FacebookLink'])){
@@ -105,9 +106,9 @@ class MembersHelper extends BaseHelper
           {
               $output .= new LoadChunk('member', 'admin/members', array(
                                                 'totalPages'     =>  $totalpages,
-                                                'name_en'        =>  $currObj->Get('Title_ar'),
+                                                'name_en'        =>  $currObj->Get('FirstName')." ".$currObj->Get('LastName'),
                                                 'description_en' =>  $currObj->Get('JobTitle_ar'),
-                                                'image'          =>  $currObj->Get('Image'),
+                                                'image'          =>  $currObj->Get('File'),
                                                 'currID'         =>  $currObj->Get('ID')
                                             ),'../');
           }
@@ -138,31 +139,27 @@ class MembersHelper extends BaseHelper
         }
         $item = $xpdo->getObject('Members', array('ID' => $itemID));
         
-        $fields['Title_en']       = $_POST['edit_title_en'];
-        $fields['JobTitle_en']    = $_POST['edit_job_title_en'];
-        $fields['Description_en'] = $_POST['edit_description_en'];
-        $fields['Title_ar']       = $_POST['edit_title_ar'];
-        $fields['JobTitle_ar']    = $_POST['edit_job_title_ar'];
-        $fields['Description_ar'] = $_POST['edit_description_ar'];
-        $fields['Sort']           = $_POST['edit_sort'];
-        $fields['UpdatedBy']      = $_SESSION['AdminUser']['Name'];
-        $fields['UpdatedOn']      = $updatedOn;
+        if (!empty($_POST['password'])) {
+            if (empty($_POST['confirmPassword'])
+                || $_POST['password'] !== $_POST['confirmPassword']) {
+                return UtilityHelper::Response('error', 'Password confirmation is missing or does not match the entered password.');
+            }
 
-        if(isset($_FILES['edit_picture']) && $_FILES['edit_picture']['size'] > 0)
-        {
-             $response = $this->UploadFile($_FILES['edit_picture'],'/../uploads/members/', $x = 1920);
-             $response = json_decode($response);
-
-             if($response->res == 0)
-             {
-                  return UtilityHelper::Response('error',$response->message);
-             }
-             else{
-              unlink("../".$item->get('Image'));
-              $fields['Image'] = $response->message;
-             }
-                 
+            if (!password_verify($_POST['password'], $item->get('Password')))
+                $fields['Password'] = password_hash($_POST['password'], PASSWORD_BCRYPT);
         }
+        
+            if (isset($_POST['isActive'])) {
+                $isActive = 1;
+                if ($isActive != $item->get('IsActive'))
+                    $fields['IsActive'] = $isActive;
+            }
+            else {
+                $isActive = 0;
+                if ($isActive != $item->get('IsActive'))
+                    $fields['IsActive'] = $isActive;
+            }
+
         $item->fromArray($fields);
         return $item->save();
 
@@ -176,8 +173,8 @@ class MembersHelper extends BaseHelper
             $itemID = $_POST['itemID'];
         }
         $item = $xpdo->getObject('Members', array('ID' => $itemID));
-        if (!empty($item->get('Image'))) {
-          unlink("../".$item->get('Image'));
+        if (!empty($item->get('File'))) {
+          unlink("../".$item->get('File'));
         }
         
         return $item->remove();

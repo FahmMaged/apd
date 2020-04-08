@@ -352,6 +352,10 @@
       city = $("#city option:selected").text();
       values.append("cityName", city);
 
+      var location = 0;
+      location = $("#locationID option:selected").text();
+      values.append("locationName", location);
+
       $.ajax({
         url: "handlers/MembersHandler.php",
         type: "POST",
