@@ -179,5 +179,47 @@ class MembersHelper extends BaseHelper
         
         return $item->remove();
     }
+
+    public function Login()
+    {
+        global $xpdo;
+
+        
+
+        // Redirect to homepage if admin is already logged in
+        if (self::IsLoggedIn())
+            UtilityHelper::RedirectTo('index.php');
+
+            echo"HERE11";
+        $email    = $_POST['email'];
+        $password = $_POST['password'];
+
+        if (empty($email)) {
+            return UtilityHelper::Response('error', 'Email is required.');
+        }
+
+        if (empty($password)) {
+            return UtilityHelper::Response('error', 'Password is required.');
+        }
+
+        $user = $xpdo->getObject('Members', array('Email' => $email));
+
+        if (empty($user)) {
+            return UtilityHelper::Response('error', 'This user does not exist.');
+        }
+
+        if ($user->get('IsActive') == 0) {
+            return UtilityHelper::Response('error', 'This user is currently disabled.');
+        }
+
+        $hash = $user->get('Password');
+
+        if (password_verify($password, $hash)) {
+            $_SESSION['AdminUser'] = $user->toArray();
+            return UtilityHelper::Response('success', 'User logged in successfully.');
+        } else {
+            return UtilityHelper::Response('error', 'Password is incorrect or email and password do not match.');
+        }
+    }
 	
 }

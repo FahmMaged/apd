@@ -102,21 +102,27 @@
     <div class="modal-content">
       <div class="s12 m6 l6 col">
         <h2 class="headline ">تسجيل دخول</h2>
-        <form class="col s12">
+        <form class="col s12" id="login">
+          <input type="hidden" name="operation" value="login" />
           <div class="row">
             <div class="input-field col l12 m12 s12">
-              <input id="first_name" type="email" class="validate" />
-              <label for="first_name">البريد الالكتروني </label>
+              <input id="email" name="email" type="email" class="validate" />
+              <label for="email">البريد الالكتروني </label>
             </div>
             <div class="input-field col l12 m12 s12">
-              <input id="last_name" type="password" class="validate" />
-              <label for="last_name">كلمة المرور</label>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                class="validate"
+              />
+              <label for="password">كلمة المرور</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-              <button id="textarea1" class="btn left redBtn">تسجيل دخول</button>
+              <button id="submit" class="btn left redBtn">تسجيل دخول</button>
             </div>
           </div>
         </form>
@@ -237,9 +243,81 @@
   <script type="text/javascript">
     $(document).ready(function() {
       var langu = $("#lang").val();
-
       if (langu == "ar") $("#langLink").text("English");
       else $("#langLink").text("عربي");
+
+      // Login Function
+      $("#login").submit(function(event) {
+        event.preventDefault();
+
+        if (
+          $("#email").val() == "" ||
+          $("#email").val() == undefined ||
+          $("#email").val() == null
+        ) {
+          swal({
+            title: "Required Field is Missing",
+            text: "Email addess is a required field",
+            type: "error",
+            confirmButtonText: "close"
+          });
+          return;
+        }
+
+        if (
+          $("#password").val() == "" ||
+          $("#password").val() == undefined ||
+          $("#password").val() == null
+        ) {
+          swal({
+            title: "Required Field is Missing",
+            text: "Password is a required field",
+            type: "error",
+            confirmButtonText: "close"
+          });
+          return;
+        }
+
+        $("#loadingContainer").show();
+
+        $.ajax({
+          url: "handlers/MembersHandler.php",
+          type: "POST",
+          data: {
+            email: $("#email").val(),
+            password: $("#password").val(),
+            operation: "login"
+          },
+          cache: false,
+          success: function(data) {
+            data = $.parseJSON(data);
+
+            if (data.res == 1) {
+              window.location = "index.php";
+            } else {
+              swal({
+                title: "Invalid mail or password",
+                text: data.message,
+                type: "error",
+                confirmButtonText: "Close"
+              });
+              $("#loadingContainer").hide();
+            }
+          },
+          error: function(xhr, ajaxOptions, thrownError) {
+            console.log(xhr.statusText);
+            console.log(xhr.responseText);
+            console.log(xhr.status);
+            swal({
+              title: "Something went wrong",
+              text: xhr.responseText,
+              type: "error",
+              confirmButtonText: "close"
+            });
+            $("#loadingContainer").hide();
+          }
+        });
+      });
     });
 
     function changeLanguage(lang) {
