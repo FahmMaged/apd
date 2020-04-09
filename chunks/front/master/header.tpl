@@ -17,13 +17,13 @@
           </a>
           <a href="#">
             <li>
-              info@apdegypt.com
+              [[+email]]
               <i class="fa fa-envelope" aria-hidden="true"></i>
             </li>
           </a>
           <a href="#">
             <li>
-              info@apdegypt.com
+              [[+phone]]
               <i class="fa fa-phone-square" aria-hidden="true"></i>
             </li>
           </a>
@@ -47,21 +47,21 @@
 
         <div class="l9 s6 m8 col menu">
           <ul>
-            <li class="active"><a href="index.php"> الرئيسية </a></li>
-            <li><a href="#"> من نخن </a></li>
-            <li><a href="events.php"> الفاعليات </a></li>
+            <li class="active"><a href="index.php"> [[+home]] </a></li>
+            <li><a href="#"> [[+aboutUs]] </a></li>
+            <li><a href="events.php"> [[+events]] </a></li>
             <li>
-              <a href="#"> المصادر </a>
+              <a href="#"> [[+resources]] </a>
               <ul class="sub_menu">
-                <li><a href="news.php"> المقالات </a></li>
-                <li><a href="videos.php"> الفيديو </a></li>
-                <li><a href="pdfs.php"> المطبوعات </a></li>
+                <li><a href="news.php"> [[+articles]] </a></li>
+                <li><a href="videos.php"> [[+videos]] </a></li>
+                <li><a href="pdfs.php"> [[+pdfs]] </a></li>
               </ul>
             </li>
-            <li><a href="/static/Instructors.html"> المدربين </a></li>
-            <li><a href="#"> خدمتنا </a></li>
-            <li><a href="contactUs.php"> اتصل بنا </a></li>
-            <li><a href="#modal2"> تسجيل </a></li>
+            <li><a href="/static/Instructors.html"> [[+trainers]] </a></li>
+            <li><a href="#"> [[+services]] </a></li>
+            <li><a href="contactUs.php"> [[+contactUs]] </a></li>
+            <li><a href="#modal2"> [[+register]] </a></li>
           </ul>
 
           <a href="#" data-activates="slide-out" class="button-collapse"
@@ -73,27 +73,27 @@
   </header>
 
   <ul id="slide-out" class="side-nav">
-    <li class="active"><a href="index.php"> الرئيسية </a></li>
-    <li><a href="#"> من نخن </a></li>
-    <li><a href="events.php"> الفاعليات </a></li>
+    <li class="active"><a href="index.php"> [[+home]] </a></li>
+    <li><a href="#"> [[+aboutUs]]</a></li>
+    <li><a href="events.php"> [[+events]] </a></li>
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header"> المصادر </a>
+          <a class="collapsible-header"> [[+resources]] </a>
           <div class="collapsible-body">
             <ul>
-              <li><a href="news.php"> المقالات </a></li>
-              <li><a href="videos.php"> الفيديو </a></li>
-              <li><a href="pdfs.php"> المطبوعات </a></li>
+              <li><a href="news.php"> [[+articles]] </a></li>
+              <li><a href="videos.php"> [[+videos]] </a></li>
+              <li><a href="pdfs.php"> [[+pdfs]] </a></li>
             </ul>
           </div>
         </li>
       </ul>
     </li>
-    <li><a href="/static/Instructors.html"> المدربين </a></li>
-    <li><a href="#"> خدمتنا </a></li>
-    <li><a href="contactUs.php"> اتصل بنا </a></li>
-    <li><a href="#modal2"> تسجيل </a></li>
+    <li><a href="/static/Instructors.html"> [[+trainers]] </a></li>
+    <li><a href="#"> [[+services]] </a></li>
+    <li><a href="contactUs.php"> [[+contactUs]] </a></li>
+    <li><a href="#modal2"> [[+register]] </a></li>
   </ul>
 
   <!-- Modal Structure -->
@@ -101,13 +101,13 @@
     <a class=" modal-action modal-close waves-effect waves-green btn-flat">X</a>
     <div class="modal-content">
       <div class="s12 m6 l6 col">
-        <h2 class="headline ">تسجيل دخول</h2>
+        <h2 class="headline ">[[+login]]</h2>
         <form class="col s12" id="login">
           <input type="hidden" name="operation" value="login" />
           <div class="row">
             <div class="input-field col l12 m12 s12">
               <input id="email" name="email" type="email" class="validate" />
-              <label for="email">البريد الالكتروني </label>
+              <label for="email">[[+emailText]] </label>
             </div>
             <div class="input-field col l12 m12 s12">
               <input
@@ -116,20 +116,20 @@
                 type="password"
                 class="validate"
               />
-              <label for="password">كلمة المرور</label>
+              <label for="password">[[+password]]</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-              <button id="submit" class="btn left redBtn">تسجيل دخول</button>
+              <button id="submit" class="btn left redBtn">[[+login]]</button>
             </div>
           </div>
         </form>
       </div>
 
       <div class="s12 m6 l6 col">
-        <h2 class="headline ">التسجيل</h2>
+        <h2 class="headline ">[[+register]]</h2>
         <form class="col s12" id="register">
           <input type="hidden" name="operation" value="add" />
           <div class="row">
@@ -140,7 +140,7 @@
                 type="text"
                 class="validate"
               />
-              <label for="first_name"> الاسم </label>
+              <label for="first_name"> [[+firstName]] </label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input
@@ -149,31 +149,31 @@
                 type="text"
                 class="validate"
               />
-              <label for="last_name"> اسم العائلة </label>
+              <label for="last_name"> [[+lastName]] </label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <input id="email" name="email" type="text" class="validate" />
-              <label for="email"> البريد الالكتروني </label>
+              <label for="email"> [[+emailText]] </label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input id="phone" name="phone" type="text" class="validate" />
-              <label for="phone"> رقم الهاتف</label>
+              <label for="phone"> [[+phoneNumber]]</label>
             </div>
           </div>
 
           <div class="row">
             <div class="file-field input-field">
               <div class="btn">
-                <span>تحميل</span>
+                <span>[[+upload]]</span>
                 <input type="file" name="image" />
               </div>
               <div class="file-path-wrapper">
                 <input
                   class="file-path validate"
                   type="text"
-                  placeholder="الصورة الشخصية"
+                  placeholder="[[+image]]"
                 />
               </div>
             </div>
@@ -187,7 +187,7 @@
                 type="password"
                 class="validate"
               />
-              <label for="password">كلمة المرور</label>
+              <label for="password">[[+password]]</label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input
@@ -196,22 +196,22 @@
                 type="password"
                 class="validate"
               />
-              <label for="confirmPassword"> تاكيد كلمة المرور </label>
+              <label for="confirmPassword"> [[+confirmPassword]] </label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <select id="city" name="city">
-                <option value="0" disabled selected>البلد</option>
-                <option value="1">مصر</option>
-                <option value="2">لبنان</option>
-                <option value="3">الاردن</option>
+                <option value="0" disabled selected>[[+country]]</option>
+                <option value="1">[[+egypt]]</option>
+                <option value="2">[[+lebanon]]</option>
+                <option value="3">[[+jordan]]</option>
               </select>
             </div>
             <div class="input-field col l6 m12 s12">
               <select id="locationID" name="locationID">
-                <option value="0" disabled selected>المحافظة</option>
+                <option value="0" disabled selected>[[+city]]</option>
                 <option value="1">القاهرة</option>
                 <option value="2">الاسكندرية</option>
                 <option value="3">مرسي مطروح</option>
@@ -225,13 +225,15 @@
                 name="bio"
                 class="materialize-textarea"
               ></textarea>
-              <label for="bio">معلومات عني</label>
+              <label for="bio">[[+bio]]</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col s12">
-              <button id="btnSend" class="btn left redBtn">تسجيل</button>
+              <button id="btnSend" class="btn left redBtn">
+                [[+register]]
+              </button>
             </div>
           </div>
         </form>
@@ -250,33 +252,33 @@
       $("#login").submit(function(event) {
         event.preventDefault();
 
-        if (
-          $("#email").val() == "" ||
-          $("#email").val() == undefined ||
-          $("#email").val() == null
-        ) {
-          swal({
-            title: "Required Field is Missing",
-            text: "Email addess is a required field",
-            type: "error",
-            confirmButtonText: "close"
-          });
-          return;
-        }
+        // if (
+        //   $("#email").val() == "" ||
+        //   $("#email").val() == undefined ||
+        //   $("#email").val() == null
+        // ) {
+        //   swal({
+        //     title: "Required Field is Missing",
+        //     text: "Email addess is a required field",
+        //     type: "error",
+        //     confirmButtonText: "close"
+        //   });
+        //   return;
+        // }
 
-        if (
-          $("#password").val() == "" ||
-          $("#password").val() == undefined ||
-          $("#password").val() == null
-        ) {
-          swal({
-            title: "Required Field is Missing",
-            text: "Password is a required field",
-            type: "error",
-            confirmButtonText: "close"
-          });
-          return;
-        }
+        // if (
+        //   $("#password").val() == "" ||
+        //   $("#password").val() == undefined ||
+        //   $("#password").val() == null
+        // ) {
+        //   swal({
+        //     title: "Required Field is Missing",
+        //     text: "Password is a required field",
+        //     type: "error",
+        //     confirmButtonText: "close"
+        //   });
+        //   return;
+        // }
 
         $("#loadingContainer").show();
 
@@ -295,9 +297,18 @@
             if (data.res == 1) {
               window.location = "index.php";
             } else {
+              var message;
+              var title;
+              if ($("#lang").val() == "en") {
+                message = data.message_en;
+                title = "Error";
+              } else {
+                message = data.message_ar;
+                title = "خطأ";
+              }
               swal({
-                title: "Invalid mail or password",
-                text: data.message,
+                title: title,
+                text: message,
                 type: "error",
                 confirmButtonText: "Close"
               });

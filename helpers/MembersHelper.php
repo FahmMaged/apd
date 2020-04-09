@@ -184,42 +184,65 @@ class MembersHelper extends BaseHelper
     {
         global $xpdo;
 
-        
-
         // Redirect to homepage if admin is already logged in
-        if (self::IsLoggedIn())
-            UtilityHelper::RedirectTo('index.php');
-
-            echo"HERE11";
+        // if (self::IsLoggedIn())
+        //     UtilityHelper::RedirectTo('index.php');
         $email    = $_POST['email'];
         $password = $_POST['password'];
 
         if (empty($email)) {
-            return UtilityHelper::Response('error', 'Email is required.');
+            return json_encode(array('res' => 0, 'message_en' => 'Email is required.', 'message_ar' => 'البريد الالكتروني مطلوب' ));
         }
 
         if (empty($password)) {
-            return UtilityHelper::Response('error', 'Password is required.');
+            // return UtilityHelper::Response('error', 'Password is required.');
+            return json_encode(array('res' => 0,
+             'message_en' => 'Password is required',
+             'message_ar' => 'لابد من ادخال كلمة المرور' ));
         }
 
         $user = $xpdo->getObject('Members', array('Email' => $email));
 
         if (empty($user)) {
-            return UtilityHelper::Response('error', 'This user does not exist.');
+            // return UtilityHelper::Response('error', 'This user does not exist.');
+            return json_encode(array('res' => 0,
+             'message_en' => 'This user does not exist',
+             'message_ar' => 'هذا المستخدم غير موجود' ));
         }
 
         if ($user->get('IsActive') == 0) {
-            return UtilityHelper::Response('error', 'This user is currently disabled.');
+            // return UtilityHelper::Response('error', 'This user is currently disabled.');
+            return json_encode(array('res' => 0,
+             'message_en' => 'This user is currently disabled',
+             'message_ar' => 'هذا المستخدم غير مفعل' ));
         }
 
         $hash = $user->get('Password');
 
         if (password_verify($password, $hash)) {
-            $_SESSION['AdminUser'] = $user->toArray();
+            $_SESSION['User'] = $user->toArray();
             return UtilityHelper::Response('success', 'User logged in successfully.');
         } else {
-            return UtilityHelper::Response('error', 'Password is incorrect or email and password do not match.');
+            return json_encode(array('res' => 0,
+             'message_en' => 'Password is incorrect or email and password do not match',
+             'message_ar' => 'خطأفي البريد الالكتروني او كلمة السر' ));
+            // return UtilityHelper::Response('error', 'Password is incorrect or email and password do not match.');
         }
+    }
+
+    public static function Logout()
+    {
+        if (self::IsLoggedIn()) {
+            unset($_SESSION['User']);
+            return true;
+        }
+
+        return false;
+    }
+
+    public static function IsLoggedIn()
+    {
+        return isset($_SESSION['User']);
     }
 	
 }
