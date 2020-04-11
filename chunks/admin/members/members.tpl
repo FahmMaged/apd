@@ -153,25 +153,38 @@
           </label>
         </div>
       </div>
+
+      <div class="col s6">
+        <p>Is Instructor</p>
+        <!-- Switch -->
+        <div class="switch">
+          <label>
+            Member
+            <input type="checkbox" id="editInstructor" name="Instructor" checked />
+            <span class="lever"></span>
+            Instructor
+          </label>
+        </div>
+      </div>
     </div>
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="first_name" name="first_name" type="text" class="validate" />
+        <input id="first_name" name="first_name" type="text" class="validate" disabled />
         <label for="first_name"> First Name </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="last_name" name="last_name" type="text" class="validate" />
+        <input id="last_name" name="last_name" type="text" class="validate" disabled />
         <label for="last_name"> Last Name </label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="email" name="email" type="text" class="validate" />
+        <input id="email" name="email" type="text" class="validate" disabled />
         <label for="email"> Email </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="phone" name="phone" type="text" class="validate" />
+        <input id="phone" name="phone" type="text" class="validate" disabled />
         <label for="phone"> Phone Number</label>
       </div>
     </div>
@@ -196,19 +209,19 @@
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="city" name="city" type="text" class="validate" />
+        <input id="city" name="city" type="text" class="validate"  disabled/>
         <label for="city"> Countery </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="location" name="location" type="text" class="validate" />
+        <input id="location" name="location" type="text" class="validate"  disabled/>
         <label for="location"> City </label>
       </div>
     </div>
 
-    <div class="row">
+    <div class="row" disabled>
       <label for="bio">Bio</label>
-      <div class="input-field col s12">
-        <textarea id="bio" name="bio" class="materialize-textarea"></textarea>
+      <div class="input-field col s12" >
+        <textarea id="bio" name="bio" class="materialize-textarea" disabled></textarea>
       </div>
     </div>
   </form>

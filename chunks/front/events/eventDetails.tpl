@@ -54,7 +54,7 @@
                                         [[+location]] 
                                     </div>
                                 </li>
-                                <li>
+                                <!-- <li>
                                     <h4> [[+share]]</h4>
                                     <div>
                                         
@@ -78,19 +78,15 @@
                                                         ><i class="fa fa-linkedin"></i>
                                                     </a>
                                                 </span>
-                                        <!-- <span> <i class="fa fa-facebook"></i>  </span> -->
-                                        <!-- <span> <i class="fa fa-facebook"></i>  </span>
-                                        <span> <i class="fa fa-facebook"></i>  </span>
-                                        <span> <i class="fa fa-facebook"></i>  </span> -->
                                     </div>
-                                </li>
-                                <button  data-target="modal2" class="btn modal-trigger waves-effect "> [[+join]] </button>
+                                </li> -->
+                                <button  data-target="modal22" class="btn modal-trigger waves-effect "> [[+join]] </button>
                             </ul>
                         </div">
                     </div>  
                     
                       <!-- Modal Structure -->
-                    <div id="modal2" class="modal">
+                    <div id="modal22" class="modal">
                         <div class="modal-content">
                             <form class="col s12" id="addGLI">
                                 <div class="row">

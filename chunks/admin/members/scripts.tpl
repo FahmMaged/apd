@@ -161,6 +161,7 @@
         $("#email").val(item.Email);
         $("#location").val(item.LocationName);
         $("#editModal #editIsActive").prop("checked", item.IsActive);
+        $("#editModal #editInstructor").prop("checked", item.Instructor);
         // $('#edit_job_title_en').val(item.JobTitle_en);
         // $('#edit_title_ar').val(item.Title_ar);
         // $('#edit_job_title_ar').val(item.JobTitle_ar);

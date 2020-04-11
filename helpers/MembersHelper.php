@@ -33,6 +33,7 @@ class MembersHelper extends BaseHelper
         $fields['LocationName']  = $_POST['locationName'];
         $fields['LocationID']    = $_POST['locationID'];
         $fields['IsActive']      = 0;
+        $fields['Instructor']      = 0;
         if(isset($_POST['FacebookLink'])){
             $fields['FacebookLink']  = $_POST['FacebookLink'];
         }
@@ -158,6 +159,17 @@ class MembersHelper extends BaseHelper
                 $isActive = 0;
                 if ($isActive != $item->get('IsActive'))
                     $fields['IsActive'] = $isActive;
+            }
+
+            if (isset($_POST['Instructor'])) {
+                $Instructor = 1;
+                if ($Instructor != $item->get('Instructor'))
+                    $fields['Instructor'] = $Instructor;
+            }
+            else {
+                $Instructor = 0;
+                if ($Instructor != $item->get('Instructor'))
+                    $fields['Instructor'] = $Instructor;
             }
 
         $item->fromArray($fields);
