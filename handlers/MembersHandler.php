@@ -23,6 +23,10 @@ if(isset($_POST['operation']))
 
         case 'delete':
             echo $membersHelper->DeleteItem();
+			break;
+			
+		case 'login':
+            echo $membersHelper->Login();
             break;
 		default:
 			# code...

@@ -22,7 +22,7 @@
         <p class="menu-links">Language Tool</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -32,7 +32,7 @@
         <i class="material-icons">translate</i>
         <p class="menu-links">Home</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"
@@ -44,7 +44,7 @@
         <p class="menu-links">Slider Items</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -54,7 +54,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Slider Videos</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"
@@ -70,22 +70,22 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="News"
+      data-tooltip="Articles"
     >
       <a href="news.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">News</p>
+        <p class="menu-links">Articles</p>
       </a>
     </li>
     <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="Events Locations"
+      data-tooltip="Locations"
     >
       <a href="eventsLocations.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">Events Locations</p>
+        <p class="menu-links">Locations</p>
       </a>
     </li>
     <li
@@ -110,7 +110,7 @@
         <p class="menu-links">Events Submissions</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -120,8 +120,8 @@
         <i class="material-icons">accessibility</i>
         <p class="menu-links">Meta Tags</p>
       </a>
-    </li>
-    <li
+    </li> -->
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -131,7 +131,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Questions</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"
@@ -143,7 +143,7 @@
         <p class="menu-links">About</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -153,7 +153,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Alternatives</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"
@@ -180,14 +180,14 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="Stuff"
+      data-tooltip="Users"
     >
       <a href="members.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">Stuff</p>
+        <p class="menu-links">Users</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -197,8 +197,8 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Books</p>
       </a>
-    </li>
-    <li
+    </li> -->
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -208,7 +208,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Activities</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"
@@ -226,12 +226,23 @@
       data-delay="50"
       data-tooltip="Videos"
     >
-      <a href="videos.php">
-        <i class="material-icons">view_carousel</i>
+      <a href="pdfs.php">
+        <i class="material-icons">accessibility</i>
         <p class="menu-links">Videos</p>
       </a>
     </li>
     <li
+      class="tooltipped"
+      data-position="right"
+      data-delay="50"
+      data-tooltip="Pdfs"
+    >
+      <a href="pdfs.php">
+        <i class="material-icons">accessibility</i>
+        <p class="menu-links">Pdfs</p>
+      </a>
+    </li>
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -241,7 +252,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Images</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"
@@ -264,7 +275,7 @@
         <p class="menu-links">Contact Us Submissions</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -274,7 +285,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">Books Submissions</p>
       </a>
-    </li>
+    </li> -->
   </ul>
   <!-- <img class="img-logo" src="img/logo.png"> -->
 </aside>

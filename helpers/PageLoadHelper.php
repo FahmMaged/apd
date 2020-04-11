@@ -31,7 +31,7 @@ if ($_SERVER['HTTP_HOST'] != 'localhost') {
 
 }
 
-$defaultTitle = "NCCPIM";
+$defaultTitle = "APD";
 
 // Default OG Image
 $ogImage = 'images/headerLogo.png';
@@ -39,34 +39,39 @@ $ogImage = 'images/headerLogo.png';
 
 
 $langFile  = json_decode(file_get_contents('lang/main.json'), true);
-$langFile2 = json_decode(file_get_contents('lang/contactUs.json'), true);
+$langFile2 = json_decode(file_get_contents('lang/headForms.json'), true);
 $noData    = $langFile['noData'][$lang];
 $header      = new LoadChunk('header', 'front/master', array(
 												'lang'      => $lang,
 												'home'      => $langFile['home'][$lang],
 												'aboutUs'   => $langFile['aboutUs'][$lang],
-												'stuff'     => $langFile['stuff'][$lang],
-												'members'   => $langFile['members'][$lang],
-												'media'     => $langFile['media'][$lang],
-												'books'     => $langFile['books'][$lang],
-												'news'      => $langFile['news'][$lang],
+												'resources' => $langFile['resources'][$lang],
+												'articles'  => $langFile['articles'][$lang],
+												'pdfs'      => $langFile['pdfs'][$lang],
+												'trainers'  => $langFile['trainers'][$lang],
+												'services'  => $langFile['services'][$lang],
 												'events'    => $langFile['events'][$lang],
-												'strategies'  => $langFile['strategies'][$lang],
-												'alternatives' => $langFile['alternatives'][$lang],
-												'videosAndImages' => $langFile['videosAndImages'][$lang],
-												'awarness'  => $langFile['awarness'][$lang],
-												'ourWork'   => $langFile['ourWork'][$lang],
-												'questions' => $langFile['questions'][$lang],
+												'register'  => $langFile['register'][$lang],
+												'phone' => $langFile['phone'][$lang],
+												'videos'    => $langFile['videos'][$lang],
+												'email'     => $langFile['email'][$lang],
+												'register'  => $langFile2['register'][$lang],
+												'login'     => $langFile2['login'][$lang],
 												'contactUs' => $langFile['contactUs'][$lang],
-												'boss'      => $langFile['boss'][$lang],
-												'mission'   => $langFile['mission'][$lang],
-												'vision'    => $langFile['vision'][$lang],
-												'keep'      => $langFile['keep'][$lang],
-												'abilities' => $langFile['abilities'][$lang],
-												'activities'=> $langFile['activities'][$lang],
-												'legislative' => $langFile['legislative'][$lang],
-												'cooperation' => $langFile['cooperation'][$lang],
-												'protection'  => $langFile['protection'][$lang],
+												'emailText' => $langFile2['email'][$lang],
+												'phoneNumber' => $langFile2['phoneNumber'][$lang],
+												'firstName'   => $langFile2['firstName'][$lang],
+												'lastName'    => $langFile2['lastName'][$lang],
+												'bio'         => $langFile2['bio'][$lang],
+												'password'    => $langFile2['password'][$lang],
+												'confirmPassword' => $langFile2['confirmPassword'][$lang],
+												'image'   => $langFile2['image'][$lang],
+												'upload'  => $langFile2['upload'][$lang],
+												'country' => $langFile2['country'][$lang],
+												'city'    => $langFile2['city'][$lang],
+												'egypt'   => $langFile2['egypt'][$lang],
+												'lebanon' => $langFile2['lebanon'][$lang],
+												'jordan'  => $langFile2['jordan'][$lang],
 												), '');
 
 $footer      = new LoadChunk('footer', 'front/master', array(

@@ -7,18 +7,23 @@ $xpdo_meta_map['Members']= array (
   'fields' => 
   array (
     'ID' => NULL,
-    'Title_en' => NULL,
-    'Description_en' => NULL,
-    'JobTitle_en' => NULL,
-    'Title_ar' => NULL,
-    'Description_ar' => NULL,
-    'JobTitle_ar' => NULL,
-    'Image' => NULL,
-    'Sort' => 1,
+    'FirstName' => NULL,
+    'LastName' => NULL,
+    'Email' => NULL,
+    'Phone' => NULL,
+    'Bio' => NULL,
+    'File' => NULL,
+    'Password' => NULL,
+    'City' => NULL,
+    'LocationID' => 0,
+    'LocationName' => NULL,
+    'IsActive' => 0,
+    'Instructor' => 0,
+    'FacebookLink' => NULL,
+    'TwitterLink' => NULL,
+    'InstagramLink' => NULL,
+    'LinkedinLink' => NULL,
     'CreatedOn' => 'CURRENT_TIMESTAMP',
-    'CreatedBy' => NULL,
-    'UpdatedOn' => 'CURRENT_TIMESTAMP',
-    'UpdatedBy' => NULL,
   ),
   'fieldMeta' => 
   array (
@@ -31,60 +36,119 @@ $xpdo_meta_map['Members']= array (
       'index' => 'pk',
       'generated' => 'native',
     ),
-    'Title_en' => 
+    'FirstName' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '250',
+      'precision' => '256',
       'phptype' => 'string',
       'null' => true,
     ),
-    'Description_en' => 
+    'LastName' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Email' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '256',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Phone' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '256',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Bio' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
       'null' => true,
     ),
-    'JobTitle_en' => 
+    'File' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '255',
+      'precision' => '191',
       'phptype' => 'string',
       'null' => true,
     ),
-    'Title_ar' => 
+    'Password' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '255',
+      'precision' => '191',
       'phptype' => 'string',
-      'null' => true,
+      'null' => false,
     ),
-    'Description_ar' => 
-    array (
-      'dbtype' => 'text',
-      'phptype' => 'string',
-      'null' => true,
-    ),
-    'JobTitle_ar' => 
+    'City' => 
     array (
       'dbtype' => 'varchar',
-      'precision' => '255',
+      'precision' => '191',
       'phptype' => 'string',
       'null' => true,
     ),
-    'Image' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '250',
-      'phptype' => 'string',
-      'null' => true,
-    ),
-    'Sort' => 
+    'LocationID' => 
     array (
       'dbtype' => 'int',
       'precision' => '11',
       'phptype' => 'integer',
+      'null' => true,
+      'default' => 0,
+    ),
+    'LocationName' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'IsActive' => 
+    array (
+      'dbtype' => 'tinyint',
+      'precision' => '4',
+      'phptype' => 'integer',
       'null' => false,
-      'default' => 1,
+      'default' => 0,
+    ),
+    'Instructor' => 
+    array (
+      'dbtype' => 'tinyint',
+      'precision' => '4',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
+    ),
+    'FacebookLink' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'TwitterLink' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'InstagramLink' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'LinkedinLink' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
     ),
     'CreatedOn' => 
     array (
@@ -92,28 +156,6 @@ $xpdo_meta_map['Members']= array (
       'phptype' => 'datetime',
       'null' => false,
       'default' => 'CURRENT_TIMESTAMP',
-    ),
-    'CreatedBy' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '100',
-      'phptype' => 'string',
-      'null' => true,
-    ),
-    'UpdatedOn' => 
-    array (
-      'dbtype' => 'datetime',
-      'phptype' => 'datetime',
-      'null' => true,
-      'default' => 'CURRENT_TIMESTAMP',
-      'extra' => 'on update current_timestamp',
-    ),
-    'UpdatedBy' => 
-    array (
-      'dbtype' => 'varchar',
-      'precision' => '100',
-      'phptype' => 'string',
-      'null' => true,
     ),
   ),
   'indexes' => 

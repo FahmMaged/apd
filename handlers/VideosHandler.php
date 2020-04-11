@@ -24,8 +24,8 @@ if(isset($_POST['operation']))
             echo $videosHelper->DeleteItem();
             break;
 
-        case 'getMedia':
-            echo $videosHelper->GetMedia2();
+        case 'getAllVideosFront':
+            echo $videosHelper->GetAllVideosFront();
             break;
 		default:
 			# code...

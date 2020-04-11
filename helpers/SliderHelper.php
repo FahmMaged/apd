@@ -27,8 +27,8 @@ class SliderHelper extends BaseHelper
         $fields['Title_ar']       = $_POST['title_ar'];
         $fields['ButtonText_ar']  = $_POST['bText_ar'];
         $fields['ButtonText_en']  = $_POST['bText_en'];
-        $fields['SubTitle_en']    = $_POST['subTitle_en'];
-        $fields['SubTitle_ar']    = $_POST['subTitle_ar'];
+        // $fields['SubTitle_en']    = $_POST['subTitle_en'];
+        // $fields['SubTitle_ar']    = $_POST['subTitle_ar'];
         $fields['Sort']           = $_POST['sort'];
         $fields['Link']           = $_POST['link'];
         $fields['UpdatedBy']      = $_SESSION['AdminUser']['FirstName'];
@@ -211,11 +211,11 @@ class SliderHelper extends BaseHelper
         $item = $xpdo->getObject('SliderItems', array('ID' => $itemID));
         
         $fields['Title_en']       = $_POST['edit_title_en'];
-        $fields['SubTitle_en']    = $_POST['edit_sub_title_en'];
+        // $fields['SubTitle_en']    = $_POST['edit_sub_title_en'];
         $fields['ButtonText_ar']  = $_POST['edit_bText_ar'];
         $fields['ButtonText_en']  = $_POST['edit_bText_en'];
         $fields['Title_ar']       = $_POST['edit_title_ar'];
-        $fields['SubTitle_ar']    = $_POST['edit_sub_title_ar'];
+        // $fields['SubTitle_ar']    = $_POST['edit_sub_title_ar'];
         $fields['Sort']           = $_POST['edit_sort'];
         $fields['Link']           = $_POST['edit_link'];
         $fields['UpdatedBy']      = $_SESSION['AdminUser']['FirstName'];

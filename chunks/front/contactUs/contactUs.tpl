@@ -54,7 +54,7 @@
         <div class="l7 m7 s12 col contact_form">
           <form class="col s12" id="addGLI">
             <div class="row">
-              <div class="input-field col l6 m12 s12">
+              <div class="input-field col s12">
                 <input type="hidden" name="operation" value="sendContactMail" />
                 <input id="name" name="name" type="text" class="validate" />
                 <label for="name">[[+name]]*</label>
@@ -99,45 +99,6 @@
       </div>
     </div>
   </div>
-</section>
-
-<!-- ==============================================    End Body     =============================================== -->
-<section class="join sections">
-  <div class="rows ">
-    <div class="l12 s12 m12 col no_padding statMain">
-      <div class="l9 m9 s12 col center">
-        <h4>شارك في القائمة البريدية</h4>
-        <p>
-          هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم
-          تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص.
-          إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق
-        </p>
-      </div>
-      <div class="l3 m3  s12 col center">
-        <a href="#modal1" class="waves-effect waves-light btn about_btn">
-          اشترك الان
-        </a>
-      </div>
-    </div>
-  </div>
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <a class=" modal-action modal-close waves-effect waves-green btn-flat">X</a>
-    <div class="modal-content">
-      <h1 class="headline ">اشترك الان</h1>
-      <form>
-        <input
-          type="text"
-          name="email"
-          id="news_name"
-          placeholder="البريد الالكتروني"
-        />
-
-        <a href="#" class="waves-effect waves-light btn  left"> اشترك </a>
-      </form>
-    </div>
-  </div>
-  <!-- Modal Structure -->
 </section>
 
 <!-- ==============================================================================================================- -->

@@ -347,7 +347,7 @@ class NewsHelper extends BaseHelper
       $numrows      = count($news);
 
       $pagination='';
-      $rowsperpage = 15;
+      $rowsperpage = 2;
       $totalpages  = ceil($numrows / $rowsperpage);
 
       if (isset($_POST['currentpage']) && is_numeric($_POST['currentpage'])) {
@@ -379,14 +379,23 @@ class NewsHelper extends BaseHelper
         foreach($allNews as $news)
         {
           $size = strlen($news->get('Title_'.$lang));
-          if($size > 100) {
-            $title = mb_substr($news->get('Title_'.$lang), 0, 100,'utf-8').' ...';
+          if($size > 50) {
+            $title = mb_substr($news->get('Title_'.$lang), 0, 50,'utf-8').' ...';
           } else{
-            $title = mb_substr($news->get('Title_'.$lang), 0, 100,'utf-8');
+            $title = mb_substr($news->get('Title_'.$lang), 0, 50,'utf-8');
           }
+
+          $size = strlen($news->get('Intro_'.$lang));
+          if($size > 100) {
+            $description = mb_substr($news->get('Intro_'.$lang), 0, 100,'utf-8').' ...';
+          } else{
+            $description = mb_substr($news->get('Intro_'.$lang), 0, 100,'utf-8');
+          }
+
           $newsChunk .=  new LoadChunk('newsItem','front/news',array(
                                                                     // 'title'  =>  $news->get('Title_'.$lang),
                                                                     'title'  =>  $title,
+                                                                    'description'  =>  $description,
                                                                     'alias'  =>  $news->get('Alias_'.$lang),
                                                                     'image'  =>  $news->get('Image'),
                                                                     'id'     =>  $news->get('ID'),
@@ -399,29 +408,29 @@ class NewsHelper extends BaseHelper
 
       // Build up the Pagination
       if ($totalpages > 1) {
-          $pagination .= '<div class="pagination">';
+        $pagination .= '<ul class="pagination">';
 
-          if ($currentpage > 1) {
-              $pagination .= '<a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage - 1) .')"> '. $langFile['previous'][$lang]. '</a>';
-          }
+        if ($currentpage > 1) {
+            $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage - 1) .')"> <i class="fa fa-chevron-right"></i></a></li>';
+        }
 
-          for ($i = 1; $i <= $totalpages; $i++) {
-              if ($i <= $currentpage + 3 && $i >= $currentpage - 2) {
-                  if ($i == $currentpage) {
-                      $pagination.= '<a href="javascript:void(0)" class="active">' . $i . '</a>';
-                  } else {
-                      $pagination.= '<a href="javascript:void(0)" onclick="'.$onclickFn.'(' . $i .')">' . $i . '</a>';
-                  }
-              }
-          }
-          if ($currentpage != $totalpages) {
-              $pagination .= '<a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage + 1) .')">'. $langFile['next'][$lang]. '</a>';
+        for ($i = 1; $i <= $totalpages; $i++) {
+            if ($i <= $currentpage + 3 && $i >= $currentpage - 2) {
+                if ($i == $currentpage) {
+                    $pagination.= '<li class="active"><a href="javascript:void(0)">' . $i . '</a></li>';
+                } else {
+                    $pagination.= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . $i .')">' . $i . '</a></li>';
+                }
+            }
+        }
+        if ($currentpage != $totalpages) {
+            $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage + 1) .')"><i class="fa fa-chevron-left"></i></a></li>';
 
-              // $pagination .= '<li class="waves-effect waves-dark"><a onclick="'.$onclickFn.'(' . $totalpages . ','.$parentID.')">...</a></li>';
-          }
+            // $pagination .= '<li class="waves-effect waves-dark"><a onclick="'.$onclickFn.'(' . $totalpages . ','.$parentID.')">...</a></li>';
+        }
 
-          $pagination .= '</div>';
-      }
+        $pagination .= '</ul>';
+    }
 
       return json_encode(array('output' => $this->urlHelper->changeToAlias($newsChunk), 'pagination' => $this->urlHelper->changeToAlias($pagination) ));
 

@@ -1,0 +1,45 @@
+{
+  "register": {
+    "en": "Register",
+    "ar": "التسجيل"
+  },
+  "firstName": {
+    "en": "First Name",
+    "ar": "\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0627\u0648\u0644"
+  },
+  "lastName": {
+    "en": "Last Name",
+    "ar": "\u0627\u0644\u0627\u0633\u0645 \u0627\u0644\u0627\u062e\u064a\u0631"
+  },
+  "email": {
+    "en": "Email",
+    "ar": "\u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0627\u0644\u0643\u062a\u0631\u0648\u0646\u064a"
+  },
+  "phoneNumber": {
+    "en": "Phone Number",
+    "ar": "رقم الهاتف"
+  },
+  "bio": {
+    "en": "Bio",
+    "ar": "نبذة عنك"
+  },
+  "login": { "en": "Login", "ar": "تسجيل دخول" },
+  "password": {
+    "en": "Password",
+    "ar": "كلمة المرور"
+  },
+  "confirmPassword": {
+    "en": "Confirm Password",
+    "ar": "تأكيد كلمة المرور"
+  },
+  "image": {
+    "en": "Personal Image",
+    "ar": "صورة شخصية"
+  },
+  "country": { "en": "Country", "ar": "بلد" },
+  "city": { "en": "City", "ar": "مدينة" },
+  "egypt": { "en": "Egypt", "ar": "مصر" },
+  "lebanon": { "en": "lebanon", "ar": "لبنان" },
+  "jordan": { "en": "Jordan", "ar": "الاردن" },
+  "upload": { "en": "Upload", "ar": "تحميل" }
+}
