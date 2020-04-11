@@ -252,3 +252,15 @@ iframe{
         text-align: initial !important;
     }
 }
+
+@media only screen and (min-width: 993px){
+    .row .col.offset-l2 {
+        margin-right: 16.66667%;
+    }
+}
+
+@media only screen and  (min-width: 601px){
+    .row .col.offset-m2 {
+        margin-right: 16.66667%;
+    }
+}
