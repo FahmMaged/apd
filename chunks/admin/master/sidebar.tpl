@@ -70,18 +70,18 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="News"
+      data-tooltip="Articles"
     >
       <a href="news.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">News</p>
+        <p class="menu-links">Articles</p>
       </a>
     </li>
     <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="Events Locations"
+      data-tooltip="Locations"
     >
       <a href="eventsLocations.php">
         <i class="material-icons">view_carousel</i>
@@ -110,7 +110,7 @@
         <p class="menu-links">Events Submissions</p>
       </a>
     </li>
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -120,7 +120,7 @@
         <i class="material-icons">accessibility</i>
         <p class="menu-links">Meta Tags</p>
       </a>
-    </li>
+    </li> -->
     <!-- <li
       class="tooltipped"
       data-position="right"

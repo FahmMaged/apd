@@ -157,8 +157,8 @@
         $("#edit_title_ar").val(item.Title_ar);
         $("#edit_bText_ar").val(item.ButtonText_ar);
         $("#edit_bText_en").val(item.ButtonText_en);
-        $("#edit_sub_title_ar").val(item.SubTitle_ar);
-        $("#edit_sub_title_en").val(item.SubTitle_en);
+        // $("#edit_sub_title_ar").val(item.SubTitle_ar);
+        // $("#edit_sub_title_en").val(item.SubTitle_en);
         $("#editSort").val(item.Sort);
         $("#edit_link").val(item.Link);
 

@@ -71,10 +71,10 @@
               <input name="title_en" type="text" class="validate" />
               <label for="dir-title_en">English Title*</label>
             </div>
-            <div class="input-field col s12">
+            <!-- <div class="input-field col s12">
               <input name="subTitle_en" type="text" class="validate" />
               <label for="dir-subTitle_en">English Sub Title*</label>
-            </div>
+            </div> -->
             <div class="input-field col s12">
               <input name="bText_en" type="text" />
               <label for="dir-bText_en">
@@ -90,10 +90,10 @@
               <input name="title_ar" type="text" class="validate" />
               <label for="dir-title_ar">Arabic Title*</label>
             </div>
-            <div class="input-field col s12">
+            <!-- <div class="input-field col s12">
               <input name="subTitle_ar" type="text" class="validate" />
               <label for="dir-subTitle_ar">Arabic Sub Title*</label>
-            </div>
+            </div> -->
             <div class="input-field col s12">
               <input name="bText_ar" type="text" />
               <label for="dir-bText_ar">
@@ -170,7 +170,7 @@
               English Title
             </label>
           </div>
-          <div class="input-field col s12">
+          <!-- <div class="input-field col s12">
             <input
               id="edit_sub_title_en"
               name="edit_sub_title_en"
@@ -179,7 +179,7 @@
             <label for="dir-edit_sub_title_en">
               English Sub Title
             </label>
-          </div>
+          </div> -->
           <div class="input-field col s12">
             <input id="edit_bText_en" name="edit_bText_en" type="text" />
             <label for="dir-edit_bText_en">
@@ -195,7 +195,7 @@
               Arabic Title
             </label>
           </div>
-          <div class="input-field col s12">
+          <!-- <div class="input-field col s12">
             <input
               id="edit_sub_title_ar"
               name="edit_sub_title_ar"
@@ -204,7 +204,7 @@
             <label for="dir-edit_sub_title_ar">
               Arabic Sub Title
             </label>
-          </div>
+          </div> -->
           <div class="input-field col s12">
             <input id="edit_bText_ar" name="edit_bText_ar" type="text" />
             <label for="dir-edit_bText_ar">

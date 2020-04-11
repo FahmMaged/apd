@@ -44,7 +44,7 @@ $xpdo_meta_map['SliderItems']= array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'Title_ar' => 
     array (
@@ -58,7 +58,7 @@ $xpdo_meta_map['SliderItems']= array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'Image' => 
     array (

@@ -16,7 +16,7 @@ class EventsHelper extends BaseHelper
     public function Add() 
     {
       global $xpdo;
-      $xpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      // $xpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
       date_default_timezone_set('Africa/Cairo'); 
       $createdOn          = date("Y-m-d H:i:s");
@@ -132,10 +132,17 @@ class EventsHelper extends BaseHelper
 
           foreach($allObj as $currObj)
           {
+            $size = strlen($currObj->get('Description_ar'));
+            if($size > 100) {
+              $description = mb_substr($currObj->get('Description_ar'), 0, 100,'utf-8').' ...';
+            } else{
+              $description = mb_substr($currObj->get('Description_ar'), 0, 100,'utf-8').' ...';
+            }
+
               $output .= new LoadChunk('event_details', 'admin/events', array(
                                                 'totalPages'     =>  $totalpages,
                                                 'name_en'        =>  $currObj->Get('Title_ar'),
-                                                'description_en' =>  $currObj->Get('Description_ar'),
+                                                'description_en' =>  $description,
                                                 'image'          =>  $currObj->Get('Image'),
                                                 'currID'         =>  $currObj->Get('ID')
                                             ),'../');

@@ -443,9 +443,9 @@
 	<object class="SliderItems" table="SliderItems" extends="xPDOObject">
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
 		<field key="Title_en" dbtype="varchar" precision="250" phptype="string" null="false" />
-		<field key="SubTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SubTitle_en" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="SubTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="SubTitle_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="Image" dbtype="varchar" precision="250" phptype="string" null="false" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
 		<field key="Link" dbtype="varchar" precision="255" phptype="string" null="true" />
