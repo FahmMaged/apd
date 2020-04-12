@@ -40,6 +40,10 @@
   "city": { "en": "City", "ar": "مدينة" },
   "egypt": { "en": "Egypt", "ar": "مصر" },
   "lebanon": { "en": "lebanon", "ar": "لبنان" },
+  "FacebookLink": { "en": "Facebook Link", "ar": "رابط الفيسبوك" },
+  "TwitterLink": { "en": "Twitter Link", "ar": "رابط تويتر" },
+  "InstagramLink": { "en": "Instagram Link", "ar": "رابط الانستجرام" },
+  "LinkedinLink": { "en": "Linkedin Link", "ar": "رابط لينكد ان" },
   "jordan": { "en": "Jordan", "ar": "الاردن" },
   "upload": { "en": "Upload", "ar": "تحميل" }
 }

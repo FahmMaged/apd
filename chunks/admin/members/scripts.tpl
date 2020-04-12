@@ -160,6 +160,10 @@
         $("#phone").val(item.Phone);
         $("#email").val(item.Email);
         $("#location").val(item.LocationName);
+        $("#FacebookLink").val(item.FacebookLink);
+        $("#TwitterLink").val(item.TwitterLink);
+        $("#InstagramLink").val(item.InstagramLink);
+        $("#LinkedinLink").val(item.LinkedinLink);
         $("#editModal #editIsActive").prop("checked", item.IsActive);
         $("#editModal #editInstructor").prop("checked", item.Instructor);
         // $('#edit_job_title_en').val(item.JobTitle_en);

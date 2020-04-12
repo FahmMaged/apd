@@ -218,6 +218,28 @@
       </div>
     </div>
 
+    <div class="row">
+      <div class="input-field col l6 m12 s12">
+        <input id="FacebookLink" name="FacebookLink" type="text" class="validate"  disabled/>
+        <label for="FacebookLink"> Facebook Link </label>
+      </div>
+      <div class="input-field col l6 m12 s12">
+        <input id="TwitterLink" name="TwitterLink" type="text" class="validate"  disabled/>
+        <label for="TwitterLink"> Twitter Link </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col l6 m12 s12">
+        <input id="InstagramLink" name="InstagramLink" type="text" class="validate"  disabled/>
+        <label for="InstagramLink"> Instagram Link </label>
+      </div>
+      <div class="input-field col l6 m12 s12">
+        <input id="LinkedinLink" name="LinkedinLink" type="text" class="validate"  disabled/>
+        <label for="LinkedinLink"> Linkedin Link </label>
+      </div>
+    </div>
+
     <div class="row" disabled>
       <label for="bio">Bio</label>
       <div class="input-field col s12" >

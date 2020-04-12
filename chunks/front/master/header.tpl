@@ -212,12 +212,33 @@
             <div class="input-field col l6 m12 s12">
               <select id="locationID" name="locationID">
                 <option value="0" disabled selected>[[+city]]</option>
-                <option value="1">القاهرة</option>
-                <option value="2">الاسكندرية</option>
-                <option value="3">مرسي مطروح</option>
+                [[+locationsTPL]]
               </select>
             </div>
           </div>
+
+          <div class="row">
+            <div class="input-field col l6 m12 s12">
+              <input id="FacebookLink" name="FacebookLink" type="text" />
+              <label for="FacebookLink"> [[+FacebookLink]] </label>
+            </div>
+            <div class="input-field col l6 m12 s12">
+              <input id="TwitterLink" name="TwitterLink" type="text" />
+              <label for="TwitterLink"> [[+TwitterLink]] </label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="input-field col l6 m12 s12">
+              <input id="InstagramLink" name="InstagramLink" type="text" />
+              <label for="InstagramLink"> [[+InstagramLink]] </label>
+            </div>
+            <div class="input-field col l6 m12 s12">
+              <input id="LinkedinLink" name="LinkedinLink" type="text" />
+              <label for="LinkedinLink"> [[+LinkedinLink]] </label>
+            </div>
+          </div>
+
           <div class="row">
             <div class="input-field col s12">
               <textarea

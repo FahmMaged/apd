@@ -6,6 +6,8 @@ require_once('helpers/URLHelper.php');
 $urlHelper    = new URLHelper();
 // Get Main Images
 $mainImage = $xpdo->getObject('MainImages', array('ID' => 1));
+
+
 //Language Session
 if(!isset($_COOKIE['lang'])) {
     $lang = (isset($_GET['lang'])) ? $_GET['lang'] : 'ar' ;
@@ -19,6 +21,16 @@ $_SESSION['lang'] = $lang;
 $enLink = '';
 if ($lang == 'en') {
 	$enLink = '<link type="text/css" rel="stylesheet" href="css/en.css" media="screen,projection" />';
+}
+
+// Get locations
+$locationsTPL = '';
+$locations = $xpdo->getCollection('EventsLocations');
+foreach($locations as $loc){
+	$locationsTPL   .= new LoadChunk('option', 'front/master', array(
+		'id'    => $loc->get('ID'),
+		'name'  => $loc->get('Title_'.$lang),
+		), '');
 }
 
 // get dynamic basr url
@@ -43,6 +55,7 @@ $langFile2 = json_decode(file_get_contents('lang/headForms.json'), true);
 $noData    = $langFile['noData'][$lang];
 $header      = new LoadChunk('header', 'front/master', array(
 												'lang'      => $lang,
+												'locationsTPL' => $locationsTPL,
 												'home'      => $langFile['home'][$lang],
 												'aboutUs'   => $langFile['aboutUs'][$lang],
 												'resources' => $langFile['resources'][$lang],
@@ -71,6 +84,10 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'city'    => $langFile2['city'][$lang],
 												'egypt'   => $langFile2['egypt'][$lang],
 												'lebanon' => $langFile2['lebanon'][$lang],
+												'FacebookLink'  => $langFile2['FacebookLink'][$lang],
+												'TwitterLink'  => $langFile2['TwitterLink'][$lang],
+												'InstagramLink'  => $langFile2['InstagramLink'][$lang],
+												'LinkedinLink'  => $langFile2['LinkedinLink'][$lang],
 												'jordan'  => $langFile2['jordan'][$lang],
 												), '');
 
