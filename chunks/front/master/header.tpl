@@ -202,11 +202,9 @@
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <select id="city" name="city">
+              <select id="cityID" name="cityID">
                 <option value="0" disabled selected>[[+country]]</option>
-                <option value="1">[[+egypt]]</option>
-                <option value="2">[[+lebanon]]</option>
-                <option value="3">[[+jordan]]</option>
+                [[+countriesTPL]]
               </select>
             </div>
             <div class="input-field col l6 m12 s12">
@@ -404,7 +402,7 @@
           return;
         }
 
-        if ($("#city").val() == null || $("#city").val() == 0) {
+        if ($("#cityID").val() == null || $("#cityID").val() == 0) {
           if ($("#lang").val() === "ar") {
             swal({
               title: "الحقول المطلوبة",

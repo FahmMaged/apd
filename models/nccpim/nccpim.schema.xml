@@ -155,6 +155,20 @@
 			<column key="ID" length="" collation="A" null="false" />
 		</index>
 	</object>
+	<object class="Countries" table="Countries" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CreatedBy" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
+		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
+		<field key="UpdatedBy" dbtype="varchar" precision="255" phptype="string" null="true" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
 	<object class="Events" table="Events" extends="xPDOObject">
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
 		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="false" />
@@ -280,6 +294,7 @@
 		<field key="Bio" dbtype="text" phptype="string" null="true" />
 		<field key="File" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="Password" dbtype="varchar" precision="191" phptype="string" null="false" />
+		<field key="CityID" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
 		<field key="City" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="LocationID" dbtype="int" precision="11" phptype="integer" null="true" default="0" />
 		<field key="LocationName" dbtype="varchar" precision="191" phptype="string" null="true" />

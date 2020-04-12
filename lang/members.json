@@ -1,31 +1,16 @@
 {
-	"headerTitle":
-	{
-		"en":"Members","ar":"فريق العمل"
-	
-	},
+  "headerTitle": {
+    "en": "Members",
+    "ar": "الاعضاء"
+  },
 
-	"pageTitle":
-	{
-		"en":"Members","ar":"فريق العمل "
-	
-	},
+  "pageTitle": {
+    "en": "Members",
+    "ar": "الاعضاء "
+  },
 
-	"membersText":
-	{
-		"en":"Members","ar":"الاعضاء "
-	
-	},
-
-	"download":
-	{
-		"en":"Downlod","ar":"تحميل "
-	
-	},
-
-	"ambassador":
-	{
-		"en":"Ambassador","ar":"السفيرة "
-	
-	}
+  "search": {
+    "en": "Search",
+    "ar": "ابحث "
+  }
 }

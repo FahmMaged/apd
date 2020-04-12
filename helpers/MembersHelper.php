@@ -2,9 +2,14 @@
 if (!isset($_SESSION)) session_start();
 require_once('AdminUsersHelper.php');
 require_once('PasswordHelper.php');
-
+require_once('URLHelper.php');
 class MembersHelper extends BaseHelper
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->urlHelper       = new URLHelper();
+    }
 
     public function AddItem()
     {
@@ -32,6 +37,7 @@ class MembersHelper extends BaseHelper
         $fields['City']          = $_POST['cityName'];
         $fields['LocationName']  = $_POST['locationName'];
         $fields['LocationID']    = $_POST['locationID'];
+        $fields['CityID']        = $_POST['cityID'];
         $fields['IsActive']      = 0;
         $fields['Instructor']      = 0;
         if(isset($_POST['FacebookLink'])){
@@ -255,6 +261,142 @@ class MembersHelper extends BaseHelper
     public static function IsLoggedIn()
     {
         return isset($_SESSION['User']);
+    }
+
+    // Front Functions
+    public function GetAllMembersFront()
+    {
+      global $xpdo;
+      date_default_timezone_set('Africa/Cairo');
+      $currentDate = date("Y-m-d");
+      $onclickFn   = 'fnGetMembers';
+      $membersChunk   = '';
+      $lang        = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
+      $langFile    = json_decode(file_get_contents('../lang/members.json'), true);
+
+      // $news = $xpdo->getCollection('News');
+      $query = $xpdo->newQuery('Members');
+      $query->where(array(
+        'IsActive'       => 1,
+      ));
+      if(!empty($_POST['city'])){
+        $query->where(array(
+            'CityID' => $_POST['city'],
+          ));
+      }
+
+      if(!empty($_POST['location'])){
+        $query->where(array(
+            'LocationID' => $_POST['location'],
+          ));
+      }
+      
+      $members = $xpdo->getCollection('Members', $query);
+      $numrows      = count($members);
+
+      $pagination='';
+      $rowsperpage = 1;
+      $totalpages  = ceil($numrows / $rowsperpage);
+
+      if (isset($_POST['currentpage']) && is_numeric($_POST['currentpage'])) {
+        $currentpage = (int) $_POST['currentpage'];
+      } else {
+        $currentpage = 1;
+      }
+
+      if ($currentpage > $totalpages) {
+        $currentpage = $totalpages;
+      }
+
+      if ($currentpage < 1) {
+        $currentpage = 1;
+      }
+
+      $offset = ($currentpage - 1) * $rowsperpage;
+
+      $query = $xpdo->newQuery('Members');
+      $query->where(array(
+        'IsActive' => 1,
+      ));
+      if(!empty($_POST['city'])){
+        $query->where(array(
+            'CityID' => $_POST['city'],
+          ));
+      }
+
+      if(!empty($_POST['location'])){
+        $query->where(array(
+            'LocationID' => $_POST['location'],
+          ));
+      }
+      // $query->sortby('Sort', 'ASC');
+      $query->sortby('CreatedOn', 'DESC');
+      $query->limit($rowsperpage,$offset);
+      $allMembers = $xpdo->getCollection('Members', $query);
+    //   print_r($allMembers);
+    //     exit;
+      if ($allMembers) {
+        foreach($allMembers as $members)
+        {
+            $hideF = !empty($members->get('FacebookLink')) ? '' : 'hidden';
+            $hideT = !empty($members->get('TwitterLink')) ? '' : 'hidden';
+            $hideI = !empty($members->get('InstagramLink')) ? '' : 'hidden';
+            $hideL = !empty($members->get('LinkedinLink')) ? '' : 'hidden';
+
+        $name = $members->get('FirstName')." ".$members->get('LastName');
+
+          $membersChunk .=  new LoadChunk('member','front/members',array(
+                                                    'email'  =>  $members->get('Email'),
+                                                    'name'   =>  $name,
+                                                    'hideF'   =>  $hideF,
+                                                    'hideT'   =>  $hideT,
+                                                    'hideI'   =>  $hideI,
+                                                    'hideL'   =>  $hideL,
+                                                    'phone'  =>  $members->get('Phone'),
+                                                    'image'  =>  $members->get('File'),
+                                                    'FacebookLink'  =>  $members->get('FacebookLink'),
+                                                    'TwitterLink'   =>  $members->get('TwitterLink'),
+                                                    'InstagramLink' =>  $members->get('InstagramLink'),
+                                                    'LinkedinLink'  =>  $members->get('LinkedinLink'),
+                                                    'id'     =>  $members->get('ID'),
+                                                    // 'lang'   =>  $lang,
+                                            ),'../');
+
+        }
+      }
+
+      // Build up the Pagination
+      if ($totalpages > 1) {
+        $pagination .= '<ul class="pagination">';
+
+        if ($currentpage > 1) {
+            $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage - 1) .')"> <i class="fa fa-chevron-right"></i></a></li>';
+        }
+
+        for ($i = 1; $i <= $totalpages; $i++) {
+            if ($i <= $currentpage + 3 && $i >= $currentpage - 2) {
+                if ($i == $currentpage) {
+                    $pagination.= '<li class="active"><a href="javascript:void(0)">' . $i . '</a></li>';
+                } else {
+                    $pagination.= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . $i .')">' . $i . '</a></li>';
+                }
+            }
+        }
+        if ($currentpage != $totalpages) {
+            $pagination .= '<li class="waves-effect"><a href="javascript:void(0)" onclick="'.$onclickFn.'(' . ($currentpage + 1) .')"><i class="fa fa-chevron-left"></i></a></li>';
+
+            // $pagination .= '<li class="waves-effect waves-dark"><a onclick="'.$onclickFn.'(' . $totalpages . ','.$parentID.')">...</a></li>';
+        }
+
+        $pagination .= '</ul>';
+        }
+
+      return json_encode(array('output' => $this->urlHelper->changeToAlias($membersChunk),
+       'pagination' => $this->urlHelper->changeToAlias($pagination)
+     ));
+
+    
+
     }
 	
 }

@@ -9,6 +9,7 @@ $memberTPL   = '';
 $membersTPL  = '';
 
 $langFile  = json_decode(file_get_contents('lang/members.json'), true);
+$langFile2  = json_decode(file_get_contents('lang/headForms.json'), true);
 // $langFile['readMore'][$lang]
 
 // Head Chunk
@@ -19,42 +20,18 @@ $head        = new LoadChunk('head', 'front/master', array(
 														   'enLink'    => $enLink
 														   ), '');
 
-// Members
-$x = 0;
-$query = $xpdo->newQuery('Members');
-$query->sortby('Sort', 'ASC');
-$members = $xpdo->getCollection('Members', $query);
-foreach ($members as $m) {
-	if ($x == 0) {
-		$fMemberTPL   .= new LoadChunk('fMember', 'front/members', array(
-													   'name'         => $m->get('Title_'.$lang),
-													   'jobTitle'     => $m->get('JobTitle_'.$lang),
-													   'ambassador'   => $langFile['ambassador'][$lang],
-													   'description'  => $m->get('Description_'.$lang),
-													   'image'        => $m->get('Image')
-													   ), '');
-		$x++;
-	} else {
-		$active = '';
-		$memberTPL   .= new LoadChunk('member', 'front/members', array(
-													   'jobTitle'     => $m->get('JobTitle_'.$lang),
-													   'name'         => $m->get('Title_'.$lang),
-													   'description'  => $m->get('Description_'.$lang),
-													   'image'        => $m->get('Image')
-													   ), '');
-	}
-	
-}
-
-
+$scripts     = new LoadChunk('scripts', 'front/members', array(), '');
 $output = new LoadChunk('members', 'front/members', array(
 											  		   'head'               => $head,
 											  		   'header'             => $header,
-											  		   'fMemberTPL'        => $fMemberTPL,
-													   'memberTPL'          => $memberTPL,
-											  		   'footer'             => $footer,
+													    'footer'            => $footer,
+													   'scripts'            => $scripts,
+													   'locationsTPL'       => $locationsTPL,
+													   'countriesTPL'       => $countriesTPL,
+													   'country'            => $langFile2['country'][$lang],
+													   'city'               => $langFile2['city'][$lang],
 											  		   'headerTitle'        => $langFile['headerTitle'][$lang],
-											  		   'membersText'        => $langFile['membersText'][$lang],
+											  		   'search'             => $langFile['search'][$lang],
 											  		   'mainImage'          => $mainImage->get('Members'),
 											  		   
 										           ), '');

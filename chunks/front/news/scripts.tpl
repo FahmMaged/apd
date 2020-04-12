@@ -1,5 +1,4 @@
 <script type="text/javascript">
-console.log("HERE");
     var currPage = parseInt($("#currPage").val());
     $(document).ready(function() {
         fnGetNews(1);

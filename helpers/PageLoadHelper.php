@@ -33,6 +33,16 @@ foreach($locations as $loc){
 		), '');
 }
 
+// Get countries
+$countriesTPL = '';
+$countries = $xpdo->getCollection('Countries');
+foreach($countries as $loc){
+	$countriesTPL   .= new LoadChunk('option2', 'front/master', array(
+		'id'    => $loc->get('ID'),
+		'name'  => $loc->get('Title_'.$lang),
+		), '');
+}
+
 // get dynamic basr url
 if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	$server        = $_SERVER['HTTP_HOST'];
@@ -56,6 +66,7 @@ $noData    = $langFile['noData'][$lang];
 $header      = new LoadChunk('header', 'front/master', array(
 												'lang'      => $lang,
 												'locationsTPL' => $locationsTPL,
+												'countriesTPL' => $countriesTPL,
 												'home'      => $langFile['home'][$lang],
 												'aboutUs'   => $langFile['aboutUs'][$lang],
 												'resources' => $langFile['resources'][$lang],
@@ -82,13 +93,10 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'upload'  => $langFile2['upload'][$lang],
 												'country' => $langFile2['country'][$lang],
 												'city'    => $langFile2['city'][$lang],
-												'egypt'   => $langFile2['egypt'][$lang],
-												'lebanon' => $langFile2['lebanon'][$lang],
 												'FacebookLink'  => $langFile2['FacebookLink'][$lang],
 												'TwitterLink'  => $langFile2['TwitterLink'][$lang],
 												'InstagramLink'  => $langFile2['InstagramLink'][$lang],
 												'LinkedinLink'  => $langFile2['LinkedinLink'][$lang],
-												'jordan'  => $langFile2['jordan'][$lang],
 												), '');
 
 $footer      = new LoadChunk('footer', 'front/master', array(

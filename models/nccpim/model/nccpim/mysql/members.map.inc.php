@@ -14,6 +14,7 @@ $xpdo_meta_map['Members']= array (
     'Bio' => NULL,
     'File' => NULL,
     'Password' => NULL,
+    'CityID' => 0,
     'City' => NULL,
     'LocationID' => 0,
     'LocationName' => NULL,
@@ -83,6 +84,14 @@ $xpdo_meta_map['Members']= array (
       'precision' => '191',
       'phptype' => 'string',
       'null' => false,
+    ),
+    'CityID' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '11',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
     ),
     'City' => 
     array (
