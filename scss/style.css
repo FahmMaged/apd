@@ -316,6 +316,18 @@ span.caret {
   text-align: initial !important;
 }
 
+@media only screen and (min-width: 993px) {
+  .row .col.offset-l2 {
+    margin-right: 16.66667%;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .row .col.offset-m2 {
+    margin-right: 16.66667%;
+  }
+}
+
 /**************************************************************************************************/
 header {
   width: 100%;
@@ -1402,6 +1414,31 @@ section {
   background: #c42035;
   -webkit-box-shadow: initial !important;
           box-shadow: initial !important;
+}
+
+.newsDetails .articleDetailsInfo {
+  padding: 20px 0px;
+}
+
+.newsDetails .articleDetailsInfo .socialShare {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: left;
+}
+
+.newsDetails .articleDetailsInfo .socialShare li {
+  margin: 0px 10px;
+  color: #888;
+}
+
+.newsDetails .articleDetailsInfo h4 {
+  font-size: 14px;
+  color: #888;
+}
+
+.newsDetails .articleDetailsInfo h4 i {
+  margin: 0px 10px;
 }
 
 .instructors .filter {

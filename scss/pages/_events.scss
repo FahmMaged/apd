@@ -100,3 +100,25 @@ font-size: 15px;
     }
 
 }
+
+.newsDetails{
+    .articleDetailsInfo{
+        padding: 20px 0px;
+        .socialShare{
+            display: flex;
+            float: left;
+            li{
+              margin: 0px 10px;
+              color: #888;
+            }
+        }  
+        h4{
+            font-size: 14px;
+            color: #888;
+            i{
+                margin: 0px 10px;
+            }
+        }
+    }
+    
+}
