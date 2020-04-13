@@ -5,16 +5,14 @@
     <div class="rows ">
       <div class="l12 s12 m12 col no_padding statMain">
         <div class="l9 m9 s12 col center">
-          <h4>شارك في القائمة البريدية</h4>
+          <h4>[[+subscribeTitle]]</h4>
           <p>
-            هنالك العديد من الأنواع المتوفرة لنصوص لوريم إيبسوم، ولكن الغالبية تم
-            تعديلها بشكل ما عبر إدخال بعض النوادر أو الكلمات العشوائية إلى النص.
-            إن كنت تريد أن تستخدم نص لوريم إيبسوم ما، عليك أن تتحقق
+            [[+subscribeDesc]]
           </p>
         </div>
         <div class="l3 m3  s12 col center">
           <a href="#modal1" class="waves-effect waves-light btn about_btn">
-            اشترك الان
+            [[+subscribeNow]]
           </a>
         </div>
       </div>
@@ -23,16 +21,16 @@
     <div id="modal1" class="modal">
       <a class=" modal-action modal-close waves-effect waves-green btn-flat">X</a>
       <div class="modal-content">
-        <h1 class="headline ">اشترك الان</h1>
+        <h1 class="headline "> [[+subscribeNow]]</h1>
         <form>
           <input
             type="text"
             name="email"
             id="news_name"
-            placeholder="البريد الالكتروني"
+            placeholder="[[+subscribeEmail]]"
           />
   
-          <a href="#" class="waves-effect waves-light btn  left"> اشترك </a>
+          <a href="#" class="waves-effect waves-light btn  left"> [[+subscribe]] </a>
         </form>
       </div>
     </div>
@@ -42,38 +40,37 @@
     <div class="rows">
         
     <div class="l4 s6 m4 col imp_links">
-        <h3> روابط سريعة </h3>
+        <h3>  [[+links]] </h3>
         <div class="s6  col">
             <ul>
-               <li>  <a href="#">  من نحن  </a></li>
-                <a href="#"> <li>الرؤية و الرسالة   </a></li>
-                <a href="#"> <li>القيم الأساسية   </a></li>
-               <li>  <a href="#">  فريق العمل </a></li>
-               <li>  <a href="#">رؤساء الوحدات   </a></li>
+               <li> <a href="index.php"> [[+home]]  </a></li>
+               <li> <a href="aboutUs.php"> [[+aboutUs]]  </a></li>
+               <li> <a href="members.php"> [[+trainers]]  </a></li>
+               <li> <a href="events.php"> [[+events]]  </a></li>
             </ul> 
         </div>
         <div class="s6 col">
             <ul>
-               <li>  <a href="#">المركز الاعلامي  </a></li>
-                <a href="#"> <li>النشرة الإخبارية   </a></li>
-               <li>  <a href="#"> بيانات صحفية  </a></li>
-               <li>  <a href="#">الأخبار  </a></li>
-               <li>  <a href="#">  اتصل بنا  </a></li>
+              <li> <a href="news.php"> [[+articles]]  </a></li>
+              <li> <a href="pdfs.php"> [[+pdfs]]  </a></li>
+              <li> <a href="videos.php"> [[+videos]]  </a></li>
+              <li> <a href="contactUs.php"> [[+contactUs]]  </a></li>
+              <!-- <li> <a href="services.php"> [[+services]]  </a></li> -->
             </ul> 
         </div>
     </div> 
     
     <div class="l4 s12 m4 col  contact-widget">
-        <h3> اتصل بنا </h3>
+        <h3> [[+contactUs]] </h3>
             <ul class="footer_contatc">
-                <li>  <a href="#"><span> الهاتف </span> 010215151615 </a></li>
-                <li>  <a href="#"><span> الايميل </span> info@sad.com </a></li>
-                <li>  <a href="#"><span> العنوان </span> التجمع الخامس - القاهرة - مصر  </a></li>
+                <li>  <a href="#"><span> [[+phoneText]] </span> [[+phone]] </a></li>
+                <li>  <a href="#"><span> [[+emailText]] </span> [[+email]] </a></li>
+                <li>  <a href="#"><span> [[+address]] </span> [[+theAddress]]  </a></li>
             </ul>
     </div>
 
     <div class="l4 s12 m4 col  contact-widget">
-        <h3>  تابعنا علي  </h3>
+        <h3> [[+follow]] </h3>
             <ul class="footer_social">
                 <li>  <a href="#"><i class="fa fa-facebook"></i>  </a></li>
                 <li>  <a href="#"> <i class=" fa fa-twitter"></i> </a></li>
@@ -87,7 +84,7 @@
     
         <div class="l12 col no_padding last_footer">
             <div class="rows">
-            <div class="l12 s12 m12 col"><h5> جميع الحقوق محفوظة .  التربية الايجابية 2020 </h5></div>
+            <div class="l12 s12 m12 col"><h5> [[+aboutFooter]] </h5></div>
             
         </div>
     </div>
