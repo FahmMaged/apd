@@ -19,20 +19,24 @@
     </div>
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
+      <form id="letterForm">
+      <input type="hidden" name="operation" value="addMail">
       <a class=" modal-action modal-close waves-effect waves-green btn-flat">X</a>
       <div class="modal-content">
         <h1 class="headline "> [[+subscribeNow]]</h1>
         <form>
           <input
             type="text"
-            name="email"
+            name="mail"
             id="news_name"
             placeholder="[[+subscribeEmail]]"
+            class="validate"
           />
   
-          <a href="#" class="waves-effect waves-light btn  left"> [[+subscribe]] </a>
+          <a href="#" class="waves-effect waves-light btn  left" id="newsLetter"> [[+subscribe]] </a>
         </form>
       </div>
+      </form>
     </div>
     <!-- Modal Structure -->
   </section>
@@ -138,5 +142,127 @@
                 dots:false,
               }); 
             });
+          
+          
+            function validEmail(email) {
+                var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                return re.test(email);
+            };
+            $("#newsLetter").click(function(event) {
+            event.preventDefault();
+
+            isValid = true;
+
+            //form validations
+            $('#letterForm .validate').each(function() {
+                if ($.trim($(this).val()) == "") {
+                  if ($("#lang").val() == "en") {
+                    swal({
+                        title: "Email Empty",
+                        text: "Email Field Can't Be Empty",
+                        type: "error",
+                        confirmButtonText: "Close"
+                    });
+                    isValid = false;
+                    return;
+                } else{
+                  swal({
+                        title: "خطأ",
+                        text: "لابد من ادخال البريد الالكتروني",
+                        type: "خطأ",
+                        confirmButtonText: "Close"
+                    });
+                    isValid = false;
+                    return;
+
+                }
+                }
+
+                var check = validEmail($('#news_name').val());
+                if(!check){
+                  if ($("#lang").val() == "en") {
+                      swal({
+                          title: "Email Not Valid",
+                          text: "Enter a valid Email address",
+                          type: "error",
+                          confirmButtonText: "Close"
+                      });
+                      isValid = false;
+                      return;
+                  } else{
+                    swal({
+                          title: "خطأ",
+                          text: "لابد من ادخال بريد الكتروني صحيح",
+                          type: "error",
+                          confirmButtonText: "اغلاق"
+                      });
+                      isValid = false;
+                      return;
+
+                  }
+                }
+                
+            });
+
+            if (!isValid) return;
+
+            //submit the form after validations
+            $('#letterForm').submit();
+        });
+
+   $('#letterForm').submit(function(event) {
+            event.preventDefault();
+
+            $("#loadingContainer").show();
+
+            var values = new FormData($(this)[0]);
+            $.ajax({
+                url: "handlers/NewsLetterHandler.php",
+                type: "post",
+                data: values,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    console.log(data);
+                    if (data == 1) {
+                      if ($("#lang").val() == "en") {
+                        swal({
+                          title: "Email Submitted",
+                          type: "success",
+                          confirmButtonText: "Close"
+                      });
+                      } else{
+                        swal({
+                          title: "تم الاشتراك",
+                          type: "success",
+                          confirmButtonText: "اغلاق"
+                      });
+                      }} else{
+                        if ($("#lang").val() == "en") {
+                        swal({
+                            title: "Email Existed",
+                            text: "This Email Existed",
+                            type: "error",
+                            confirmButtonText: "Close"
+                        });
+                      } else {
+                        swal({
+                            title: "خطأ",
+                            text: "هذا البريد الالكتروني موجود بالفعل",
+                            type: "error",
+                            confirmButtonText: "اغلاق"
+                        });
+                      }}
+                    $('#letterForm')[0].reset();
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.responseText);
+
+                    $("#loadingContainer").hide();
+                }
+            });
+        });
+
           </script>
 </html>
