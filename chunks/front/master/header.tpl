@@ -58,7 +58,7 @@
                 <li><a href="pdfs.php"> [[+pdfs]] </a></li>
               </ul>
             </li>
-            <li><a href="/static/Instructors.html"> [[+trainers]] </a></li>
+            <li><a href="members.php"> [[+trainers]] </a></li>
             <li><a href="#"> [[+services]] </a></li>
             <li><a href="contactUs.php"> [[+contactUs]] </a></li>
             <li><a href="#modal2"> [[+register]] </a></li>
@@ -90,7 +90,7 @@
         </li>
       </ul>
     </li>
-    <li><a href="/static/Instructors.html"> [[+trainers]] </a></li>
+    <li><a href="members.php"> [[+trainers]] </a></li>
     <li><a href="#"> [[+services]] </a></li>
     <li><a href="contactUs.php"> [[+contactUs]] </a></li>
     <li><a href="#modal2"> [[+register]] </a></li>
