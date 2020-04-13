@@ -48,7 +48,7 @@
         <div class="l9 s6 m8 col menu">
           <ul>
             <li class="active"><a href="index.php"> [[+home]] </a></li>
-            <li><a href="#"> [[+aboutUs]] </a></li>
+            <li><a href="aboutUs.php"> [[+aboutUs]] </a></li>
             <li><a href="events.php"> [[+events]] </a></li>
             <li>
               <a href="#"> [[+resources]] </a>
@@ -74,7 +74,7 @@
 
   <ul id="slide-out" class="side-nav">
     <li class="active"><a href="index.php"> [[+home]] </a></li>
-    <li><a href="#"> [[+aboutUs]]</a></li>
+    <li><a href="aboutUs.php"> [[+aboutUs]]</a></li>
     <li><a href="events.php"> [[+events]] </a></li>
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">

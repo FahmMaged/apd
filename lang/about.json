@@ -1,22 +1,11 @@
 {
-	"pageTitle":
-	{
-		"en":"About Us","ar":"عن اللجنة"
-	},
+  "pageTitle": {
+    "en": "About Us",
+    "ar": "من نحن"
+  },
 
-	"headerTitle":
-	{
-		"en":"About Us","ar":"معلومات عن اللجنة"
-	},
-
-	"members":
-	{
-		"en":"Members","ar":"الأعضاء"
-	},
-
-
-	"parteners":
-	{
-		"en":"Parteners","ar":"الشركاء"
-	}
+  "headerTitle": {
+    "en": "About Us",
+    "ar": " من نحن "
+  }
 }

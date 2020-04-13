@@ -9,21 +9,6 @@
     "ar": "الفاعليات"
   },
 
-  "dateText": {
-    "en": "Month",
-    "ar": "الشهر"
-  },
-
-  "timeText": {
-    "en": "Time",
-    "ar": "التوقيت"
-  },
-
-  "locationText": {
-    "en": "Location",
-    "ar": "المكان"
-  },
-
   "details": {
     "en": "Details",
     "ar": "شرح الحدث"

@@ -1,76 +1,29 @@
-[[+head]]
-[[+header]]
+[[+head]] [[+header]]
 
-<section class="headerInner" style="background-image: url('[[+mainImage]]')">
-    <div class="overlay">
-        <div class="titles">
-            <h3>[[+headerTitle]]
-            </h3>
-        </div>
-    </div>
+<section class="l12 s12 m12 col no_padding page_name">
+  <div class="l12 s12 m12 col inner_headline center">
+    <h1>[[+headerTitle]]</h1>
+  </div>
+  <img src="[[+mainImage]]" />
+</section>
+<!-- ==============================================    End Body     =============================================== -->
+<section class="sections about1">
+  <div class="rows">
+    <div class="l12 s12 m12 col no_padding ">
+      <div class="l7 m6 s12 col  animated fadeInRight ">
+        <h2>[[+firstTitle]]</h2>
 
+        [[+firstDescription]]
+      </div>
+      <div class="l5 m6 s12 col center animated fadeInLeft">
+        <div class="video_box">
+          <img src="[[+firstImage]]" />
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
-<!-- HEADER-END -->
-<section class="overview">
-    <div class="container">
-        <div class="row" id="overView">
-            <div class="titles">
-                <h3>[[+firstTitle]]
-                </h3>
-            </div>
-           
-            <div class="col s12 m7 l7">
-                <p> [[+firstDescription]] </p>
 
-            </div>
-            <div class="col s12 m5 l5">
-                <img src="[[+firstImage]]">
-            </div>
-        </div>
-        <div class="row">
-               
-            <div class="col s12 m7 l7 textImage2">
-                <h2>[[+secondTitle]]</h2>
-                [[+secondDescription]]
-            </div>
-            <div class="col s12 m5 l5">
-                    <img src="[[+secondImage]]">
-                </div>
-          
-        </div>
-    </div>
-</section>
-<section class="vision" id="vision">
-    <div class="overlay">
-        <div class="container">
-            <div class="row">
-                <div class="titles">
-                    <h3>[[+thirdTitle]]
-                    </h3>
-                </div>
-                <p>
-                    [[+thirdDescription]]
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="vision" >
-    <div class="overlay">
-        <div class="container" id="mission">
-            <div class="row">
-                <div class="titles">
-                    <h3>[[+fourthTitle]]
-                    </h3>
-                </div>
-                <p>
-                    [[+fourthDescription]]
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-[[+membersTPL]]
-[[+partenersTPL]]
+<section class="testimonial sections" id="testimonialSection"></section>
 
-[[+footer]]
+[[+footer]] [[+scripts]]
