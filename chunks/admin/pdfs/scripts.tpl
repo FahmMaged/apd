@@ -49,6 +49,11 @@
       $("#loadingContainer").show();
 
       var values = new FormData($(this)[0]);
+      var forMembers = 0;
+      if ($("#forMembers").is(":checked")) {
+        forMembers = 1;
+      }
+      values.append("forMembers", forMembers);
 
       $.ajax({
         url: "../handlers/PdfsHandler.php",
@@ -109,6 +114,11 @@
       $("#loadingContainer").show();
 
       var values = new FormData($(this)[0]);
+      var editForMembers = 0;
+      if ($("#edit_forMembers").is(":checked")) {
+        editForMembers = 1;
+      }
+      values.append("edit_forMembers", editForMembers);
 
       $.ajax({
         url: "../handlers/PdfsHandler.php",
@@ -156,7 +166,9 @@
         $("#edit_title_ar").val(item.Title_ar);
         $("#edit_title_en").val(item.Title_en);
 
-        // $("#edit_link").val(item.Link);
+        if (item.ForMembers == 1) {
+          $("#edit_forMembers").prop("checked", true);
+        }
         $("#edit_sort").val(item.Sort);
 
         Materialize.updateTextFields();

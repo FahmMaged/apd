@@ -85,6 +85,13 @@
         </div>
 
         <div class="input-field col s12">
+          <p>
+            <input type="checkbox" class="filled-in" id="forMembers" />
+            <label for="forMembers">For Members</label>
+          </p>
+        </div>
+
+        <div class="input-field col s12">
           <input name="link" type="text" class="validate" />
           <label for="dir-link">Link*</label>
         </div>
@@ -161,6 +168,13 @@
               Arabic Title*
             </label>
           </div>
+        </div>
+
+        <div class="input-field col s12">
+          <p>
+            <input type="checkbox" class="filled-in" id="edit_forMembers" />
+            <label for="edit_forMembers">For Members</label>
+          </p>
         </div>
 
         <div class="input-field col s12">

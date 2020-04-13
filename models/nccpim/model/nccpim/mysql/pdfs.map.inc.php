@@ -9,6 +9,7 @@ $xpdo_meta_map['Pdfs']= array (
     'ID' => NULL,
     'Title_en' => NULL,
     'Title_ar' => NULL,
+    'ForMembers' => 0,
     'Link' => NULL,
     'Sort' => 1,
     'Image' => NULL,
@@ -41,6 +42,14 @@ $xpdo_meta_map['Pdfs']= array (
       'precision' => '255',
       'phptype' => 'string',
       'null' => true,
+    ),
+    'ForMembers' => 
+    array (
+      'dbtype' => 'tinyint',
+      'precision' => '4',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
     ),
     'Link' => 
     array (

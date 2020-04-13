@@ -17,7 +17,7 @@ $xpdo_meta_map['News']= array (
     'PublishDate' => NULL,
     'InHome' => NULL,
     'IsActive' => NULL,
-    'IsFeature' => 0,
+    'ForMembers' => 0,
     'Sort' => 1,
     'Alias_en' => NULL,
     'Alias_ar' => NULL,
@@ -104,7 +104,7 @@ $xpdo_meta_map['News']= array (
       'phptype' => 'integer',
       'null' => false,
     ),
-    'IsFeature' => 
+    'ForMembers' => 
     array (
       'dbtype' => 'tinyint',
       'precision' => '2',

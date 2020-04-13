@@ -17,7 +17,7 @@ class PdfsHelper extends BaseHelper
         $urlHelper = new URLHelper();
         $fields['Title_en']       = $_POST['title_en'];
         $fields['Title_ar']       = $_POST['title_ar'];
-        // $fields['Link']           = $_POST['link'];
+        $fields['ForMembers']     = $_POST['forMembers'];
         $fields['Sort']           = $_POST['sort'];
         $fields['UpdatedBy']      = $_SESSION['AdminUser']['Name'];
         $fields['CreatedBy']      = $_SESSION['AdminUser']['Name'];
@@ -117,7 +117,7 @@ class PdfsHelper extends BaseHelper
         
         $fields['Title_en']       = $_POST['edit_title_en'];
         $fields['Title_ar']       = $_POST['edit_title_ar'];
-        // $fields['Link']           = $_POST['edit_link'];
+        $fields['ForMembers']     = $_POST['edit_forMembers'];
         $fields['Sort']           = $_POST['edit_sort'];
         $fields['UpdatedBy']      = $_SESSION['AdminUser']['Name'];
         $fields['UpdatedOn']      = $updatedOn;

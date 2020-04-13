@@ -226,7 +226,7 @@
       data-delay="50"
       data-tooltip="Videos"
     >
-      <a href="pdfs.php">
+      <a href="videos.php">
         <i class="material-icons">accessibility</i>
         <p class="menu-links">Videos</p>
       </a>

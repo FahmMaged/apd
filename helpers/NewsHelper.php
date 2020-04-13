@@ -43,7 +43,7 @@ class NewsHelper extends BaseHelper
       $fields['Intro_ar']    = $_POST['intro_ar'];
       $fields['InHome']      = $inHome;
       $fields['IsActive']    = $_POST['isActive'];
-      // $fields['IsFeature']   = $_POST['isFeature'];
+      $fields['ForMembers']  = $_POST['forMembers'];
       $fields['CreatedOn']   = $createdOn;
       if (!empty($_POST['description_en'])) {
         $fields['Description_en'] = $_POST['description_en'];
@@ -180,7 +180,7 @@ class NewsHelper extends BaseHelper
                       'PublishDate'    => $_POST['edit_publish_date'],
                       'InHome'         => $_POST['edit_inHome'],
                       'IsActive'       => $_POST['edit_isActive'],
-                      // 'IsFeature'      => $_POST['edit_isFeature'],
+                      'ForMembers'     => $_POST['edit_forMembers'],
                       'Sort'           => $_POST['edit_sort'],
                       'UpdatedOn'      => $updatedOn,
                       'Alias_en'       =>($_POST['edit_alias_en']!="")? $this->urlHelper->getAliasFormat($_POST['edit_alias_en']) : $this->urlHelper->getAliasFormat($_POST['edit_title_en']),

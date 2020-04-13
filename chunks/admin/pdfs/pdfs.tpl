@@ -84,10 +84,12 @@
           </div>
         </div>
 
-        <!-- <div class="input-field col s12">
-          <input name="link" type="text" class="validate" />
-          <label for="dir-link">Link*</label>
-        </div> -->
+        <div class="input-field col s12">
+          <p>
+            <input type="checkbox" class="filled-in" id="forMembers" />
+            <label for="forMembers">For Members</label>
+          </p>
+        </div>
 
         <div class="input-field col s12">
           <input name="sort" type="number" />
@@ -163,10 +165,12 @@
           </div>
         </div>
 
-        <!-- <div class="input-field col s12">
-          <input name="edit_link" id="edit_link" type="text" class="validate" />
-          <label for="dir-edit_link">Link*</label>
-        </div> -->
+        <div class="input-field col s12">
+          <p>
+            <input type="checkbox" class="filled-in" id="edit_forMembers" />
+            <label for="edit_forMembers">Is Active</label>
+          </p>
+        </div>
 
         <div class="input-field col s12">
           <input name="edit_sort" id="edit_sort" type="number" />

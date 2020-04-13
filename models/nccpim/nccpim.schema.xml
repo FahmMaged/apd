@@ -375,7 +375,7 @@
 		<field key="PublishDate" dbtype="date" phptype="date" null="false" />
 		<field key="InHome" dbtype="tinyint" precision="1" phptype="integer" null="false" />
 		<field key="IsActive" dbtype="tinyint" precision="1" phptype="integer" null="false" />
-		<field key="IsFeature" dbtype="tinyint" precision="2" phptype="integer" null="false" default="0" />
+		<field key="ForMembers" dbtype="tinyint" precision="2" phptype="integer" null="false" default="0" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
 		<field key="Alias_en" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="Alias_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -411,6 +411,7 @@
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
 		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="ForMembers" dbtype="tinyint" precision="4" phptype="integer" null="false" default="0" />
 		<field key="Link" dbtype="varchar" precision="250" phptype="string" null="true" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
 		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
@@ -494,6 +495,7 @@
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
 		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="ForMembers" dbtype="tinyint" precision="4" phptype="integer" null="false" default="0" />
 		<field key="Link" dbtype="varchar" precision="250" phptype="string" null="true" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
 		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />

@@ -19,6 +19,7 @@ class VideosHelper extends BaseHelper
         $fields['Title_ar']       = $_POST['title_ar'];
         $fields['Link']           = $_POST['link'];
         $fields['Sort']           = $_POST['sort'];
+        $fields['ForMembers']     = $_POST['forMembers'];
         $fields['UpdatedBy']      = $_SESSION['AdminUser']['Name'];
         $fields['CreatedBy']      = $_SESSION['AdminUser']['Name'];
         $fields['CreatedOn']      = $createdOn;
@@ -122,6 +123,7 @@ class VideosHelper extends BaseHelper
         $fields['Title_ar']       = $_POST['edit_title_ar'];
         $fields['Link']           = $_POST['edit_link'];
         $fields['Sort']           = $_POST['edit_sort'];
+        $fields['ForMembers']     = $_POST['edit_forMembers'];
         $fields['UpdatedBy']      = $_SESSION['AdminUser']['Name'];
         $fields['UpdatedOn']      = $updatedOn;
         
