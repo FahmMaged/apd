@@ -173,11 +173,14 @@ class VideosHelper extends BaseHelper
       $onclickFn  = 'fnGetVideos';
       $mediaTPL   = '';
       $lang       = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
-      $langFile   = json_decode(file_get_contents('../lang/books.json'), true);
+      $logged     = (isset($_POST['logged'])) ? $_POST['logged'] : 0;
 
-      $videos = $xpdo->getCollection('Videos');
+      $query = $xpdo->newQuery('Videos');
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
+      $videos = $xpdo->getCollection('Videos', $query);
       $numrows      = count($videos);
-
 
       $pagination='';
       $rowsperpage = 1;
@@ -200,8 +203,9 @@ class VideosHelper extends BaseHelper
       $offset = ($currentpage - 1) * $rowsperpage;
 
       $query = $xpdo->newQuery('Videos');
-
-      // $query->sortby('Sort', 'ASC');
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
       $query->sortby('Sort', 'ASC');
       $query->limit($rowsperpage,$offset);
       $videos = $xpdo->getCollection('Videos', $query);

@@ -2,6 +2,14 @@
 require_once('helpers/LoadChunk.php');
 require_once('helpers/AdminUsersHelper.php');
 require_once('helpers/URLHelper.php');
+require_once('helpers/MembersHelper.php');
+
+if (MembersHelper::IsLoggedIn())
+{
+	$logged = 1;
+} else{
+	$logged = 0;
+}
 
 $urlHelper    = new URLHelper();
 // Get Main Images

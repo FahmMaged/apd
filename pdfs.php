@@ -22,6 +22,7 @@ $scripts     = new LoadChunk('scripts', 'front/pdfs', array(), '');
 $output = new LoadChunk('pdfs', 'front/pdfs', array(
 											  		   'head'               => $head,
 											  		   'header'             => $header,
+											  		   'logged'             => $logged,
 											  		   'footer'             => $footer,
 											  		   'scripts'            => $scripts,
 											  		   'pageTitle'          => $langFile['pageTitle'][$lang],

@@ -21,7 +21,8 @@ $scripts     = new LoadChunk('scripts', 'front/videos', array(), '');
 
 $output = new LoadChunk('videos', 'front/videos', array(
 											  		   'head'               => $head,
-											  		   'header'             => $header,
+														 'header'             => $header,
+														 'logged'             => $logged,
 											  		   'footer'             => $footer,
 											  		   'scripts'            => $scripts,
 											  		   'pageTitle'          => $langFile['pageTitle'][$lang],

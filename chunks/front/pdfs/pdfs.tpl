@@ -1,6 +1,7 @@
 [[+head]] [[+header]]
 
 <section class="l12 s12 m12 col no_padding page_name">
+  <input type="hidden" id="logged" name="logged" value="[[+logged]]" />
   <div class="l12 s12 m12 col inner_headline center">
     <h1>[[+pageTitle]]</h1>
   </div>

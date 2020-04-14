@@ -14,7 +14,8 @@
       data: {
         operation: "getAllPdfsFront",
         currentpage: toPage,
-        lang: $("#lang").val()
+        lang: $("#lang").val(),
+        logged: $("#logged").val()
       },
       success: function(data) {
         var data = JSON.parse(data);

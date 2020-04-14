@@ -168,9 +168,14 @@ class PdfsHelper extends BaseHelper
       $onclickFn  = 'fnGetPdfs';
       $mediaTPL   = '';
       $lang       = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
-      $langFile   = json_decode(file_get_contents('../lang/books.json'), true);
+      $logged     = (isset($_POST['logged'])) ? $_POST['logged'] : 0;
 
-      $pdfs = $xpdo->getCollection('Pdfs');
+      $query = $xpdo->newQuery('Pdfs');
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
+      $pdfs = $xpdo->getCollection('Pdfs', $query);
+
       $numrows      = count($pdfs);
 
 
@@ -195,8 +200,9 @@ class PdfsHelper extends BaseHelper
       $offset = ($currentpage - 1) * $rowsperpage;
 
       $query = $xpdo->newQuery('Pdfs');
-
-      // $query->sortby('Sort', 'ASC');
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
       $query->sortby('Sort', 'ASC');
       $query->limit($rowsperpage,$offset);
       $pdfs = $xpdo->getCollection('Pdfs', $query);

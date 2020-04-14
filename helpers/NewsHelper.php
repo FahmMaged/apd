@@ -334,11 +334,14 @@ class NewsHelper extends BaseHelper
       $onclickFn   = 'fnGetNews';
       $newsChunk   = '';
       $lang        = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
-      $langFile    = json_decode(file_get_contents('../lang/books.json'), true);
+      $logged     = (isset($_POST['logged'])) ? $_POST['logged'] : 0;
 
       // $news = $xpdo->getCollection('News');
       
       $query = $xpdo->newQuery('News');
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
       $query->where(array(
         'IsActive'       => 1,
         'PublishDate:<=' => $currentDate
@@ -367,6 +370,9 @@ class NewsHelper extends BaseHelper
       $offset = ($currentpage - 1) * $rowsperpage;
 
       $query = $xpdo->newQuery('News');
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
       $query->where(array(
         'IsActive'       => 1,
         'PublishDate:<=' => $currentDate
