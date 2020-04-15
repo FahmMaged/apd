@@ -10,16 +10,16 @@
 <section class="inner_body instructors">
   <div class="rows">
     <div class="filter">
-      <div class="s12 l5 m5 col input-field ">
-        <select id="cityID">
-          <option value="" disabled selected>[[+country]]</option>
+      <div class="s12 l5 m5 col input-field " id="cityID">
+        <select>
+          <option value="0" selected>[[+country]]</option>
           [[+countriesTPL]]
         </select>
       </div>
 
-      <div class="s12 l5 m5 col input-field ">
-        <select id="locationID">
-          <option value="0" disabled selected>[[+city]] </option>
+      <div class="s12 l5 m5 col input-field " id="locationID">
+        <select>
+          <option value="0" selected>[[+city]] </option>
           [[+locationsTPL]]
         </select>
       </div>

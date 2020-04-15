@@ -1,15 +1,15 @@
 <script type="text/javascript">
   var currPage = parseInt($("#currPage").val());
+  var locationID;
+  var cityID;
   $(document).ready(function() {
     fnGetMembers(1);
 
-    console.log("HERE");
-
-    $("#locationID").change(function() {
-      locationID = $("#locationID").val();
-      // getCoursesList(catID);
-      console.log("HERE11");
-      console.log(locationID);
+    $("#locationID select").on("change", function() {
+      locationID = $(this).val();
+    });
+    $("#cityID select").on("change", function() {
+      cityID = $(this).val();
     });
   });
 
@@ -18,22 +18,14 @@
     $("#loadingContainer").show();
     $("#loadMore").hide();
 
-    var location = 0;
-    console.log($("#locationID").val());
-
-    location = $("#locationID").val();
-
-    var city = 0;
-    city = $("#cityID").val();
-
     $.ajax({
       url: "handlers/MembersHandler.php",
       type: "POST",
       data: {
         operation: "getAllMembersFront",
         currentpage: toPage,
-        location: location,
-        city: city,
+        location: locationID,
+        city: cityID,
         lang: $("#lang").val()
       },
       success: function(data) {
