@@ -31,6 +31,10 @@
     "en": "register",
     "ar": "تسجيل"
   },
+  "logout": {
+    "en": "Logout",
+    "ar": "خروج"
+  },
   "email": { "en": "info@apdegypt.com", "ar": "info@apdegypt.com" },
   "phone": { "en": "0123456789", "ar": "0123456789" },
   "phoneText": { "en": "Phone number", "ar": "رقم الهاتف" },

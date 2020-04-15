@@ -32,19 +32,15 @@
             <option value="0" disabled selected>Choose File</option>
             <option value="about.json">About</option>
             <option value="news.json">Aricles</option>
-            <!-- <option value="awareness.json">Awareness</option> -->
-            <!-- <option value="books.json">Books</option> -->
             <option value="contactUs.json">Contact Us</option>
             <option value="events.json">Events</option>
             <option value="main.json">General</option>
             <option value="home.json">Home Page</option>
             <option value="headForms.json">Head Form</option>
-            <!-- <option value="media.json">Media</option> -->
             <option value="members.json">Members</option>
-
-            <!-- <option value="ourWork.json">Our Work</option> -->
-            <!-- <option value="questions.json">Questions</option> -->
+            <option value="pdfs.json">PDFs</option>
             <option value="videos.json">Videos</option>
+            <option value="subscribe.json">Subscribe</option>
           </select>
           <label>Choose File</label>
         </div>

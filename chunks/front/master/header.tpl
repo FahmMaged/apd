@@ -61,7 +61,8 @@
             <li><a href="members.php"> [[+trainers]] </a></li>
             <li><a href="#"> [[+services]] </a></li>
             <li><a href="contactUs.php"> [[+contactUs]] </a></li>
-            <li><a href="#modal2"> [[+register]] </a></li>
+            <li [[+hideLogin]]><a href="#modal2"> [[+register]] </a></li>
+            <li [[+hideLogout]]><a onclick="logout()"> [[+logout]] </a></li>
           </ul>
 
           <a href="#" data-activates="slide-out" class="button-collapse"
@@ -93,7 +94,8 @@
     <li><a href="members.php"> [[+trainers]] </a></li>
     <li><a href="#"> [[+services]] </a></li>
     <li><a href="contactUs.php"> [[+contactUs]] </a></li>
-    <li><a href="#modal2"> [[+register]] </a></li>
+    <li [[+hideLogin]]><a href="#modal2"> [[+register]] </a></li>
+    <li [[+hideLogout]]><a href="#"> [[+logout]] </a></li>
   </ul>
 
   <!-- Modal Structure -->
@@ -350,6 +352,7 @@
       });
     });
 
+    // Change Lang
     function changeLanguage(lang) {
       $("#loadingContainer").show();
 
@@ -365,6 +368,31 @@
         .done(function(data) {
           // return;
           window.location.href = data;
+        })
+        .fail(function() {
+          console.log("error");
+        })
+        .always(function() {
+          $("#loadingContainer").hide();
+        });
+    }
+
+    // Logout
+    function logout() {
+      $("#loadingContainer").show();
+
+      $.ajax({
+        url: "handlers/MembersHandler.php",
+        type: "POST",
+        data: {
+          operation: "logout"
+        }
+      })
+        .done(function(data) {
+          // return;
+          if (data) {
+            location.reload();
+          }
         })
         .fail(function() {
           console.log("error");
@@ -568,3 +596,4 @@
       });
     });
   </script>
+</div>

@@ -7,8 +7,12 @@ require_once('helpers/MembersHelper.php');
 if (MembersHelper::IsLoggedIn())
 {
 	$logged = 1;
+	$hideLogin = 'hidden';
+	$hideLogout = '';
 } else{
 	$logged = 0;
+	$hideLogin = '';
+	$hideLogout = 'hidden';
 }
 
 $urlHelper    = new URLHelper();
@@ -74,6 +78,8 @@ $langFileSubscribe = json_decode(file_get_contents('lang/subscribe.json'), true)
 $noData    = $langFile['noData'][$lang];
 $header      = new LoadChunk('header', 'front/master', array(
 												'lang'      => $lang,
+												'hideLogin'    => $hideLogin,
+												'hideLogout'   => $hideLogout,
 												'locationsTPL' => $locationsTPL,
 												'countriesTPL' => $countriesTPL,
 												'home'      => $langFile['home'][$lang],
@@ -85,6 +91,7 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'services'  => $langFile['services'][$lang],
 												'events'    => $langFile['events'][$lang],
 												'register'  => $langFile['register'][$lang],
+												'logout'    => $langFile['logout'][$lang],
 												'phone'     => $langFile['phone'][$lang],
 												'videos'    => $langFile['videos'][$lang],
 												'email'     => $langFile['email'][$lang],

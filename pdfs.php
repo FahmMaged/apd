@@ -26,7 +26,7 @@ $output = new LoadChunk('pdfs', 'front/pdfs', array(
 											  		   'footer'             => $footer,
 											  		   'scripts'            => $scripts,
 											  		   'pageTitle'          => $langFile['pageTitle'][$lang],
-											  		   'mainImage'          => $mainImage->get('Media'),
+											  		   'mainImage'          => $mainImage->get('Books'),
 											  		   
 										           ), '');
 $output = $urlHelper->changeToAlias($output);

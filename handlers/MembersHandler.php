@@ -28,6 +28,10 @@ if(isset($_POST['operation']))
 		case 'login':
             echo $membersHelper->Login();
 			break;
+
+		case 'logout':
+            echo $membersHelper->Logout();
+			break;
 			
 		case 'getAllMembersFront':
             echo $membersHelper->GetAllMembersFront();
