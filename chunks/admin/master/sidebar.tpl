@@ -154,7 +154,7 @@
         <p class="menu-links">Alternatives</p>
       </a>
     </li> -->
-    <li
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -164,8 +164,8 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">About Members</p>
       </a>
-    </li>
-    <li
+    </li> -->
+    <!-- <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
@@ -175,7 +175,7 @@
         <i class="material-icons">view_carousel</i>
         <p class="menu-links">About Parteners</p>
       </a>
-    </li>
+    </li> -->
     <li
       class="tooltipped"
       data-position="right"

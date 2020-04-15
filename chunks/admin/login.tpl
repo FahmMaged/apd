@@ -7,7 +7,7 @@
         <div class="large-6 columns large-centered pt80">
           <div class="large-12 columns">
             <div class="company-logo">
-              <img class="center-block mb30" src="img/logo.png" />
+              <img class="center-block mb30" src="../images/logo.png" />
             </div>
             <h4 class="mb30 center">Login to APD Admin Panel</h4>
           </div>
