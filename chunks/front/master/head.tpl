@@ -5,7 +5,7 @@
 		Title and basic Metas
 		=============================================== -->
     <meta charset="utf-8" />
-    <!-- <base href="https://[[+baseUrl]]/" /> -->
+     <base href="https://[[+baseUrl]]/" /> 
     <title>Arab Positive Discipline</title>
     <meta name="Arab Positive Discipline" content="" />
     <meta name="Arab Positive Discipline" content="Arab Positive Discipline" />
