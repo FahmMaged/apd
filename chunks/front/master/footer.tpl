@@ -17,8 +17,10 @@
         </div>
       </div>
     </div>
+  </section>
+  
     <!-- Modal Structure -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal newsLetterModal">
       <form id="letterForm">
       <input type="hidden" name="operation" value="addMail">
       <a class=" modal-action modal-close waves-effect waves-green btn-flat">X</a>
@@ -39,7 +41,6 @@
       </form>
     </div>
     <!-- Modal Structure -->
-  </section>
   <footer class="l12 s12 m12 col  no_padding ">
     <div class="rows">
         
@@ -101,6 +102,11 @@
         <script>
             $(document).ready(function() {
                 $('select').material_select();
+                $('p').each(function() {
+                    var $this = $(this);
+                    if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+                        $this.remove();
+                });
             });
         </script>
           <script>

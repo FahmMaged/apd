@@ -5,7 +5,7 @@
 		Title and basic Metas
 		=============================================== -->
     <meta charset="utf-8" />
-    <base href="https://[[+baseUrl]]/" />
+    <!-- <base href="https://[[+baseUrl]]/" /> -->
     <title>Arab Positive Discipline</title>
     <meta name="Arab Positive Discipline" content="" />
     <meta name="Arab Positive Discipline" content="Arab Positive Discipline" />
@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="css/materialize.css" />
     <!-- Foundation -->
     <link rel="stylesheet" href="scss/style.css" />
+    <link rel="stylesheet" href="scss/style-en.css" />
     <!-- Main stylesheet -->
     <link rel="stylesheet" href="css/animate.css" />
     <!-- Main stylesheet -->

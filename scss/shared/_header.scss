@@ -93,8 +93,7 @@ header {
                 text-align: center;
                 position: relative;
 
-                &:last-child {
-
+                &:nth-last-child(2) {
                     color: #418cb5;
 
                     a {
@@ -183,7 +182,12 @@ header {
             }
         }
     }
-
+    a#langLink {
+        margin-top: 4px;
+        display: inline-block;
+        margin: 0px 10px;
+        margin-top: 4px;
+    }
     .header_cart {
         text-align: center;
         margin-top: 35px;

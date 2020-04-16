@@ -8,4 +8,5 @@
   <p>
     [[+description]]
   </p>
+  <p> </p>
 </div>

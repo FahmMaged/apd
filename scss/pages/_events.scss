@@ -47,7 +47,23 @@
    } 
    
 } 
+.disclaimer{
+    text-align: center;
+    margin-top: -35px;
+    margin-bottom: 20px;
+    p{
+        text-align: center;
+        font-size: 18px;
+        columns: #888;
 
+    }
+    .btn{
+        background-color: $main_color2;
+        margin-bottom: 25px;
+        border-radius: 30px;
+        float: initial;
+    }
+}
 .eventsInnerPage{
     h1{
         margin: 20px 0px;
@@ -119,6 +135,9 @@ font-size: 15px;
                 margin: 0px 10px;
             }
         }
+    }
+    .news_img {
+        text-align: center;
     }
     
 }

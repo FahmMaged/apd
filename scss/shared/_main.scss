@@ -178,10 +178,10 @@ h3.headline{
         background: rgba(0, 0, 0, 0.5);
         h1{
             color: #fff;
-        top: 40%;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
             position: relative;
         }
         .nav-wrapper {
@@ -262,5 +262,15 @@ iframe{
 @media only screen and  (min-width: 601px){
     .row .col.offset-m2 {
         margin-right: 16.66667%;
+    }
+}
+.newsLetterModal{
+    .modal-content {
+        padding: 24px;
+        float: left;
+        width: 100%;
+        .btn{
+            background-color: $main_color2;
+        }
     }
 }

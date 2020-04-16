@@ -1,4 +1,9 @@
 $(document).ready(function(){   
+    $('p').each(function() {
+        var $this = $(this);
+        if($this.html().replace(/\s|&nbsp;/g, '').length == 0)
+            $this.remove();
+    });
         $('.slider').slider({full_width: true}); 
        $(".search_btn").click(function(){  
          $(".search_box").toggleClass('view_search'); 

@@ -1,0 +1,66 @@
+*{
+    direction: ltr;
+}
+.row .col {
+    float: left !important;
+}
+header .social_media {
+    float: right;
+    margin: 0px;
+}
+header .menu > ul{
+    float: left;
+ > li {
+    float: left;
+}
+}
+header .social_media li {
+    float: right;
+}
+.the_slider .slider .slides li .caption {
+    top: calc(50% - 80px);
+    left: 25%;
+}
+.join h4 {
+    text-align: left;
+}
+.join p {
+    text-align: left;
+}
+footer .footer_social {
+    float: left;
+}
+span.caret {
+    left: initial !important;
+    right: 0 !important;
+}
+.instructors .teacher_box .bio .teacher_social {
+    float: left;
+}
+a#btnSend {
+    float: right !important;
+}
+.contact_info li span {
+    margin-left: 3%;
+    float: left;
+    text-align: left;
+}
+.contact_info li span i {
+    margin-left: 0px;
+    margin-right: 15px;
+}
+.contact_info li {
+    text-align: left;
+}
+.input-field label {
+    left: 0.5rem;
+    right: initial;
+}
+.modal .modal-content {
+    padding: 24px;
+    float: right;
+    width: 100%;
+}
+#addGLI .redBtn{
+    float: right !important;
+}
