@@ -25,10 +25,20 @@ $head        = new LoadChunk('head', 'front/master', array(
 
 $url = $baseHelper->Server()."/eventDetails.php?id=".$event->get('ID').'&alias='.$event->get('Alias_'.$lang);
 $encodedUrl = urlencode($url);
+
+if($logged == 1){
+	$hideRegister = 'hidden';
+	$hideJoin = '';
+} else{
+	$hideRegister = '';
+	$hideJoin = 'hidden';
+}
 $output = new LoadChunk('eventDetails', 'front/events', array(
 											  		   'head'        => $head,
 											  		   'header'      => $header,
 											  		   'lang'        => $lang,
+											  		   'hideRegister'=> $hideRegister,
+											  		   'hideJoin'    => $hideJoin,
 											  		   'title'       => $event->get('Title_'.$lang),
 											  		//    'location'    => $location->get('Title_'.$lang),
 													   'description' => $event->get('Description_'.$lang),
@@ -41,6 +51,7 @@ $output = new LoadChunk('eventDetails', 'front/events', array(
 											  		   'encodedUrl'  => $encodedUrl,
 											  		   'headerTitle' => $langFile['headerTitle'][$lang],
 											  		   'details'     => $langFile['details'][$lang],
+											  		   'register'     => $langFile['register'][$lang],
 											  		   'timeText'     => $langFile['timeText'][$lang],
 											  		   'date'         => $langFile['date'][$lang],
 											  		   'join'         => $langFile['join'][$lang],
@@ -48,10 +59,10 @@ $output = new LoadChunk('eventDetails', 'front/events', array(
 														'share'       => $langFile['share'][$lang],
 														'name'        => $langFile2['name'][$lang],
 														'email'       => $langFile2['email'][$lang],
-														'phoneNumber' => $langFile2['phoneNumber'][$lang],
+														'telephone'   => $langFile2['telephone'][$lang],
 														'send'        => $langFile2['send'][$lang],
 														'message'     => $langFile2['message'][$lang],
-											  		   'mainImage'   => $mainImage->get('Events'),
+											  		   'mainImage'    => $mainImage->get('Events'),
 										           ), '');
 $output = $urlHelper->changeToAlias($output);
 echo $output;

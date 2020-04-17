@@ -80,7 +80,8 @@
                                                 </span>
                                     </div>
                                 </li> -->
-                                <button  data-target="modal22" class="btn modal-trigger waves-effect "> [[+join]] </button>
+                                <button  data-target="modal22" class="btn modal-trigger waves-effect "[[+hideJoin]]> [[+join]] </button>
+                                <button  data-target="modal2" class="btn modal-trigger waves-effect " [[+hideRegister]]> [[+register]] </button>
                             </ul>
                         </div">
                     </div>  
@@ -107,7 +108,7 @@
                                     </div>
                                     <div class="input-field col l6 m12 s12">
                                     <input id="phone" name="phone"  type="text" class="validate">
-                                    <label for="phone">[[+phoneNumber]]</label>
+                                    <label for="phone">[[+telephone]]</label>
                                     </div>
                                 </div> 
                                 <div class="row">

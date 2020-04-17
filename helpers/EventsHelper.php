@@ -71,21 +71,101 @@ class EventsHelper extends BaseHelper
              else
                $fields['Image'] = $response->message;
             // save image to images
-            if($responseI->res == 0)
+            // if($responseI->res == 0)
+            //  {
+            //   return UtilityHelper::Response('error',$responseI->message);
+            //  }
+            //  else{
+            //   $item = $xpdo->newObject('Images');
+            //   $fields2['Title_en']   = $_POST['title_en'];
+            //   $fields2['Title_ar']   = $_POST['title_ar'];
+            //   $fields2['UpdatedBy']  = $_SESSION['AdminUser']['Name'];
+            //   $fields2['CreatedBy']  = $_SESSION['AdminUser']['Name'];
+            //   $fields2['CreatedOn']  = $createdOn;
+            //   $fields2['Image']      = $responseI->message;
+            //   $item->fromArray($fields2);
+            //   $item->save();
+            //  }
+        }
+
+      $cat_obj->fromArray($fields);
+      return $cat_obj->save();
+
+    }
+
+    public function AddFront() 
+    {
+      global $xpdo;
+      // $xpdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      date_default_timezone_set('Africa/Cairo'); 
+      $createdOn          = date("Y-m-d H:i:s");
+      $fields['Alias_en'] = ($_POST['alias_en']!="")? $this->urlHelper->getAliasFormat($_POST['alias_en']) : $this->urlHelper->getAliasFormat($_POST['title_en']);
+
+      $fields['Alias_ar'] = ($_POST['alias_ar']!="")? $this->urlHelper->getAliasFormat($_POST['alias_ar']) : $this->urlHelper->getAliasFormat($_POST['title_ar']);
+
+      if (!empty($_POST['publish_date'])) {
+        $publish_date          = $_POST['publish_date'];
+      } else{
+        date_default_timezone_set('Africa/Cairo');
+        $publish_date          = date("Y-m-d");
+      }
+
+      $cat_obj = $xpdo->newObject('Events');
+
+      $fields['Title_en']    = $_POST['title'];
+      $fields['Title_ar']    = $_POST['title'];
+      $fields['Time_en']    = $_POST['time'];
+      $fields['Time_ar']    = $_POST['time'];
+      $fields['Location_en']    = $_POST['location'];
+      $fields['Location_ar']    = $_POST['location'];
+      // $fields['StartTime']   = $_POST['start'];
+      // $fields['EndTime']     = $_POST['end'];
+      $fields['Sort']        = $_POST['sort'];
+      // $fields['InHome']      = $_POST['inHome'];
+      $fields['IsActive']    = $_POST['isActive'];
+      // $fields['LocationID']  = $_POST['locationID'];
+      $fields['CreatedOn']   = $createdOn;
+      if (!empty($_POST['description'])) {
+        $fields['Description_en'] = $_POST['description'];
+      }
+      
+      if (!empty($_POST['description'])) {
+        $fields['Description_ar'] = $_POST['description'];
+      }
+      
+      $fields['PublishDate']   = $publish_date;
+      $fields['UpdatedBy']     = $_SESSION['User']['Name'];
+      $fields['CreatedBy']     = $_SESSION['User']['Name'];
+
+      if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0){
+             $response  = $this->UploadFile($_FILES['picture'],'/../uploads/eventsImages/', $x = 500);
+             $responseI = $this->UploadFile($_FILES['picture'],'/../uploads/imagesItems/', $x = 800);
+             $responseI = json_decode($responseI);
+             $response  = json_decode($response);
+
+             if($response->res == 0)
              {
-              return UtilityHelper::Response('error',$responseI->message);
+              return UtilityHelper::Response('error',$response->message);
              }
-             else{
-              $item = $xpdo->newObject('Images');
-              $fields2['Title_en']   = $_POST['title_en'];
-              $fields2['Title_ar']   = $_POST['title_ar'];
-              $fields2['UpdatedBy']  = $_SESSION['AdminUser']['Name'];
-              $fields2['CreatedBy']  = $_SESSION['AdminUser']['Name'];
-              $fields2['CreatedOn']  = $createdOn;
-              $fields2['Image']      = $responseI->message;
-              $item->fromArray($fields2);
-              $item->save();
-             }
+             else
+               $fields['Image'] = $response->message;
+            // save image to images
+            // if($responseI->res == 0)
+            //  {
+            //   return UtilityHelper::Response('error',$responseI->message);
+            //  }
+            //  else{
+            //   $item = $xpdo->newObject('Images');
+            //   $fields2['Title_en']   = $_POST['title_en'];
+            //   $fields2['Title_ar']   = $_POST['title_ar'];
+            //   $fields2['UpdatedBy']  = $_SESSION['AdminUser']['Name'];
+            //   $fields2['CreatedBy']  = $_SESSION['AdminUser']['Name'];
+            //   $fields2['CreatedOn']  = $createdOn;
+            //   $fields2['Image']      = $responseI->message;
+            //   $item->fromArray($fields2);
+            //   $item->save();
+            //  }
         }
 
       $cat_obj->fromArray($fields);

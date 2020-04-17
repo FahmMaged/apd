@@ -44,118 +44,118 @@ $xpdo_meta_map['AboutUs']= array (
       'dbtype' => 'varchar',
       'precision' => '250',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FirstDescription_en' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FirstTitle_ar' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FirstDescription_ar' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'SecondTitle_ar' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'SecondTitle_en' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'SecondDescription_ar' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'SecondDescription_en' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'ThirdTitle_ar' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'ThirdTitle_en' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'ThirdDescription_ar' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'ThirdDescription_en' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FourthTitle_en' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FourthTitle_ar' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FourthDescription_en' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FourthDescription_ar' => 
     array (
       'dbtype' => 'text',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'FirstImage' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'SecondImage' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '255',
       'phptype' => 'string',
-      'null' => false,
+      'null' => true,
     ),
     'UpdatedOn' => 
     array (

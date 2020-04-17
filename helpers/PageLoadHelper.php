@@ -32,7 +32,7 @@ $_SESSION['lang'] = $lang;
 
 $enLink = '';
 if ($lang == 'en') {
-	$enLink = '<link type="text/css" rel="stylesheet" href="css/en.css" media="screen,projection" />';
+	$enLink = '<link rel="stylesheet" href="scss/style-en.css" />';
 }
 
 // Get locations
