@@ -19,48 +19,59 @@ $head        = new LoadChunk('head', 'front/master', array(
 														   'enLink'    => $enLink
 														   ), '');
 
-// Arabic months
-$months = array(
-	"January"   => "يناير",
-	"February"  => "فبراير",
-	"March"     => "مارس",
-	"April"     => "أبريل",
-	"May"       => "مايو",
-	"June"      => "يونيو",
-	"July"      => "يوليو",
-	"August"    => "أغسطس",
-	"September" => "سبتمبر",
-	"October"   => "أكتوبر",
-	"November"  => "نوفمبر",
-	"December"  => "ديسمبر"
-  );
-  // Months Select
-  $optins = "";
-  $i = 1;
-  foreach ($months as $en => $ar) {
-  if ($lang == 'ar') {
-		$month = $ar;
-  } else{
-   		$month = $en;
-  }
-  $options        .= new LoadChunk('option', 'front/events', array("i" => $i++, "month" => $month), '');
-}
+// // Arabic months
+// $months = array(
+// 	"January"   => "يناير",
+// 	"February"  => "فبراير",
+// 	"March"     => "مارس",
+// 	"April"     => "أبريل",
+// 	"May"       => "مايو",
+// 	"June"      => "يونيو",
+// 	"July"      => "يوليو",
+// 	"August"    => "أغسطس",
+// 	"September" => "سبتمبر",
+// 	"October"   => "أكتوبر",
+// 	"November"  => "نوفمبر",
+// 	"December"  => "ديسمبر"
+//   );
+//   // Months Select
+//   $optins = "";
+//   $i = 1;
+//   foreach ($months as $en => $ar) {
+//   if ($lang == 'ar') {
+// 		$month = $ar;
+//   } else{
+//    		$month = $en;
+//   }
+//   $options        .= new LoadChunk('option', 'front/events', array("i" => $i++, "month" => $month), '');
+// }
 
 $scripts        = new LoadChunk('scripts', 'front/events', array(), '');
 
-
+if($logged == 1){
+	$hideAdd = '';
+} else{
+	$hideAdd = 'hidden';
+}
 $output = new LoadChunk('events', 'front/events', array(
 											  		   'head'               => $head,
 											  		   'header'             => $header,
-											  		   'montheventsTPL'     => $montheventsTPL,
 											  		   'footer'             => $footer,
-											  		   'options'            => $options,
 											  		   'scripts'            => $scripts,
+											  		   'hideAdd'            => $hideAdd,
 											  		   'headerTitle'        => $langFile['headerTitle'][$lang],
 											  		   'dateText'           => $langFile['dateText'][$lang],
-											  		   'timeText'           => $langFile['timeText'][$lang],
+											  		   'youCanAddEvent'     => $langFile['youCanAddEvent'][$lang],
 											  		   'locationText'       => $langFile['locationText'][$lang],
-											  		   'filter'             => $langFile['filter'][$lang],
+											  		   'addEvent'           => $langFile['addEvent'][$lang],
+													   'eventTitle'         => $langFile['eventTitle'][$lang],
+											  		   'upload'             => $langFile['upload'][$lang],
+											  		   'eventImage'         => $langFile['eventImage'][$lang],
+											  		   'eventLocation'      => $langFile['eventLocation'][$lang],
+											  		   'eventTime'          => $langFile['eventTime'][$lang],
+											  		   'eventDetails'       => $langFile['eventDetails'][$lang],
+											  		   'submit'             => $langFile['submit'][$lang],
+											  		   'eventDate'          => $langFile['eventDate'][$lang],
 											  		   'mainImage'          => $mainImage->get('Events'),
 											  		   
 										           ), '');

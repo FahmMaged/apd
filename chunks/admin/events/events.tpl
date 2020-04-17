@@ -306,32 +306,6 @@
         </div>
 
         <div class="row">
-          <div class="input-field col s6">
-            <input
-              type="date"
-              class="timepicker"
-              name="edit_start"
-              id="edit_start"
-            />
-            <label for="dir-edit_start">
-              Start Time
-            </label>
-          </div>
-
-          <div class="input-field col s6">
-            <input
-              type="date"
-              class="timepicker"
-              name="edit_end"
-              id="edit_end"
-            />
-            <label for="dir-edit_end">
-              End Time
-            </label>
-          </div>
-        </div>
-
-        <div class="row">
           <div class="input-field col s12">
             <input
               type="date"

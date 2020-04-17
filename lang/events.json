@@ -27,5 +27,50 @@
   "join": {
     "en": "Join",
     "ar": "اشتراك"
+  },
+  "register": {
+    "en": "Register",
+    "ar": "تسجيل"
+  },
+  "addEvent": {
+    "en": "+ Add Event",
+    "ar": "اضافة فاعلية +"
+  },
+  "youCanAddEvent": {
+    "en": "You Can Add Event",
+    "ar": "يمكنك اضافة فاعلية"
+  },
+
+  "eventTitle": {
+    "en": "Event Title",
+    "ar": "عنوان الحدث"
+  },
+  "upload": {
+    "en": "Upload",
+    "ar": "رفع"
+  },
+  "eventImage": {
+    "en": "Event Image",
+    "ar": "صورة الحث"
+  },
+  "eventLocation": {
+    "en": "Event Location",
+    "ar": "مكان الحدث"
+  },
+  "eventTime": {
+    "en": "Event Time",
+    "ar": "وقت الحدث"
+  },
+  "eventDetails": {
+    "en": "Event Details",
+    "ar": "تفاصيل الحدث"
+  },
+  "submit": {
+    "en": "Submit",
+    "ar": "اضافة"
+  },
+  "eventDate": {
+    "en": "Event Date",
+    "ar": "تاريخ الحدث"
   }
 }

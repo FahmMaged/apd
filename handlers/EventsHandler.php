@@ -11,6 +11,9 @@ if(isset($_POST['operation']))
 		case 'add':
 			echo $eventsHelper->Add();
 			break;
+		case 'newEvent':
+			echo $eventsHelper->AddFront();
+			break;
 
 		case 'upload':
 			echo $eventsHelper->Upload();
