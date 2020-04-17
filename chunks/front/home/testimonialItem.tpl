@@ -5,8 +5,9 @@
   <div class="clearfix"></div>
   <h3>[[+name]]</h3>
   <h5>[[+job_title]]</h5>
-  <p>
+  <div class="mainP">
+  <p >
     [[+description]]
   </p>
-  <p> </p>
+  </div>
 </div>

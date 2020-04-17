@@ -5,6 +5,7 @@
     fnGetNewsSection();
     fnGetServicesSection();
     fnGetTestimonialSection();
+    $("p:empty").remove();
   });
   //get all items
   function fnGetSliderItems() {
@@ -23,6 +24,7 @@
         $("#sliderContainer").html(data.output);
         $(".slider").slider();
         $("#loadingContainer").hide();
+        $("p:empty").remove();
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);
@@ -46,6 +48,7 @@
 
         $("#aboutUsSection").html("");
         $("#aboutUsSection").html(data.output);
+        $("p:empty").remove();
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);
@@ -67,6 +70,7 @@
 
         $("#newsSection").html("");
         $("#newsSection").html(data.output);
+        $("p:empty").remove();
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);
@@ -89,6 +93,7 @@
 
         $("#servicesSection").html("");
         $("#servicesSection").html(data.output);
+        $("p:empty").remove();
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);
@@ -113,6 +118,7 @@
         // $(".eventDetails").css("width", event_width);
         $("#testimonialSection").html("");
         $("#testimonialSection").html(data.output);
+        $("p:empty").remove();
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);

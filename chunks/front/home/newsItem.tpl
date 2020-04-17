@@ -6,7 +6,7 @@
         [[+day]]
         <div>[[+month]]</div>
       </span>
-      <img src="[[+image]]" />
+      <div class="homeNewsImg" style="background-image:url('[[+image]]')"></div>
     </div>
     <div class="clearfix"></div>
     <h3>[[+title]]</h3>

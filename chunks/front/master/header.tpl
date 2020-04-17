@@ -1,3 +1,12 @@
+<div class="loader">
+  <div class="loading">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
 <div class="row">
   <header>
     <div class="s12 col top_header">
@@ -41,11 +50,11 @@
     </div>
     <div class="l12 col no_padding header-body">
       <div class="rows">
-        <div class="l3 s6 m4 col">
+        <div class="l3 s8 m4 col">
           <div class="logo"><img src="images/Logo.png" /></div>
         </div>
 
-        <div class="l9 s6 m8 col menu">
+        <div class="l9 s4 m8 col menu">
           <ul>
             <li class="active"><a href="index.php"> [[+home]] </a></li>
             <li><a href="aboutUs.php"> [[+aboutUs]] </a></li>

@@ -36,7 +36,7 @@
                                 <li>
                                     <h4> [[+date]]</h4>
                                     <div>  
-                                        <i class="fa fa-clock-o"></i>
+                                        <i class="fa fa-calendar"></i>
                                          [[+publishDate]]
                                     </div>
                                 </li>
@@ -50,7 +50,7 @@
                                 <li>
                                     <h4> [[+locationText]]</h4>
                                     <div>  
-                                        <i class="fa fa-clock-o"></i>
+                                        <i class="fa fa-map-marker"></i>
                                         [[+location]] 
                                     </div>
                                 </li>

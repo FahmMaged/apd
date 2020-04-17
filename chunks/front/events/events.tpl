@@ -16,7 +16,7 @@
 <!-- ==============================================    End Body     =============================================== -->
 <section class="inner_body eventsPage">
   <div class="rows">
-    <div class="l12 col no_padding">
+    <div class="l12 s12 m12 col no_padding">
       <div class="disclaimer"> 
         <p> يمكنك اضافة الفاعليات </p>
         <a href="#" data-target="modal22" class="waves-effect waves-light btn about_btn">
