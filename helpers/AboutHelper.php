@@ -40,20 +40,20 @@ class AboutHelper extends BaseHelper
                       'FirstDescription_en'  => $_POST['first_edit_description_en'],
                       'FirstDescription_ar'  => $_POST['first_edit_description_ar'],
 
-                      'SecondTitle_en'       => $_POST['second_edit_title_en'],
-                      'SecondTitle_ar'       => $_POST['second_edit_title_ar'],
-                      'SecondDescription_en' => $_POST['second_edit_description_en'],
-                      'SecondDescription_ar' => $_POST['second_edit_description_ar'],
+                    //   'SecondTitle_en'       => $_POST['second_edit_title_en'],
+                    //   'SecondTitle_ar'       => $_POST['second_edit_title_ar'],
+                    //   'SecondDescription_en' => $_POST['second_edit_description_en'],
+                    //   'SecondDescription_ar' => $_POST['second_edit_description_ar'],
 
-                      'ThirdTitle_en'       => $_POST['third_edit_title_en'],
-                      'ThirdTitle_ar'       => $_POST['third_edit_title_ar'],
-                      'ThirdDescription_en' => $_POST['third_edit_description_en'],
-                      'ThirdDescription_ar' => $_POST['third_edit_description_ar'],
+                    //   'ThirdTitle_en'       => $_POST['third_edit_title_en'],
+                    //   'ThirdTitle_ar'       => $_POST['third_edit_title_ar'],
+                    //   'ThirdDescription_en' => $_POST['third_edit_description_en'],
+                    //   'ThirdDescription_ar' => $_POST['third_edit_description_ar'],
 
-                      'FourthTitle_en'       => $_POST['fourth_edit_title_en'],
-                      'FourthTitle_ar'       => $_POST['fourth_edit_title_ar'],
-                      'FourthDescription_en' => $_POST['fourth_edit_description_en'],
-                      'FourthDescription_ar' => $_POST['fourth_edit_description_ar'],
+                    //   'FourthTitle_en'       => $_POST['fourth_edit_title_en'],
+                    //   'FourthTitle_ar'       => $_POST['fourth_edit_title_ar'],
+                    //   'FourthDescription_en' => $_POST['fourth_edit_description_en'],
+                    //   'FourthDescription_ar' => $_POST['fourth_edit_description_ar'],
                       'UpdatedBy'            => $_SESSION['AdminUser']['Name'],
                       'UpdatedOn'            => $updatedOn
                       );
@@ -69,17 +69,17 @@ class AboutHelper extends BaseHelper
                $fields['FirstImage'] = $response->message;
         }
 
-        if(isset($_FILES['secondPicture']) && $_FILES['secondPicture']['size'] > 0){
-             $response = $this->UploadFile($_FILES['secondPicture'],'/../uploads/aboutImages/', $x = 500);
-             $response = json_decode($response);
+        // if(isset($_FILES['secondPicture']) && $_FILES['secondPicture']['size'] > 0){
+        //      $response = $this->UploadFile($_FILES['secondPicture'],'/../uploads/aboutImages/', $x = 500);
+        //      $response = json_decode($response);
 
-             if($response->res == 0)
-             {
-              return UtilityHelper::Response('error',$response->message);
-             }
-             else
-               $fields['SecondImage'] = $response->message;
-        }
+        //      if($response->res == 0)
+        //      {
+        //       return UtilityHelper::Response('error',$response->message);
+        //      }
+        //      else
+        //        $fields['SecondImage'] = $response->message;
+        // }
 
         $item->fromArray($fields);
 

@@ -30,24 +30,24 @@
 	</object>
 	<object class="AboutUs" table="AboutUs" extends="xPDOObject">
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
-		<field key="FirstTitle_en" dbtype="varchar" precision="250" phptype="string" null="false" />
-		<field key="FirstDescription_en" dbtype="text" phptype="string" null="false" />
-		<field key="FirstTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="FirstDescription_ar" dbtype="text" phptype="string" null="false" />
-		<field key="SecondTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="SecondTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="SecondDescription_ar" dbtype="text" phptype="string" null="false" />
-		<field key="SecondDescription_en" dbtype="text" phptype="string" null="false" />
-		<field key="ThirdTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="ThirdTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="ThirdDescription_ar" dbtype="text" phptype="string" null="false" />
-		<field key="ThirdDescription_en" dbtype="text" phptype="string" null="false" />
-		<field key="FourthTitle_en" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="FourthTitle_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="FourthDescription_en" dbtype="text" phptype="string" null="false" />
-		<field key="FourthDescription_ar" dbtype="text" phptype="string" null="false" />
-		<field key="FirstImage" dbtype="varchar" precision="255" phptype="string" null="false" />
-		<field key="SecondImage" dbtype="varchar" precision="255" phptype="string" null="false" />
+		<field key="FirstTitle_en" dbtype="varchar" precision="250" phptype="string" null="true" />
+		<field key="FirstDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="FirstTitle_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="FirstDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="SecondTitle_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="SecondTitle_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="SecondDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="SecondDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="ThirdTitle_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="ThirdTitle_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="ThirdDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="ThirdDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="FourthTitle_en" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="FourthTitle_ar" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="FourthDescription_en" dbtype="text" phptype="string" null="true" />
+		<field key="FourthDescription_ar" dbtype="text" phptype="string" null="true" />
+		<field key="FirstImage" dbtype="varchar" precision="255" phptype="string" null="true" />
+		<field key="SecondImage" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="true" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
 		<field key="UpdatedBy" dbtype="varchar" precision="100" phptype="string" null="true" />
 
