@@ -131,46 +131,6 @@
         isValid = false;
         return;
       }
-
-      if ($("#cityID").val() == null || $("#cityID").val() == 0) {
-        if ($("#lang").val() === "ar") {
-          swal({
-            title: "الحقول المطلوبة",
-            text: "لابد من اختيار بلد",
-            type: "error",
-            confirmButtonText: "غلق"
-          });
-        } else {
-          swal({
-            title: "Required Fields",
-            text: "you should choose country",
-            type: "error",
-            confirmButtonText: "Close"
-          });
-        }
-        isValid = false;
-        return;
-      }
-
-      if ($("#locationID").val() == null || $("#locationID").val() == 0) {
-        if ($("#lang").val() === "ar") {
-          swal({
-            title: "الحقول المطلوبة",
-            text: "لابد من اختيار مدينة",
-            type: "error",
-            confirmButtonText: "غلق"
-          });
-        } else {
-          swal({
-            title: "Required Fields",
-            text: "you should choose city",
-            type: "error",
-            confirmButtonText: "Close"
-          });
-        }
-        isValid = false;
-        return;
-      }
     });
 
     if (!isValid) return;
@@ -186,13 +146,13 @@
     $("#loadingContainer").show();
 
     var values = new FormData($(this)[0]);
-    var city = 0;
-    city = $("#city option:selected").text();
-    values.append("cityName", city);
+    // var city = 0;
+    // city = $("#city option:selected").text();
+    // values.append("cityName", city);
 
-    var location = 0;
-    location = $("#locationID option:selected").text();
-    values.append("locationName", location);
+    // var location = 0;
+    // location = $("#locationID option:selected").text();
+    // values.append("locationName", location);
 
     $.ajax({
       url: "handlers/EventsHandler.php",
@@ -203,14 +163,14 @@
       processData: false,
       success: function(data) {
         var data = JSON.parse(data);
-        console.log("data: ", data.saved);
+        console.log("data: ", data);
         $("#loadingContainer").hide();
-        if (data.saved === true) {
-          $("#register")[0].reset();
+        if (data === 1) {
+          $("#newEvent")[0].reset();
           if ($("#lang").val() === "ar") {
             swal(
               {
-                title: "تم ارسال طلبك",
+                title: " تم ارسال طلبك لاضافة الفاعلية",
                 text: "نشكرك للتواصل معنا",
                 type: "success",
                 confirmButtonText: "تم"
@@ -223,69 +183,13 @@
             swal(
               {
                 title: "Submitted",
-                text: "Thanks for contact us.",
+                text: "Thanks for contact us to add the event.",
                 type: "success",
                 confirmButtonText: "Close"
               },
               function(isConfirm2) {
                 if (isConfirm2) location.reload();
               }
-            );
-          }
-        }
-
-        if (data.saved === 2) {
-          if ($("#lang").val() === "ar") {
-            swal(
-              {
-                title: "هذا البريد الالكتروني موجود بالفعل",
-                text: "خطأ",
-                type: "error",
-                confirmButtonText: "اغلاق"
-              }
-              // function(isConfirm2) {
-              //   if (isConfirm2) location.reload();
-              // }
-            );
-          } else {
-            swal(
-              {
-                title: "Error",
-                text: "This e-mail already exist",
-                type: "error",
-                confirmButtonText: "Close"
-              }
-              // function(isConfirm2) {
-              //   if (isConfirm2) location.reload();
-              // }
-            );
-          }
-        }
-
-        if (data.saved === 3) {
-          if ($("#lang").val() === "ar") {
-            swal(
-              {
-                title: "كلمة المرور و تأكيد كلمة المررور غير متطابقين",
-                text: "خطأ",
-                type: "error",
-                confirmButtonText: "اغلاق"
-              }
-              // function(isConfirm2) {
-              //   if (isConfirm2) location.reload();
-              // }
-            );
-          } else {
-            swal(
-              {
-                title: "Error",
-                text: "The password and confirm password didn't match",
-                type: "error",
-                confirmButtonText: "Close"
-              }
-              // function(isConfirm2) {
-              //   if (isConfirm2) location.reload();
-              // }
             );
           }
         }
