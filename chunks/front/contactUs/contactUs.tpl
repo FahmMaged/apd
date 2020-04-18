@@ -56,8 +56,8 @@
             <div class="row">
               <div class="input-field col s12">
                 <input type="hidden" name="operation" value="sendContactMail" />
-                <input id="name" name="name" type="text" class="validate" />
-                <label for="name">[[+name]]*</label>
+                <input id="name1" name="name" type="text" class="validate" />
+                <label for="name1">[[+name]]*</label>
               </div>
               <!-- <div class="input-field col l6 m12 s12">
                 <input id="last_name" type="text" class="validate" />
@@ -66,12 +66,12 @@
             </div>
             <div class="row">
               <div class="input-field col l6 m12 s12">
-                <input id="email" name="email" type="text" class="validate" />
-                <label for="email">[[+email]]* </label>
+                <input id="email1" name="email" type="text" class="validate" />
+                <label for="email1">[[+email]]* </label>
               </div>
               <div class="input-field col l6 m12 s12">
-                <input id="phone" name="phone" type="text" class="validate" />
-                <label for="phone">[[+phoneNumber]]*</label>
+                <input id="phone1" name="phone" type="text" class="validate" />
+                <label for="phone1">[[+telephone]]*</label>
               </div>
             </div>
             <div class="row">
@@ -87,11 +87,11 @@
 
             <div class="row">
               <div class="input-field col s12">
-                <a id="btnSend" class="btn left redBtn">
-                  <!-- <button > -->
+                <!-- <a id="btnSend" class="btn left redBtn"> -->
+                <button id="btnSend1" class="btn left redBtn">
                   [[+send]]
-                  <!-- </button> -->
-                </a>
+                </button>
+                <!-- </a> -->
               </div>
             </div>
           </form>
@@ -107,9 +107,9 @@
 <script type="text/javascript">
   //get all items
   //save button in the add News modal
-  $("#btnSend").click(function(event) {
+  $("#btnSend1").click(function(event) {
     event.preventDefault();
-
+    console.log("XXXX");
     isValid = true;
 
     //form validations

@@ -335,6 +335,7 @@ class NewsHelper extends BaseHelper
       $newsChunk   = '';
       $lang        = (isset($_POST['lang'])) ? $_POST['lang'] : 'ar';
       $logged     = (isset($_POST['logged'])) ? $_POST['logged'] : 0;
+      $langFile  = json_decode(file_get_contents('../lang/home.json'), true);
 
       // $news = $xpdo->getCollection('News');
       
@@ -401,6 +402,7 @@ class NewsHelper extends BaseHelper
           $newsChunk .=  new LoadChunk('newsItem','front/news',array(
                                                                     // 'title'  =>  $news->get('Title_'.$lang),
                                                                     'title'  =>  $title,
+                                                                    'readMore'    => $langFile['readMore'][$lang],
                                                                     'description'  =>  $description,
                                                                     'alias'  =>  $news->get('Alias_'.$lang),
                                                                     'image'  =>  $news->get('Image'),

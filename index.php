@@ -15,7 +15,7 @@ $videoSectionTpl    = '';
 // Head Chunk
 $head        = new LoadChunk('head', 'front/master', array(
 														   'baseUrl'   => $server,
-														   'pageTitle' => 'Home',
+														   'pageTitle' => $langFile['pageTitle'][$lang],
 														   'ogImage'   => $ogImage,
 														   'enLink'    => $enLink
 														   ), '');
