@@ -757,6 +757,16 @@ div#modal2 .modal-content > div:nth-child(2) {
   padding-right: 10px;
 }
 
+.whyModal h4 {
+  color: #585858;
+  margin-top: 25px;
+}
+
+.whyModal h4 span {
+  color: #0473c1;
+  text-decoration: underline;
+}
+
 footer {
   background: #418cb5;
   padding: 20px 0px;

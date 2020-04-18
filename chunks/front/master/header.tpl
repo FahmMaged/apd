@@ -37,12 +37,7 @@
             </li>
           </a>
           <input type="hidden" id="lang" value="[[+lang]]" />
-          <a
-            href="javascript:void(0)"
-            onclick="changeLanguage('[[+lang]]')"
-            class="langLink"
-            id="langLink"
-          >
+          <a href="javascript:void(0)" onclick="changeLanguage('[[+lang]]')" class="langLink" id="langLink">
             <li>English <i class="fa fa-flag" aria-hidden="true"></i></li>
           </a>
         </ul>
@@ -74,9 +69,8 @@
             <li [[+hideLogout]]><a onclick="logout()"> [[+logout]] </a></li>
           </ul>
 
-          <a href="#" data-activates="slide-out" class="button-collapse"
-            ><i class="fa fa-bars" aria-hidden="true"></i
-          ></a>
+          <a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars"
+              aria-hidden="true"></i></a>
         </div>
       </div>
     </div>
@@ -121,12 +115,7 @@
               <label for="email">[[+emailText]] </label>
             </div>
             <div class="input-field col l12 m12 s12">
-              <input
-                id="password"
-                name="password"
-                type="password"
-                class="validate"
-              />
+              <input id="password" name="password" type="password" class="validate" />
               <label for="password">[[+password]]</label>
             </div>
           </div>
@@ -141,25 +130,20 @@
 
       <div class="s12 m6 l6 col">
         <h2 class="headline ">[[+register]]</h2>
+        <div class="s12 col center whyModal">
+          <a class="waves-effect" href="#modal5">
+            <h4> مميزات العضوية لمعلمين التربية الإيجابية  <span> اضعط هنا</span></h4>
+          </a>
+        </div>
         <form class="col s12" id="register">
           <input type="hidden" name="operation" value="add" />
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <input
-                id="first_name"
-                name="first_name"
-                type="text"
-                class="validate"
-              />
+              <input id="first_name" name="first_name" type="text" class="validate" />
               <label for="first_name"> [[+firstName]] </label>
             </div>
             <div class="input-field col l6 m12 s12">
-              <input
-                id="last_name"
-                name="last_name"
-                type="text"
-                class="validate"
-              />
+              <input id="last_name" name="last_name" type="text" class="validate" />
               <label for="last_name"> [[+lastName]] </label>
             </div>
           </div>
@@ -181,32 +165,18 @@
                 <input type="file" name="image" />
               </div>
               <div class="file-path-wrapper">
-                <input
-                  class="file-path validate"
-                  type="text"
-                  placeholder="[[+image]]"
-                />
+                <input class="file-path validate" type="text" placeholder="[[+image]]" />
               </div>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <input
-                id="password"
-                name="password"
-                type="password"
-                class="validate"
-              />
+              <input id="password" name="password" type="password" class="validate" />
               <label for="password">[[+password]]</label>
             </div>
             <div class="input-field col l6 m12 s12">
-              <input
-                id="confirmPassword"
-                name="confirmPassword"
-                type="password"
-                class="validate"
-              />
+              <input id="confirmPassword" name="confirmPassword" type="password" class="validate" />
               <label for="confirmPassword"> [[+confirmPassword]] </label>
             </div>
           </div>
@@ -250,11 +220,7 @@
 
           <div class="row">
             <div class="input-field col s12">
-              <textarea
-                id="bio"
-                name="bio"
-                class="materialize-textarea"
-              ></textarea>
+              <textarea id="bio" name="bio" class="materialize-textarea"></textarea>
               <label for="bio">[[+bio]]</label>
             </div>
           </div>
@@ -272,14 +238,56 @@
   </div>
   <!-- Modal Structure -->
 
+
+  <!-- Modal Structure -->
+  <div id="modal5" class="modal bottom-sheet">
+    <div class="modal-content">
+
+      <h3> يحصل المعلمين الأعضاء في جمعية التربية الإيجابية العربية - مصر على المميزات التالية: </h3>
+      <ol>
+        <li> عضوية الجمعية الأمريكية، فكل عضو في الجمعية العربية يصبح تلقائيًا عضوا في الجمعية الأمريكية دون أن
+          يسدد اشتراكًا منفصلًا للجمعية الأمريكية وليس العكس .. بمعنى عضوية الجمعية الأمريكية لا تغني عن عضوية
+          "التربية الإيجابية العربية".
+        </li>
+        <li> حساب خاص على الموقع مع كل البيانات الخاصة بالأعضاء ليسهل الوصول إليهم.
+        </li>
+        <li> التسويق يحصل الأعضاء على الفرصة لوضع إعلانات الورش الخاصة بيهم (التربية الإيجابية فقط) على موقع
+          التربية الإيجابية العربية.
+        </li>
+        <li> حضور اللقاء السنوي لأسرة لتربية الإيجابية العربية، والذي يسمح به للأعضاء فقط.
+        </li>
+        <li> حضور كل التدريبات التي تقدم للأعضاء للتطوير.
+        </li>
+        <li>يمنح الأعضاء منفذا خاصا لبعض المصادر على الموقع العربي ( مثل كل الأوراق والفيديوهات والباوربوينت)
+          الذين يعرضون في الاجتماع السنوي .. أجندات متنوعة....
+        </li>
+        <li> لقاء الدعم الشهري. وهو لقاء يتم شهريا يجمع الأعضاء المشاركين مع المدربين بهدف دعم الأعضاء. وهو قاصر
+          على الأعضاء فقط
+        </li>
+        <li>يتم دعوة الأعضاء لكل ما يستجد من خدمات تقدمها الجمعية العربية لدعم أعضائها وتنمية قدراتهم.
+        </li>
+      </ol>
+
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-close waves-effect waves-green btn-flat" 
+      style="position: relative;
+              width: 100%;
+              text-align: center;
+              background: #eee;
+              color: #888;">اغلاق</a>
+    </div>
+  </div>
+
+
   <script type="text/javascript">
-    $(document).ready(function() {
+    $(document).ready(function () {
       var langu = $("#lang").val();
       if (langu == "ar") $("#langLink").text("English");
       else $("#langLink").text("عربي");
 
       // Login Function
-      $("#login").submit(function(event) {
+      $("#login").submit(function (event) {
         event.preventDefault();
 
         // if (
@@ -321,7 +329,7 @@
             operation: "login"
           },
           cache: false,
-          success: function(data) {
+          success: function (data) {
             data = $.parseJSON(data);
 
             if (data.res == 1) {
@@ -345,7 +353,7 @@
               $("#loadingContainer").hide();
             }
           },
-          error: function(xhr, ajaxOptions, thrownError) {
+          error: function (xhr, ajaxOptions, thrownError) {
             console.log(xhr.statusText);
             console.log(xhr.responseText);
             console.log(xhr.status);
@@ -366,22 +374,22 @@
       $("#loadingContainer").show();
 
       $.ajax({
-        url: "handlers/LangHandler.php",
-        type: "POST",
-        data: {
-          operation: "changeLanguage",
-          lang: lang,
-          currentURL: location.href
-        }
-      })
-        .done(function(data) {
+          url: "handlers/LangHandler.php",
+          type: "POST",
+          data: {
+            operation: "changeLanguage",
+            lang: lang,
+            currentURL: location.href
+          }
+        })
+        .done(function (data) {
           // return;
           window.location.href = data;
         })
-        .fail(function() {
+        .fail(function () {
           console.log("error");
         })
-        .always(function() {
+        .always(function () {
           $("#loadingContainer").hide();
         });
     }
@@ -391,34 +399,34 @@
       $("#loadingContainer").show();
 
       $.ajax({
-        url: "handlers/MembersHandler.php",
-        type: "POST",
-        data: {
-          operation: "logout"
-        }
-      })
-        .done(function(data) {
+          url: "handlers/MembersHandler.php",
+          type: "POST",
+          data: {
+            operation: "logout"
+          }
+        })
+        .done(function (data) {
           // return;
           if (data) {
             location.reload();
           }
         })
-        .fail(function() {
+        .fail(function () {
           console.log("error");
         })
-        .always(function() {
+        .always(function () {
           $("#loadingContainer").hide();
         });
     }
 
     //save button in the add News modal
-    $("#btnSend").click(function(event) {
+    $("#btnSend").click(function (event) {
       event.preventDefault();
 
       isValid = true;
 
       //form validations
-      $("#register .validate").each(function() {
+      $("#register .validate").each(function () {
         if ($.trim($(this).val()) == "") {
           if ($("#lang").val() === "ar") {
             swal({
@@ -487,7 +495,7 @@
     });
 
     //add News submission
-    $("#register").submit(function(event) {
+    $("#register").submit(function (event) {
       event.preventDefault();
 
       $("#loadingContainer").show();
@@ -508,33 +516,31 @@
         cache: false,
         contentType: false,
         processData: false,
-        success: function(data) {
+        success: function (data) {
           var data = JSON.parse(data);
           console.log("data: ", data.saved);
           $("#loadingContainer").hide();
           if (data.saved === true) {
             $("#register")[0].reset();
             if ($("#lang").val() === "ar") {
-              swal(
-                {
+              swal({
                   title: "تم ارسال طلبك",
                   text: "نشكرك للتواصل معنا",
                   type: "success",
                   confirmButtonText: "تم"
                 },
-                function(isConfirm2) {
+                function (isConfirm2) {
                   if (isConfirm2) location.reload();
                 }
               );
             } else {
-              swal(
-                {
+              swal({
                   title: "Submitted",
                   text: "Thanks for contact us.",
                   type: "success",
                   confirmButtonText: "Close"
                 },
-                function(isConfirm2) {
+                function (isConfirm2) {
                   if (isConfirm2) location.reload();
                 }
               );
@@ -543,8 +549,7 @@
 
           if (data.saved === 2) {
             if ($("#lang").val() === "ar") {
-              swal(
-                {
+              swal({
                   title: "هذا البريد الالكتروني موجود بالفعل",
                   text: "خطأ",
                   type: "error",
@@ -555,8 +560,7 @@
                 // }
               );
             } else {
-              swal(
-                {
+              swal({
                   title: "Error",
                   text: "This e-mail already exist",
                   type: "error",
@@ -571,8 +575,7 @@
 
           if (data.saved === 3) {
             if ($("#lang").val() === "ar") {
-              swal(
-                {
+              swal({
                   title: "كلمة المرور و تأكيد كلمة المررور غير متطابقين",
                   text: "خطأ",
                   type: "error",
@@ -583,8 +586,7 @@
                 // }
               );
             } else {
-              swal(
-                {
+              swal({
                   title: "Error",
                   text: "The password and confirm password didn't match",
                   type: "error",
@@ -597,7 +599,7 @@
             }
           }
         },
-        error: function(xhr, ajaxOptions, thrownError) {
+        error: function (xhr, ajaxOptions, thrownError) {
           console.log(xhr.responseText);
 
           $("#loadingContainer").hide();
