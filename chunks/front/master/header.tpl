@@ -68,7 +68,7 @@
               </ul>
             </li>
             <li><a href="members.php"> [[+trainers]] </a></li>
-            <li><a href="#"> [[+services]] </a></li>
+            <!--<li><a href="#"> [[+services]] </a></li>-->
             <li><a href="contactUs.php"> [[+contactUs]] </a></li>
             <li [[+hideLogin]]><a href="#modal2"> [[+register]] </a></li>
             <li [[+hideLogout]]><a onclick="logout()"> [[+logout]] </a></li>
@@ -101,7 +101,7 @@
       </ul>
     </li>
     <li><a href="members.php"> [[+trainers]] </a></li>
-    <li><a href="#"> [[+services]] </a></li>
+    <!--<li><a href="#"> [[+services]] </a></li>-->
     <li><a href="contactUs.php"> [[+contactUs]] </a></li>
     <li [[+hideLogin]]><a href="#modal2"> [[+register]] </a></li>
     <li [[+hideLogout]]><a href="#"> [[+logout]] </a></li>
