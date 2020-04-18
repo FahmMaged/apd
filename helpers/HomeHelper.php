@@ -99,7 +99,7 @@ class HomeHelper extends BaseHelper
         // }
         $aboutSectionTpl  = new LoadChunk('aboutSection', 'front/home', array(
             // 'aboutItemsTPL' => $aboutItemsTPL,
-            // 'aboutTitle'    => $langFile['aboutTitle'][$lang]
+            'readMore'    => $langFile['readMore'][$lang],
             'title' => $item->get('FirstTitle_'.$lang),
             'description' => $item->get('FirstDescription_'.$lang),
             'image' => $item->get('FirstImage'),

@@ -6,10 +6,17 @@
         [[+day]]
         <div>[[+month]]</div>
       </span>
-      <div class="homeNewsImg" style="background-image:url('[[+image]]')"></div>
+      <a href="newsDetails.php?id=[[+id]]&alias=[[+alias]]">
+        <div
+          class="homeNewsImg"
+          style="background-image:url('[[+image]]')"
+        ></div
+      ></a>
     </div>
     <div class="clearfix"></div>
-    <h3>[[+title]]</h3>
+    <a href="newsDetails.php?id=[[+id]]&alias=[[+alias]]"
+      ><h3>[[+title]]</h3></a
+    >
     <p>
       [[+intro]]
     </p>

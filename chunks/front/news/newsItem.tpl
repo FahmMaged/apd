@@ -10,7 +10,7 @@
       </a>
       [[+description]]
       <a href="newsDetails.php?id=[[+id]]&alias=[[+alias]]" class="readMore">
-        اقراء المزيد
+        [[+readMore]]
       </a>
     </div>
   </div>

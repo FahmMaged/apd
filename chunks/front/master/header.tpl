@@ -51,7 +51,7 @@
     <div class="l12 col no_padding header-body">
       <div class="rows">
         <div class="l3 s8 m4 col">
-          <div class="logo"><img src="images/Logo.png" /></div>
+          <div class="logo"><img src="images/logo.png" /></div>
         </div>
 
         <div class="l9 s4 m8 col menu">

@@ -4,7 +4,7 @@
       <div class="l7 m6 s12 col  animated fadeInRight ">
         <h2>[[+title]]</h2>
         <p>[[+description]]</p>
-        <a href="#"> اقراء المزيد </a>
+        <a href="aboutUs.php"> [[+readMore]] </a>
       </div>
       <!--=============================================================-->
       <div class="l5 m6 s12 col center animated fadeInLeft">
