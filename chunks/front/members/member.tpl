@@ -4,7 +4,7 @@
         <div class="clearfix"></div>
         <div class="l12 m12 s12 col details">
             <h3>[[+name]]</h3>
-            <h5> استاذة التربية الايجابية </h5>
+            <h5> [[+position]] </h5>
 
             <div class="bio">
                 <h6>  <i class="fa fa-envelope"></i> [[+email]]</h6>

@@ -348,6 +348,7 @@ class MembersHelper extends BaseHelper
 
           $membersChunk .=  new LoadChunk('member','front/members',array(
                                                     'email'  =>  $members->get('Email'),
+                                                    'position'=>  $members->get('Position'),
                                                     'name'   =>  $name,
                                                     'hideF'   =>  $hideF,
                                                     'hideT'   =>  $hideT,
