@@ -45,5 +45,11 @@
   "InstagramLink": { "en": "Instagram Link", "ar": "رابط الانستجرام" },
   "LinkedinLink": { "en": "Linkedin Link", "ar": "رابط لينكد ان" },
   "jordan": { "en": "Jordan", "ar": "الاردن" },
+  "position": { "en": "position", "ar": "الوظيفة" },
+  "clickHere": { "en": "Click Here", "ar": "اضغط هنا" },
+  "advantage": {
+    "en": "advantage to join",
+    "ar": "مميزات العضوية لمعلمين التربية الإيجابية "
+  },
   "upload": { "en": "Upload", "ar": "تحميل" }
 }
