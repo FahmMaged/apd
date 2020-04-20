@@ -140,28 +140,28 @@
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <input id="first_name" name="first_name" type="text" class="validate" />
-              <label for="first_name"> [[+firstName]] </label>
+              <label for="first_name"> [[+firstName]] *</label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input id="last_name" name="last_name" type="text" class="validate" />
-              <label for="last_name"> [[+lastName]] </label>
+              <label for="last_name"> [[+lastName]] *</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <input id="email" name="email" type="text" class="validate" />
-              <label for="email"> [[+emailText]] </label>
+              <label for="email"> [[+emailText]] *</label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input id="phone" name="phone" type="text" class="validate" />
-              <label for="phone"> [[+phoneNumber]]</label>
+              <label for="phone"> [[+phoneNumber]] *</label>
             </div>
           </div>
 
           <div class="row">
             <div class="file-field input-field">
               <div class="btn">
-                <span>[[+upload]]</span>
+                <span>[[+upload]] *</span>
                 <input type="file" name="image" />
               </div>
               <div class="file-path-wrapper">
@@ -173,11 +173,11 @@
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <input id="password" name="password" type="password" class="validate" />
-              <label for="password">[[+password]]</label>
+              <label for="password">[[+password]] *</label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input id="confirmPassword" name="confirmPassword" type="password" class="validate" />
-              <label for="confirmPassword"> [[+confirmPassword]] </label>
+              <label for="confirmPassword"> [[+confirmPassword]] * </label>
             </div>
           </div>
 
