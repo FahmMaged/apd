@@ -33,6 +33,7 @@ class MembersHelper extends BaseHelper
         $fields['Email']         = $_POST['email'];
         $fields['Phone']         = $_POST['phone'];
         $fields['Bio']           = $_POST['bio'];
+        $fields['Position']      = $_POST['position'];
         $fields['Password']      = password_hash($_POST['password'], PASSWORD_BCRYPT);;
         $fields['City']          = $_POST['cityName'];
         $fields['LocationName']  = $_POST['locationName'];
@@ -347,6 +348,7 @@ class MembersHelper extends BaseHelper
 
           $membersChunk .=  new LoadChunk('member','front/members',array(
                                                     'email'  =>  $members->get('Email'),
+                                                    'position'=>  $members->get('Position'),
                                                     'name'   =>  $name,
                                                     'hideF'   =>  $hideF,
                                                     'hideT'   =>  $hideT,

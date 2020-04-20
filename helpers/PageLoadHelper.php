@@ -110,8 +110,12 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'country' => $langFile2['country'][$lang],
 												'city'    => $langFile2['city'][$lang],
 												'FacebookLink'  => $langFile2['FacebookLink'][$lang],
-												'TwitterLink'  => $langFile2['TwitterLink'][$lang],
-												'InstagramLink'  => $langFile2['InstagramLink'][$lang],
+												'clickHere'     => $langFile2['clickHere'][$lang],
+												'advantage'     => $langFile2['advantage'][$lang],
+												'position'      => $langFile2['position'][$lang],
+												'FacebookLink'  => $langFile2['FacebookLink'][$lang],
+												'TwitterLink'   => $langFile2['TwitterLink'][$lang],
+												'InstagramLink' => $langFile2['InstagramLink'][$lang],
 												'LinkedinLink'  => $langFile2['LinkedinLink'][$lang],
 												), '');
 
