@@ -915,6 +915,7 @@ text {
 .the_slider {
   width: 100%;
   float: left;
+  overflow: hidden;
 }
 
 .the_slider .slides {

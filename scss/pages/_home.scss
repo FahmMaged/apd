@@ -2,6 +2,7 @@
 .the_slider{
     width: 100%;
     float: left;  
+    overflow: hidden;
     .slides {
         height:555px !important;
     }
