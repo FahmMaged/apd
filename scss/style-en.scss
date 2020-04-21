@@ -64,3 +64,21 @@ a#btnSend {
 #addGLI .redBtn{
     float: right !important;
 }
+
+.show-more{
+    &::before{
+      content: "Show More";
+      position: relative;
+      display: inline-block;
+  }
+  &.activeText::before{
+      content: "ًShow Less";
+      position: relative;
+      display: inline-block;
+  }
+  &.removeText::before{
+    content: "Show More";
+      position: relative;
+      display: inline-block;
+  }
+}

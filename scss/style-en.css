@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   direction: ltr;
 }
@@ -81,5 +82,23 @@ a#btnSend {
 
 #addGLI .redBtn {
   float: right !important;
+}
+
+.show-more::before {
+  content: "Show More";
+  position: relative;
+  display: inline-block;
+}
+
+.show-more.activeText::before {
+  content: "ًShow Less";
+  position: relative;
+  display: inline-block;
+}
+
+.show-more.removeText::before {
+  content: "Show More";
+  position: relative;
+  display: inline-block;
 }
 /*# sourceMappingURL=style-en.css.map */

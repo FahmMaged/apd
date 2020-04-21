@@ -5,8 +5,12 @@
     </div>
     <div class="clearfix"></div>
     <h3>[[+title]]</h3>
+    <div class="text show-more-height">
     <p>
       [[+description]]
     </p>
+    
+    </div>
+    <div class="show-more"></div>
   </div>
 </div>

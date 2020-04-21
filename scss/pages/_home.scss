@@ -396,6 +396,28 @@ section{
         color: $main_color1;
             padding-right: 20px;
     }
+     .show-more-height { 
+        height: 65px; 
+        overflow:hidden; 
+      }
+      .show-more{
+          &::before{
+            content: "شاهد المزيد";
+            position: relative;
+            display: inline-block;
+        }
+        &.activeText::before{
+            content: "شاهد اقل";
+            position: relative;
+            display: inline-block;
+        }
+        &.removeText::before{
+            content: "شاهد المزيد";
+            position: relative;
+            display: inline-block;
+        }
+      }
+      
 }
 /**************************************************************************************************/
 .testimonial{

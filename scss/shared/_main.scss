@@ -352,3 +352,7 @@ iframe{
       }
       
 }
+.side-nav .collapsible-body, .side-nav.fixed .collapsible-body {
+    border: 0;
+    background-color: #3e85ac;
+}

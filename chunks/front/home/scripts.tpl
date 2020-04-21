@@ -94,6 +94,15 @@
         $("#servicesSection").html("");
         $("#servicesSection").html(data.output);
         $("p:empty").remove();
+
+        $(".show-more").click(function () {
+        if($(".text").hasClass("show-more-height")) {
+            $(this).addClass("activeText");
+        } else {
+            $(this).addClass("removeText");
+        }
+        $(".text").toggleClass("show-more-height");
+    });
       },
       error: function(xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);

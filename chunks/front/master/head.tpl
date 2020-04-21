@@ -66,5 +66,4 @@
       href="images/apple-touch-icon-114x114.png"
     />
   </head>
-  <body></body>
-</html>
+  <body>

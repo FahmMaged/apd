@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*************************/
 @font-face {
   font-family: "Cairo";
@@ -455,6 +456,11 @@ span.caret {
   bottom: 0;
   right: 0;
   background: #b61da1;
+}
+
+.side-nav .collapsible-body, .side-nav.fixed .collapsible-body {
+  border: 0;
+  background-color: #3e85ac;
 }
 
 /**************************************************************************************************/
@@ -1342,6 +1348,29 @@ section {
   font-family: "Cairo-bold";
   color: #418cb5;
   padding-right: 20px;
+}
+
+.services .show-more-height {
+  height: 65px;
+  overflow: hidden;
+}
+
+.services .show-more::before {
+  content: "شاهد المزيد";
+  position: relative;
+  display: inline-block;
+}
+
+.services .show-more.activeText::before {
+  content: "شاهد اقل";
+  position: relative;
+  display: inline-block;
+}
+
+.services .show-more.removeText::before {
+  content: "شاهد المزيد";
+  position: relative;
+  display: inline-block;
 }
 
 /**************************************************************************************************/
