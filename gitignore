@@ -1,0 +1,5 @@
+#Ignore svn files
+/.svn
+/.git
+/lang
+
