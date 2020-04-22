@@ -6,7 +6,7 @@ RewriteRule 	^/?$ 				$1/ar/Home/$2 	[R=301,L]
 RewriteRule    	^(en|ar)/Home/?$ 	index.php?lang=$1	[NC,L]
 #---- Pages Rules ---#
 RewriteRule     ^(en|ar)/AboutUs/?$    aboutUs.php?lang=$1  [NC,L]
-RewriteRule     ^(en|ar)/Awareness/([0-9]+)/?$    awareness.php?lang=$1&id=$2  [NC,L]
+RewriteRule     ^(en|ar)/AboutPage/([0-9]+)/?$    aboutPage.php?lang=$1&id=$2  [NC,L]
 RewriteRule     ^(en|ar)/PDFs/?$    pdfs.php?lang=$1  [NC,L]
 RewriteRule     ^(en|ar)/ContactUs/?$    contactUs.php?lang=$1  [NC,L]
 RewriteRule     ^(en|ar)/Events/?$    events.php?lang=$1  [NC,L]

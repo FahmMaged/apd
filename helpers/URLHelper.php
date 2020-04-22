@@ -93,7 +93,7 @@ Class URLHelper{
     $patterns     = array();
     $patterns[0]  = 'index.php';
     $patterns[1]  = 'aboutUs.php';
-    $patterns[2]  = 'awareness.php?id=';
+    $patterns[2]  = 'aboutPage.php?id=';
     $patterns[3]  = 'pdfs.php';
     $patterns[4]  = 'contactUs.php';
     $patterns[5]  = 'events.php';
@@ -124,7 +124,7 @@ Class URLHelper{
     $replacements     = array();
     $replacements[0]  = 'index.php?lang='.$lang;
     $replacements[1]  = 'aboutUs.php?lang='.$lang;
-    $replacements[2]  = 'awareness.php?lang='.$lang.'&id=';
+    $replacements[2]  = 'aboutPage.php?lang='.$lang.'&id=';
     $replacements[3]  = 'pdfs.php?lang='.$lang;
     $replacements[4]  = 'contactUs.php?lang='.$lang;
     $replacements[5]  = 'events.php?lang='.$lang;
@@ -153,7 +153,7 @@ Class URLHelper{
       $replacements     = array();
       $replacements[0]  = "$lang/Home";
       $replacements[1]  = "$lang/AboutUs/";
-      $replacements[2]  = "$lang/Awareness/";
+      $replacements[2]  = "$lang/AboutPage/";
       $replacements[3]  = "$lang/PDFs/";
       $replacements[4]  = "$lang/ContactUs/";
       $replacements[5]  = "$lang/Events/";

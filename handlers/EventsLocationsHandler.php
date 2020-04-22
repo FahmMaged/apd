@@ -23,6 +23,9 @@ if(isset($_POST['operation']))
         case 'delete':
             echo $eventsLocationsHelper->DeleteItem();
             break;
+        case 'getCityLocations':
+            echo $eventsLocationsHelper->GetCityLocations();
+            break;
 		default:
 			# code...
 			break;

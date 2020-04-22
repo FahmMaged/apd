@@ -198,17 +198,17 @@
         <p class="menu-links">Books</p>
       </a>
     </li> -->
-    <!-- <li
+    <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="Activities"
+      data-tooltip="About Pages"
     >
       <a href="awareness.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">Activities</p>
+        <p class="menu-links">About Pages</p>
       </a>
-    </li> -->
+    </li>
     <li
       class="tooltipped"
       data-position="right"

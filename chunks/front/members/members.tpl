@@ -18,9 +18,9 @@
       </div>
 
       <div class="s12 l5 m5 col input-field " id="locationID">
-        <select>
+        <select id="test">
           <option value="0" selected>[[+city]] </option>
-          [[+locationsTPL]]
+          <!-- [[+locationsTPL]] -->
         </select>
       </div>
 

@@ -1,17 +1,40 @@
 <script type="text/javascript">
   var currPage = parseInt($("#currPage").val());
-  var locationID;
-  var cityID;
+  var locationID = 0;
+  var cityID = 0;
   $(document).ready(function() {
     fnGetMembers(1);
 
     $("#locationID select").on("change", function() {
       locationID = $(this).val();
     });
+
     $("#cityID select").on("change", function() {
       cityID = $(this).val();
+      var x = getCityLocations(cityID);
+      $(this).val(x);
     });
   });
+
+  function getCityLocations(cityID) {
+    $.ajax({
+      url: "handlers/EventsLocationsHandler.php",
+      type: "POST",
+      data: {
+        operation: "getCityLocations",
+        cityID: cityID,
+        lang: $("#lang").val()
+      },
+      success: function(data) {
+        console.log(data);
+        //  return data;
+        $("#cityID select").append(data);
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        console.log(xhr.responseText);
+      }
+    });
+  }
 
   //get all items
   function fnGetMembers(toPage) {

@@ -122,5 +122,27 @@ class EventsLocationsHelper extends BaseHelper
         $item = $xpdo->getObject('EventsLocations', array('ID' => $itemID));
         return $item->remove();
     }
+
+    // Front function
+    public function GetCityLocations()
+    {
+      global $xpdo;
+      $cityID      = '';
+      $lang       = (isset($_POST['lang'])) ? $_POST['lang'] : 'en';
+      $locationsTPL = '';
+      if (isset($_POST['cityID'])) {
+        $cityID = $_POST['cityID'];
+      }
+      $locations = $xpdo->getCollection('EventsLocations', array('CountryID' => $cityID));
+      if (!empty($locations)) {
+        foreach ($locations as $c) {
+          $locationsTPL .= new LoadChunk('option', 'front/master', array(
+                                                        'id'      => $c->get('ID'),
+                                                        'name'   => $c->get('Title_'.$lang)
+                                ), '../');
+        }
+      }
+      return $locationsTPL;
+    }
 	
 }

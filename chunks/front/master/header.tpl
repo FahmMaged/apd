@@ -59,7 +59,14 @@
         <div class="l9 s4 m8 col menu">
           <ul>
             <li class="active"><a href="index.php"> [[+home]] </a></li>
-            <li><a href="aboutUs.php"> [[+aboutUs]] </a></li>
+            <li>
+              <a href="aboutUs.php"> [[+aboutUs]] </a>
+              <ul class="sub_menu">
+                <li><a href="aboutPage.php?id=1"> [[+page1]] </a></li>
+                <li><a href="aboutPage.php?id=2"> [[+page2]] </a></li>
+                <li><a href="aboutPage.php?id=3"> [[+page3]] </a></li>
+              </ul>
+            </li>
             <li><a href="events.php"> [[+events]] </a></li>
             <li>
               <a href="#"> [[+resources]] </a>
