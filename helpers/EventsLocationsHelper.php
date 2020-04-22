@@ -16,6 +16,7 @@ class EventsLocationsHelper extends BaseHelper
         $fields['Title_ar']    = $_POST['title_ar'];
         $fields['Title_en']    = $_POST['title_en'];
         $fields['Sort']        = $_POST['sort'];
+        $fields['CountryID']   = $_POST['country'];
         $fields['UpdatedBy']   = $_SESSION['AdminUser']['Name'];
         $fields['CreatedBy']   = $_SESSION['AdminUser']['Name'];
         $fields['CreatedOn']   = $createdOn;
@@ -102,6 +103,7 @@ class EventsLocationsHelper extends BaseHelper
         $fields['Title_ar']    = $_POST['edit_title_ar'];
         $fields['Title_en']    = $_POST['edit_title_en'];
         $fields['Sort']        = $_POST['edit_sort'];
+        $fields['CountryID']   = $_POST['editCountry'];
         $fields['UpdatedBy']   = $_SESSION['AdminUser']['Name'];
         $fields['UpdatedOn']   = $updatedOn;
 

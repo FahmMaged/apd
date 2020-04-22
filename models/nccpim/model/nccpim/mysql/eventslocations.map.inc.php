@@ -10,6 +10,7 @@ $xpdo_meta_map['EventsLocations']= array (
     'Title_en' => NULL,
     'Title_ar' => NULL,
     'Sort' => 1,
+    'CountryID' => 0,
     'CreatedBy' => NULL,
     'CreatedOn' => 'CURRENT_TIMESTAMP',
     'UpdatedOn' => 'CURRENT_TIMESTAMP',
@@ -47,6 +48,14 @@ $xpdo_meta_map['EventsLocations']= array (
       'phptype' => 'integer',
       'null' => false,
       'default' => 1,
+    ),
+    'CountryID' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '11',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
     ),
     'CreatedBy' => 
     array (

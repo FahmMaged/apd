@@ -200,6 +200,7 @@
 		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="false" />
 		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="1" />
+		<field key="CountryID" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
 		<field key="CreatedBy" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="CreatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP" />
 		<field key="UpdatedOn" dbtype="datetime" phptype="datetime" null="false" default="CURRENT_TIMESTAMP"  extra="on update current_timestamp" />
@@ -298,6 +299,7 @@
 		<field key="City" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="LocationID" dbtype="int" precision="11" phptype="integer" null="true" default="0" />
 		<field key="LocationName" dbtype="varchar" precision="191" phptype="string" null="true" />
+		<field key="Position" dbtype="varchar" precision="191" phptype="string" null="true" />
 		<field key="IsActive" dbtype="tinyint" precision="4" phptype="integer" null="false" default="0" />
 		<field key="Instructor" dbtype="tinyint" precision="4" phptype="integer" null="false" default="0" />
 		<field key="FacebookLink" dbtype="varchar" precision="191" phptype="string" null="true" />

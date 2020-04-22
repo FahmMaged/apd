@@ -18,6 +18,7 @@ $xpdo_meta_map['Members']= array (
     'City' => NULL,
     'LocationID' => 0,
     'LocationName' => NULL,
+    'Position' => NULL,
     'IsActive' => 0,
     'Instructor' => 0,
     'FacebookLink' => NULL,
@@ -109,6 +110,13 @@ $xpdo_meta_map['Members']= array (
       'default' => 0,
     ),
     'LocationName' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Position' => 
     array (
       'dbtype' => 'varchar',
       'precision' => '191',
