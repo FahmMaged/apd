@@ -18,6 +18,7 @@ $xpdo_meta_map['Events']= array (
     'Image' => NULL,
     'PublishDate' => NULL,
     'InHome' => 0,
+    'ForMembers' => 0,
     'IsActive' => 0,
     'Sort' => 0,
     'Alias_en' => NULL,
@@ -106,6 +107,14 @@ $xpdo_meta_map['Events']= array (
       'null' => true,
     ),
     'InHome' => 
+    array (
+      'dbtype' => 'tinyint',
+      'precision' => '1',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
+    ),
+    'ForMembers' => 
     array (
       'dbtype' => 'tinyint',
       'precision' => '1',

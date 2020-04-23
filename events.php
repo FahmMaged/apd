@@ -56,7 +56,8 @@ if($logged == 1){
 $output = new LoadChunk('events', 'front/events', array(
 											  		   'head'               => $head,
 											  		   'header'             => $header,
-											  		   'footer'             => $footer,
+													   'footer'             => $footer,
+													   'logged'             => $logged,
 											  		   'scripts'            => $scripts,
 											  		   'hideAdd'            => $hideAdd,
 											  		   'headerTitle'        => $langFile['headerTitle'][$lang],

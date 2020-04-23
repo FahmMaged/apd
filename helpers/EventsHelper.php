@@ -39,7 +39,7 @@ class EventsHelper extends BaseHelper
       $fields['Time_ar']    = $_POST['time_ar'];
       $fields['Location_en']    = $_POST['location_en'];
       $fields['Location_ar']    = $_POST['location_ar'];
-      // $fields['StartTime']   = $_POST['start'];
+      $fields['ForMembers']     = $_POST['forMembers'];
       // $fields['EndTime']     = $_POST['end'];
       $fields['Sort']        = $_POST['sort'];
       // $fields['InHome']      = $_POST['inHome'];
@@ -122,6 +122,7 @@ class EventsHelper extends BaseHelper
       // $fields['StartTime']   = $_POST['start'];
       // $fields['EndTime']     = $_POST['end'];
       $fields['Sort']        = $_POST['sort'];
+      $fields['ForMembers']     = $_POST['edit_forMembers'];
       // $fields['InHome']      = $_POST['inHome'];
       $fields['IsActive']    = $_POST['isActive'];
       // $fields['LocationID']  = $_POST['locationID'];
@@ -260,7 +261,7 @@ class EventsHelper extends BaseHelper
                       'Description_en'  => $_POST['edit_description_en'],
                       'Description_ar'  => $_POST['edit_description_ar'],
                       'PublishDate'  => $_POST['edit_publish_date'],
-                      // 'StartTime'    => $_POST['edit_start'],
+                      'ForMembers'    => $_POST['edit_forMembers'],
                       // 'EndTime'      => $_POST['edit_end'],
                       'Sort'         => $_POST['edit_sort'],
                       // 'InHome'       => $_POST['edit_inHome'],
@@ -441,11 +442,14 @@ class EventsHelper extends BaseHelper
       $query1 = $xpdo->newQuery('Events');
       $query1->where(array('IsActive' => 1));
       // $query->sortby('PublishDate', 'DESC');
+      if($logged == 0){
+        $query1->where(array('ForMembers' => 0));
+      }
       $events = $xpdo->getCollection('Events', $query1);
       $numrows      = count($events);
 
       $pagination='';
-      $rowsperpage = 1;
+      $rowsperpage = 9;
       $totalpages  = ceil($numrows / $rowsperpage);
       if (isset($_POST['currentpage']) && is_numeric($_POST['currentpage'])) {
         $currentpage = (int) $_POST['currentpage'];
@@ -462,6 +466,9 @@ class EventsHelper extends BaseHelper
 
       $query = $xpdo->newQuery('Events');
       $query->where(array('IsActive' => 1));
+      if($logged == 0){
+        $query->where(array('ForMembers' => 0));
+      }
       $query->sortby('PublishDate', 'DESC');
       $query->limit($rowsperpage,$offset);
       $allEvents = $xpdo->getCollection('Events', $query);

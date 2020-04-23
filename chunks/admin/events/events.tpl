@@ -133,6 +133,10 @@
             <label for="inHome">In Home</label>
           </p> -->
           <p>
+            <input type="checkbox" class="filled-in" id="forMembers" />
+            <label for="forMembers">For Members</label>
+          </p>
+          <p>
             <input type="checkbox" class="filled-in" id="isActive" />
             <label for="isActive">Is Active</label>
           </p>
@@ -299,6 +303,10 @@
             <input type="checkbox" class="filled-in" id="edit_inHome" />
             <label for="edit_inHome">In Home</label>
           </p> -->
+          <p>
+            <input type="checkbox" class="filled-in" id="edit_forMembers" />
+            <label for="edit_forMembers">For Members</label>
+          </p>
           <p>
             <input type="checkbox" class="filled-in" id="edit_isActive" />
             <label for="edit_isActive">Is Active</label>

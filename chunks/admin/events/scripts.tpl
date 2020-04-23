@@ -77,6 +77,12 @@
       }
       values.append("isActive", isActive);
 
+      var forMembers = 0;
+      if ($("#forMembers").is(":checked")) {
+        forMembers = 1;
+      }
+      values.append("forMembers", forMembers);
+
       //   var inHome = 0;
       //   if ($("#inHome").is(":checked")) {
       //     inHome = 1;
@@ -154,6 +160,12 @@
         editIsActive = 1;
       }
       values.append("edit_isActive", editIsActive);
+
+      var editForMembers = 0;
+      if ($("#edit_forMembers").is(":checked")) {
+        editForMembers = 1;
+      }
+      values.append("edit_forMembers", editForMembers);
 
       //   var editInHome = 0;
       //   if ($("#edit_inHome").is(":checked")) {
@@ -314,6 +326,9 @@
         // }
         if (item.IsActive == 1) {
           $("#edit_isActive").prop("checked", true);
+        }
+        if (item.ForMembers == 1) {
+          $("#edit_forMembers").prop("checked", true);
         }
 
         // $("#editLocationID option[value=" + item.LocationID + "]").attr("selected", "selected");

@@ -168,7 +168,7 @@
         <div class="input-field col s12">
           <p>
             <input type="checkbox" class="filled-in" id="edit_forMembers" />
-            <label for="edit_forMembers">Is Active</label>
+            <label for="edit_forMembers">For Members</label>
           </p>
         </div>
 

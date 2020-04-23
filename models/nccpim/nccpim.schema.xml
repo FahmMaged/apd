@@ -182,6 +182,7 @@
 		<field key="Image" dbtype="varchar" precision="255" phptype="string" null="true" />
 		<field key="PublishDate" dbtype="date" phptype="date" null="true" />
 		<field key="InHome" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
+		<field key="ForMembers" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
 		<field key="IsActive" dbtype="tinyint" precision="1" phptype="integer" null="false" default="0" />
 		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
 		<field key="Alias_en" dbtype="varchar" precision="255" phptype="string" null="true" />

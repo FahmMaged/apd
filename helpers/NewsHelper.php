@@ -351,7 +351,7 @@ class NewsHelper extends BaseHelper
       $numrows      = count($news);
 
       $pagination='';
-      $rowsperpage = 2;
+      $rowsperpage = 9;
       $totalpages  = ceil($numrows / $rowsperpage);
 
       if (isset($_POST['currentpage']) && is_numeric($_POST['currentpage'])) {
