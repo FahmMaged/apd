@@ -119,31 +119,24 @@ class ContactHelper extends BaseHelper
     {
         global $xpdo;
         
-        $submissions = $xpdo->getCollection('BooksSubmissions');
+        $submissions = $xpdo->getCollection('NewsLetterMails');
         $allApplications = '';
         if (!empty($submissions)) {
             // <td>Actions</td>
             $allApplications .="<table class='responsive-table'><thead><tr>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Phone</td>
+                    
                     <td>Email</td>
-                    <td>Message</td>
                     <td>Delete</td>
-                    
-
-                    
-
                     </tr></thead><tbody>";
 
             foreach ($submissions as $submission) {
                 $allApplications .= new LoadChunk('submission', 'admin/booksSubmissions', array(
                                                              'ID'               => $submission->get('ID'),
-                                                             'firstName'        => $submission->get('FirstName'),
-                                                             'lastName'         => $submission->get('LastName'),
-                                                             'phone'            => $submission->get('Phone'),
-                                                             'email'            => $submission->get('Email'),
-                                                             'message'          => $submission->get('Message')
+                                                            //  'firstName'        => $submission->get('FirstName'),
+                                                            //  'lastName'         => $submission->get('LastName'),
+                                                            //  'phone'            => $submission->get('Phone'),
+                                                             'email'            => $submission->get('Mail'),
+                                                            //  'message'          => $submission->get('Message')
                                                              ), '../');
             }
 
@@ -214,7 +207,7 @@ class ContactHelper extends BaseHelper
     {
         global $xpdo;
         if (isset($_POST['itemID'])) {
-            $submission = $xpdo->getObject('BooksSubmissions', array('ID' => $_POST['itemID']));
+            $submission = $xpdo->getObject('NewsLetterMails', array('ID' => $_POST['itemID']));
         
             return $submission->remove();
         }
