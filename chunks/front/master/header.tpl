@@ -424,7 +424,7 @@
               });
               $("#loadingContainer").hide();
             }
-            $('#modal2').modal('close');
+            $("#modal2").modal("close");
           },
           error: function(xhr, ajaxOptions, thrownError) {
             console.log(xhr.statusText);
@@ -604,7 +604,9 @@
                   confirmButtonText: "تم"
                 },
                 function(isConfirm2) {
-                  if (isConfirm2) location.reload();
+                  if (isConfirm2) {
+                    window.location.reload(true);
+                  }
                 }
               );
             } else {
@@ -616,7 +618,9 @@
                   confirmButtonText: "Close"
                 },
                 function(isConfirm2) {
-                  if (isConfirm2) location.reload();
+                  if (isConfirm2) {
+                    window.location.reload(true);
+                  }
                 }
               );
             }
@@ -624,60 +628,40 @@
 
           if (data.saved === 2) {
             if ($("#lang").val() === "ar") {
-              swal(
-                {
-                  title: "هذا البريد الالكتروني موجود بالفعل",
-                  text: "خطأ",
-                  type: "error",
-                  confirmButtonText: "اغلاق"
-                }
-                // function(isConfirm2) {
-                //   if (isConfirm2) location.reload();
-                // }
-              );
+              swal({
+                title: "هذا البريد الالكتروني موجود بالفعل",
+                text: "خطأ",
+                type: "error",
+                confirmButtonText: "اغلاق"
+              });
             } else {
-              swal(
-                {
-                  title: "Error",
-                  text: "This e-mail already exist",
-                  type: "error",
-                  confirmButtonText: "Close"
-                }
-                // function(isConfirm2) {
-                //   if (isConfirm2) location.reload();
-                // }
-              );
+              swal({
+                title: "Error",
+                text: "This e-mail already exist",
+                type: "error",
+                confirmButtonText: "Close"
+              });
             }
           }
 
           if (data.saved === 3) {
             if ($("#lang").val() === "ar") {
-              swal(
-                {
-                  title: "كلمة المرور و تأكيد كلمة المررور غير متطابقين",
-                  text: "خطأ",
-                  type: "error",
-                  confirmButtonText: "اغلاق"
-                }
-                // function(isConfirm2) {
-                //   if (isConfirm2) location.reload();
-                // }
-              );
+              swal({
+                title: "كلمة المرور و تأكيد كلمة المررور غير متطابقين",
+                text: "خطأ",
+                type: "error",
+                confirmButtonText: "اغلاق"
+              });
             } else {
-              swal(
-                {
-                  title: "Error",
-                  text: "The password and confirm password didn't match",
-                  type: "error",
-                  confirmButtonText: "Close"
-                }
-                // function(isConfirm2) {
-                //   if (isConfirm2) location.reload();
-                // }
-              );
+              swal({
+                title: "Error",
+                text: "The password and confirm password didn't match",
+                type: "error",
+                confirmButtonText: "Close"
+              });
             }
           }
-          $('#modal2').modal('close');
+          $("#modal2").modal("close");
         },
         error: function(xhr, ajaxOptions, thrownError) {
           console.log(xhr.responseText);
