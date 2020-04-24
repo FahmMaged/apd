@@ -40,7 +40,7 @@
       data-tooltip="Slider Items"
     >
       <a href="slider.php">
-        <i class="material-icons">accessibility</i>
+        <i class="material-icons">photo_library</i>
         <p class="menu-links">Slider Items</p>
       </a>
     </li>
@@ -62,19 +62,8 @@
       data-tooltip="Services"
     >
       <a href="services.php">
-        <i class="material-icons">accessibility</i>
+        <i class="material-icons">settings</i>
         <p class="menu-links">Services</p>
-      </a>
-    </li>
-    <li
-      class="tooltipped"
-      data-position="right"
-      data-delay="50"
-      data-tooltip="Articles"
-    >
-      <a href="news.php">
-        <i class="material-icons">view_carousel</i>
-        <p class="menu-links">Articles</p>
       </a>
     </li>
     <li
@@ -84,7 +73,7 @@
       data-tooltip="Locations"
     >
       <a href="eventsLocations.php">
-        <i class="material-icons">view_carousel</i>
+        <i class="material-icons">location_on</i>
         <p class="menu-links">Locations</p>
       </a>
     </li>
@@ -95,7 +84,7 @@
       data-tooltip="Events"
     >
       <a href="events.php">
-        <i class="material-icons">accessibility</i>
+        <i class="material-icons">calendar_today</i>
         <p class="menu-links">Events</p>
       </a>
     </li>
@@ -106,7 +95,7 @@
       data-tooltip="Events Submissions"
     >
       <a href="eventsSubmissions.php">
-        <i class="material-icons">accessibility</i>
+        <i class="material-icons">unsubscribe</i>
         <p class="menu-links">Events Submissions</p>
       </a>
     </li>
@@ -139,7 +128,7 @@
       data-tooltip="About"
     >
       <a href="about.php">
-        <i class="material-icons">view_carousel</i>
+        <i class="material-icons">info</i>
         <p class="menu-links">About</p>
       </a>
     </li>
@@ -183,7 +172,7 @@
       data-tooltip="Users"
     >
       <a href="members.php">
-        <i class="material-icons">view_carousel</i>
+        <i class="material-icons">supervised_user_circle</i>
         <p class="menu-links">Users</p>
       </a>
     </li>
@@ -202,10 +191,10 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="About Pages"
+      data-tooltip="About Sub Pages"
     >
       <a href="awareness.php">
-        <i class="material-icons">view_carousel</i>
+        <i class="material-icons">subject</i>
         <p class="menu-links">About Pages</p>
       </a>
     </li>
@@ -213,13 +202,26 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="About Items"
+      data-tooltip="Testimonials"
     >
       <a href="aboutItems.php">
-        <i class="material-icons">view_carousel</i>
-        <p class="menu-links">About Items</p>
+        <i class="material-icons">supervisor_account</i>
+        <p class="menu-links">Testimonials</p>
       </a>
     </li>
+    
+    <li
+      class="tooltipped"
+      data-position="right"
+      data-delay="50"
+      data-tooltip="Articles"
+    >
+      <a href="news.php">
+        <i class="material-icons">edit</i>
+        <p class="menu-links">Articles</p>
+      </a>
+    </li>
+
     <li
       class="tooltipped"
       data-position="right"
@@ -227,7 +229,7 @@
       data-tooltip="Videos"
     >
       <a href="videos.php">
-        <i class="material-icons">accessibility</i>
+        <i class="material-icons">movie</i>
         <p class="menu-links">Videos</p>
       </a>
     </li>
@@ -238,7 +240,7 @@
       data-tooltip="Pdfs"
     >
       <a href="pdfs.php">
-        <i class="material-icons">accessibility</i>
+        <i class="material-icons">picture_as_pdf</i>
         <p class="menu-links">Pdfs</p>
       </a>
     </li>
@@ -260,7 +262,7 @@
       data-tooltip="Main Images"
     >
       <a href="upload.php">
-        <i class="material-icons">view_carousel</i>
+        <i class="material-icons">add_photo_alternate</i>
         <p class="menu-links">Main Images</p>
       </a>
     </li>
@@ -271,7 +273,7 @@
       data-tooltip="Contact Us Submissions"
     >
       <a href="contactSubmissions.php">
-        <i class="material-icons">view_carousel</i>
+        <i class="material-icons">textsms</i>
         <p class="menu-links">Contact Us Submissions</p>
       </a>
     </li>
