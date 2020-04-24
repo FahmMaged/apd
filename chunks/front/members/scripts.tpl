@@ -5,14 +5,12 @@
   $(document).ready(function() {
     fnGetMembers(1);
 
-    $("#locationID select").on("change", function() {
+    $("#location2ID select").on("change", function() {
       locationID = $(this).val();
     });
 
     $("#cityID select").on("change", function() {
       cityID = $(this).val();
-      var x = getCityLocations(cityID);
-      $(this).val(x);
     });
   });
 

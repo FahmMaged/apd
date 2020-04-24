@@ -17,10 +17,10 @@
         </select>
       </div>
 
-      <div class="s12 l5 m5 col input-field " id="locationID">
-        <select id="test">
+      <div class="s12 l5 m5 col input-field " id="location2ID">
+        <select>
           <option value="0" selected>[[+city]] </option>
-          <!-- [[+locationsTPL]] -->
+          [[+locationsTPL]]
         </select>
       </div>
 
