@@ -142,7 +142,8 @@ class EventsLocationsHelper extends BaseHelper
                                 ), '../');
         }
       }
-      return $locationsTPL;
+    //   return $locationsTPL;
+    return json_encode(array('output' => $locationsTPL));
     }
 	
 }
