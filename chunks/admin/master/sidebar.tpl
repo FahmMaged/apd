@@ -176,17 +176,17 @@
         <p class="menu-links">Users</p>
       </a>
     </li>
-    <!-- <li
+    <li
       class="tooltipped"
       data-position="right"
       data-delay="50"
-      data-tooltip="Books"
+      data-tooltip="Newsletter Mails"
     >
-      <a href="books.php">
+      <a href="newsletterMails.php">
         <i class="material-icons">view_carousel</i>
-        <p class="menu-links">Books</p>
+        <p class="menu-links">Newsletter Mails</p>
       </a>
-    </li> -->
+    </li>
     <li
       class="tooltipped"
       data-position="right"
@@ -209,7 +209,7 @@
         <p class="menu-links">Testimonials</p>
       </a>
     </li>
-    
+
     <li
       class="tooltipped"
       data-position="right"
