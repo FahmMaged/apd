@@ -269,6 +269,7 @@
           }
         }
         $('#letterForm')[0].reset();
+        $('#modal1').modal('close');
       },
       error: function (xhr, ajaxOptions, thrownError) {
         console.log(xhr.responseText);

@@ -424,6 +424,7 @@
               });
               $("#loadingContainer").hide();
             }
+            $('#modal2').modal('close');
           },
           error: function(xhr, ajaxOptions, thrownError) {
             console.log(xhr.statusText);
@@ -676,6 +677,7 @@
               );
             }
           }
+          $('#modal2').modal('close');
         },
         error: function(xhr, ajaxOptions, thrownError) {
           console.log(xhr.responseText);
