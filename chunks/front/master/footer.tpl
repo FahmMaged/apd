@@ -62,7 +62,7 @@
       <ul class="footer_contatc">
         <li> <a href="#"><span> [[+phoneText]] </span> [[+phone]] </a></li>
         <li> <a href="#"><span> [[+emailText]] </span> [[+email]] </a></li>
-        <li> <a href="#"><span> [[+address]] </span> [[+theAddress]] </a></li>
+        <!-- <li> <a href="#"><span> [[+address]] </span> [[+theAddress]] </a></li> -->
       </ul>
     </div>
 
