@@ -10,9 +10,8 @@
   <div class="rows">
     <div class="l12 s12 m12 col no_padding ">
       <div>
-        <h2>[[+title]]</h2>
         [[+description]]
       </div>
-    </div>
+    </div> 
   </div>
 </section>

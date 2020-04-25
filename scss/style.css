@@ -521,6 +521,18 @@ header .social_media li {
   line-height: 30px;
 }
 
+@media screen and (max-width: 768px) {
+  header .social_media li {
+    margin-right: 3px;
+    color: #515151;
+    font-size: 12px;
+    margin: 0px 2px;
+    text-align: center;
+    padding: 2px 4px;
+    line-height: 30px;
+  }
+}
+
 header .social_media li i {
   margin-right: 5px;
 }
@@ -1549,6 +1561,7 @@ section {
   max-height: 400px;
   margin-bottom: 20px;
   background-repeat: no-repeat;
+  background-color: #eee;
 }
 
 .eventsPage .news_box .date h3 {
@@ -1745,6 +1758,7 @@ section {
   max-height: 400px;
   margin-bottom: 20px;
   background-repeat: no-repeat;
+  background-color: #eee;
 }
 
 .instructors .teacher_box .details h3 {
