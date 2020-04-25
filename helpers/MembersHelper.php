@@ -134,6 +134,41 @@ class MembersHelper extends BaseHelper
         $itemObj = json_encode($item->toArray());
         return $itemObj;
     }
+    public function GetMember()
+    {
+        global $xpdo;
+        if (isset($_POST['id'])) 
+        {
+            $itemID = $_POST['id'];
+        }
+        $members = $xpdo->getObject('Members', array('ID' => $itemID));
+        $itemObj = json_encode($members->toArray());
+        $hideF = !empty($members->get('FacebookLink')) ? '' : 'hidden';
+            $hideT = !empty($members->get('TwitterLink')) ? '' : 'hidden';
+            $hideI = !empty($members->get('InstagramLink')) ? '' : 'hidden';
+            $hideL = !empty($members->get('LinkedinLink')) ? '' : 'hidden';
+
+        $name = $members->get('FirstName')." ".$members->get('LastName');
+
+          $membersModal =  new LoadChunk('modal','front/members',array(
+                                                    'email'  =>  $members->get('Email'),
+                                                    'position'=>  $members->get('Position'),
+                                                    'name'   =>  $name,
+                                                    'hideF'   =>  $hideF,
+                                                    'hideT'   =>  $hideT,
+                                                    'hideI'   =>  $hideI,
+                                                    'hideL'   =>  $hideL,
+                                                    'phone'  =>  $members->get('Phone'),
+                                                    'image'  =>  $members->get('File'),
+                                                    'FacebookLink'  =>  $members->get('FacebookLink'),
+                                                    'TwitterLink'   =>  $members->get('TwitterLink'),
+                                                    'InstagramLink' =>  $members->get('InstagramLink'),
+                                                    'LinkedinLink'  =>  $members->get('LinkedinLink'),
+                                                    'id'     =>  $members->get('ID'),
+                                                    // 'lang'   =>  $lang,
+                                            ),'../');
+        return $itemObj;
+    }
 
     public function EditItem()
     {

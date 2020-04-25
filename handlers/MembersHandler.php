@@ -21,6 +21,10 @@ if(isset($_POST['operation']))
 			echo $membersHelper->GetItem();
 			break;
 
+		case 'getMember':
+			echo $membersHelper->GetMember();
+			break;
+
         case 'delete':
             echo $membersHelper->DeleteItem();
 			break;
