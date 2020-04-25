@@ -42,12 +42,12 @@
               >
               info@kijamii.com
             </li>
-            <li class="center  Show">
+            <!-- <li class="center  Show">
               <span
                 ><i class="fa fa-phone" aria-hidden="true"></i>[[+telephone]]
               </span>
               01250555666
-            </li>
+            </li> -->
             <!---- <li class="center  "><span><i class="fa fa-fax" aria-hidden="true"></i>Fax :</span>   </li> -->
           </ul>
         </div>

@@ -12,18 +12,18 @@
     <div class="s12 col top_header">
       <div class="rows">
         <ul class="social_media">
-          <a href="#">
+          <a href="https://www.facebook.com/ArabPositiveDiscipline/">
             <li><i class="fa fa-facebook"></i></li>
           </a>
-          <a href="#">
+          <!-- <a href="#">
             <li><i class=" fa fa-twitter"></i></li>
+          </a> -->
+          <a href="https://instagram.com/arabpositivediscipline?igshid=1eb7js7rkijgg">
+            <li><i class=" fa fa-instagram"></i></li>
           </a>
-          <a href="#">
-            <li><i class=" fa fa-linkedin"></i></li>
-          </a>
-          <a href="#">
+          <!-- <a href="#">
             <li><i class=" fa fa-youtube"></i></li>
-          </a>
+          </a> -->
           <a href="#">
             <li>
               [[+email]]

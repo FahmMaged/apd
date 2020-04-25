@@ -18,4 +18,4 @@
   </div>
 </section>
 
-[[+footer]] [[+scripts]]
+[[+footer]] 

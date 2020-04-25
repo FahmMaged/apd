@@ -608,6 +608,7 @@ header .menu > ul > li .sub_menu li {
 
 header .menu > ul > li .sub_menu li a {
   color: #fff !important;
+  padding: 5px 5px;
 }
 
 header .menu > ul > li .sub_menu li:hover {
@@ -1923,6 +1924,17 @@ section {
   font-size: 18px;
   line-height: 1.8;
   color: #555555;
+  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 .pdfPage a.btn {
