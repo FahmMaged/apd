@@ -4,6 +4,7 @@
   </div>
   <img src="[[+image]]" />
 </section>
+
 <!-- ==============================================    End Body     =============================================== -->
 <section class="sections about1">
   <div class="rows">
