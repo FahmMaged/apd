@@ -1,3 +1,4 @@
+
 [[+head]] 
 [[+header]]
 
@@ -18,4 +19,4 @@
   </div>
 </section>
 
-[[+footer]] 
+[[+footer]] [[+scripts]]

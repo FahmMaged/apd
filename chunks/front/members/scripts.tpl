@@ -34,6 +34,38 @@
     });
   }
 
+  // get member
+  function openMemberModal(id) {
+    console.log(id);
+    // $('#modal1').modal('close');
+
+    $.ajax({
+      url: "handlers/MembersHandler.php",
+      type: "POST",
+      data: {
+        operation: "getMember",
+        id: id,
+        lang: $("#lang").val()
+      },
+      success: function(data) {
+        var data = JSON.parse(data);
+        $("#memberName").html(data.FirstName + " " + data.LastName);
+        $("#memberPosition").html(data.Position);
+        $("#memberEmail").html(data.Email);
+        $("#memberPhone").html(data.Phone);
+        $("#memberBio").html(data.Bio);
+        // $("#memberImage").html(data.File);
+        $("#memberImage").attr("src", data.File);
+
+        $("#bioModal").modal("open");
+      },
+      error: function(xhr, ajaxOptions, thrownError) {
+        console.log(xhr.responseText);
+
+        $("#loadingContainer").hide();
+      }
+    });
+  }
   //get all items
   function fnGetMembers(toPage) {
     $("#loadingContainer").show();

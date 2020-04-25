@@ -3,7 +3,7 @@
         <div class="teacher_img" style="background-image: url('[[+image]]');"></div>
         <div class="clearfix"></div>
         <div class="l12 m12 s12 col details">
-           <a href="#bioModal" class="waves-effect"> <h3>[[+name]]</h3> </a>
+           <a onclick="openMemberModal('[[+id]]')"class="waves-effect"> <h3>[[+name]]</h3> </a>
             <h5> [[+position]] </h5>
 
             <div class="bio">
