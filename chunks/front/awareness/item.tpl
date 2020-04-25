@@ -1,4 +1,4 @@
-<section class="l12 s12 m12 col no_padding page_name">
+<section class="l12 s12 m12 col no_padding page_name" style=" min-height: 350px;">
   <div class="l12 s12 m12 col inner_headline center">
     <h1>[[+title]]</h1>
   </div>
