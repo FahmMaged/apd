@@ -40,7 +40,7 @@
         max-height: 400px;
         margin-bottom: 20px;
         background-repeat: no-repeat;
-
+        background-color: #eee;
        }
     .details{
         h3{
@@ -191,6 +191,12 @@ font-size: 15px;
         font-size: 18px;
         line-height: 1.8;
         color: $main_color3;
+
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
     }
     a.btn {
         margin: 20px auto;

@@ -1,6 +1,21 @@
 <div class="l3 m4 s12 col animated fadeInRight">
     <div class="teacher_box">
-        <div class="teacher_img" style="background-image: url('[[+image]]');"></div>
+        <div class="teacher_img" style="background-image: url('[[+image]]');">
+            <a style="
+            background: #fff;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            top: 20px;
+            right: 20px;
+            position: relative;
+        " onclick="openMemberModal('[[+id]]')" class="waves-effect"> <i class="fa fa-info"></i> </a>
+        </div>
         <div class="clearfix"></div>
         <div class="l12 m12 s12 col details">
            <a onclick="openMemberModal('[[+id]]')"class="waves-effect"> <h3>[[+name]]</h3> </a>

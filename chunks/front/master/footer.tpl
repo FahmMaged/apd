@@ -62,19 +62,19 @@
       <ul class="footer_contatc">
         <li> <a href="#"><span> [[+phoneText]] </span> [[+phone]] </a></li>
         <li> <a href="#"><span> [[+emailText]] </span> [[+email]] </a></li>
-        <li> <a href="#"><span> [[+address]] </span> [[+theAddress]] </a></li>
+        <!-- <li> <a href="#"><span> [[+address]] </span> [[+theAddress]] </a></li> -->
       </ul>
     </div>
 
     <div class="l4 s12 m4 col  contact-widget">
       <h3> [[+follow]] </h3>
       <ul class="footer_social">
-        <li> <a href="#"><i class="fa fa-facebook"></i> </a></li>
-        <li> <a href="#"> <i class=" fa fa-twitter"></i> </a></li>
-        <li> <a href="#"> <i class=" fa fa-linkedin"></i> </a></li>
-        <li> <a href="#"><i class=" fa fa-youtube"></i> </li> </a>
+        <li> <a href="https://www.facebook.com/ArabPositiveDiscipline/"><i class="fa fa-facebook"></i> </a></li>
+        <li> <a href="https://instagram.com/arabpositivediscipline?igshid=1eb7js7rkijgg"> <i class=" fa fa-instagram"></i> </a></li>
+        
       </ul>
     </div>
+
 
   </div>
 

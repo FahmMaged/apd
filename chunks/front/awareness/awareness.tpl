@@ -1,1 +1,7 @@
-[[+head]] [[+header]] [[+itemsTPL]] [[+footer]] [[+scripts]]
+
+[[+head]] 
+[[+header]]
+
+[[+itemsTPL]]
+[[+footer]] 
+

@@ -521,6 +521,18 @@ header .social_media li {
   line-height: 30px;
 }
 
+@media screen and (max-width: 768px) {
+  header .social_media li {
+    margin-right: 3px;
+    color: #515151;
+    font-size: 12px;
+    margin: 0px 2px;
+    text-align: center;
+    padding: 2px 4px;
+    line-height: 30px;
+  }
+}
+
 header .social_media li i {
   margin-right: 5px;
 }
@@ -608,6 +620,7 @@ header .menu > ul > li .sub_menu li {
 
 header .menu > ul > li .sub_menu li a {
   color: #fff !important;
+  padding: 5px 5px;
 }
 
 header .menu > ul > li .sub_menu li:hover {
@@ -1197,14 +1210,6 @@ section {
   font-size: 16px;
 }
 
-.about1 a {
-  background: #c42035;
-  padding: 5px 10px;
-  color: #fff;
-  margin: 10px 0px;
-  display: inline-block;
-}
-
 .aboutDetailsHome {
   height: 120px;
   overflow: hidden;
@@ -1556,6 +1561,7 @@ section {
   max-height: 400px;
   margin-bottom: 20px;
   background-repeat: no-repeat;
+  background-color: #eee;
 }
 
 .eventsPage .news_box .date h3 {
@@ -1752,6 +1758,7 @@ section {
   max-height: 400px;
   margin-bottom: 20px;
   background-repeat: no-repeat;
+  background-color: #eee;
 }
 
 .instructors .teacher_box .details h3 {
@@ -1923,6 +1930,17 @@ section {
   font-size: 18px;
   line-height: 1.8;
   color: #555555;
+  min-height: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
 }
 
 .pdfPage a.btn {
