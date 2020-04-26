@@ -181,6 +181,9 @@ font-size: 15px;
         margin-bottom: 50px;
         padding: 20px;
         border: 1px dashed #ccc;
+        @media screen and (max-width:768px) {
+            padding: 10px;
+        }
     }
     img{
         margin: 0 auto;
@@ -191,12 +194,14 @@ font-size: 15px;
         font-size: 18px;
         line-height: 1.8;
         color: $main_color3;
-
         min-height: 70px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-align: center;
+        @media screen and (max-width:768px) {
+            font-size: 14px;
+        }
     }
     a.btn {
         margin: 20px auto;

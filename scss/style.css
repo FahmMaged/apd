@@ -236,6 +236,13 @@ h3.headline {
   margin-bottom: 50px;
 }
 
+@media screen and (max-width: 768px) {
+  .page_name {
+    min-height: initial !important;
+    height: initial !important;
+  }
+}
+
 .page_name > div {
   position: absolute;
   width: 100%;
@@ -249,6 +256,12 @@ h3.headline {
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
   position: relative;
+}
+
+@media screen and (max-width: 768px) {
+  .page_name > div h1 {
+    font-size: 6vw;
+  }
 }
 
 .page_name > div .nav-wrapper {
@@ -1920,6 +1933,12 @@ section {
   border: 1px dashed #ccc;
 }
 
+@media screen and (max-width: 768px) {
+  .pdfPage .pdf_box {
+    padding: 10px;
+  }
+}
+
 .pdfPage img {
   margin: 0 auto;
   display: table;
@@ -1941,6 +1960,12 @@ section {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .pdfPage h3 {
+    font-size: 14px;
+  }
 }
 
 .pdfPage a.btn {
