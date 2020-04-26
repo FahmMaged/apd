@@ -18,40 +18,8 @@
   <div class="rows">
     <div class="l12 col no_padding">
       <div class="contact_us ">
-        <div class="l5 m5 s12 col contact_info">
-          <iframe
-            src=" https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d55281.1924264357!2d31.384468880548614!3d30.006016365279518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x14583ceb32248c7f%3A0x8ca7b1d76d8a1953!2s52+Passage!3m2!1d30.006020999999997!2d31.4194885!5e0!3m2!1sen!2seg!4v1477904660592 "
-            width="100%"
-            height="200"
-            frameborder="0"
-            style="border:0"
-            allowfullscreen
-          ></iframe>
-
-          <ul class="contact-info">
-            <li class="center  ">
-              <span
-                ><i class="fa fa-home" aria-hidden="true"></i> [[+address]]
-              </span>
-              <div>[[+theAddress]]</div>
-            </li>
-            <li class="center  ">
-              <span>
-                <i class="fa fa-envelope-o" aria-hidden="true"></i
-                >[[+email]]</span
-              >
-              info@kijamii.com
-            </li>
-            <!-- <li class="center  Show">
-              <span
-                ><i class="fa fa-phone" aria-hidden="true"></i>[[+telephone]]
-              </span>
-              01250555666
-            </li> -->
-            <!---- <li class="center  "><span><i class="fa fa-fax" aria-hidden="true"></i>Fax :</span>   </li> -->
-          </ul>
-        </div>
-        <div class="l7 m7 s12 col contact_form">
+        
+        <div class="l12 m12 s12 col contact_form">
           <form class="col s12" id="addGLI">
             <div class="row">
               <div class="input-field col s12">
@@ -96,6 +64,42 @@
             </div>
           </form>
         </div>
+
+        <div class="l12 m12 s12 col contact_info">
+          <!-- <iframe
+            src=" https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d55281.1924264357!2d31.384468880548614!3d30.006016365279518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x14583ceb32248c7f%3A0x8ca7b1d76d8a1953!2s52+Passage!3m2!1d30.006020999999997!2d31.4194885!5e0!3m2!1sen!2seg!4v1477904660592 "
+            width="100%"
+            height="200"
+            frameborder="0"
+            style="border:0"
+            allowfullscreen
+          ></iframe> -->
+
+          <ul class="contact-info">
+            <!-- <li class="center  ">
+              <span
+                ><i class="fa fa-home" aria-hidden="true"></i> [[+address]]
+              </span>
+              <div>[[+theAddress]]</div>
+            </li> -->
+            <li class="center  ">
+              <span>
+                <i class="fa fa-envelope-o" aria-hidden="true"></i
+                >[[+email]]</span
+              >
+              info@apdegypt.com
+            </li>
+            <!-- <li class="center  Show">
+              <span
+                ><i class="fa fa-phone" aria-hidden="true"></i>[[+telephone]]
+              </span>
+              01250555666
+            </li> -->
+            <!---- <li class="center  "><span><i class="fa fa-fax" aria-hidden="true"></i>Fax :</span>   </li> -->
+          </ul>
+        </div>
+
+
       </div>
     </div>
   </div>
