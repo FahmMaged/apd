@@ -187,23 +187,28 @@
               <label for="phone"> [[+phoneNumber]] *</label>
             </div>
           </div>
+          <div class="input-field col l6 m12 s12">
+            <div class="file-field input-field">
+              <div class="btn">
+                <span>[[+upload]]</span>
+                <input type="file" name="image" />
+              </div>
+              <div class="file-path-wrapper">
+                <input
+                  class="file-path validate"
+                  type="text"
+                  placeholder="[[+image]]"
+                />
+              </div>
+            </div>
+          </div>
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
-              <div class="file-field input-field">
-                <div class="btn">
-                  <span>[[+upload]]</span>
-                  <input type="file" name="image" />
-                </div>
-                <div class="file-path-wrapper">
-                  <input
-                    class="file-path validate"
-                    type="text"
-                    placeholder="[[+image]]"
-                  />
-                </div>
-              </div>
+              <input id="degree" name="degree" type="text" class="validate" />
+              <label for="degree"> [[+degree]] </label>
             </div>
+
             <div class="input-field col l6 m12 s12">
               <input
                 id="position"
@@ -671,3 +676,4 @@
       });
     });
   </script>
+</div>

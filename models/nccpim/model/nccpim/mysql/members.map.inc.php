@@ -19,6 +19,7 @@ $xpdo_meta_map['Members']= array (
     'LocationID' => 0,
     'LocationName' => NULL,
     'Position' => NULL,
+    'Degree' => NULL,
     'IsActive' => 0,
     'Instructor' => 0,
     'FacebookLink' => NULL,
@@ -120,6 +121,13 @@ $xpdo_meta_map['Members']= array (
     array (
       'dbtype' => 'varchar',
       'precision' => '191',
+      'phptype' => 'string',
+      'null' => true,
+    ),
+    'Degree' => 
+    array (
+      'dbtype' => 'varchar',
+      'precision' => '255',
       'phptype' => 'string',
       'null' => true,
     ),
