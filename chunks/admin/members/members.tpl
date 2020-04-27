@@ -155,14 +155,14 @@
       </div>
 
       <div class="col s6">
-        <p>Is Instructor</p>
+        <p>Is Trainer</p>
         <!-- Switch -->
         <div class="switch">
           <label>
-            Member
+            Teacher
             <input type="checkbox" id="editInstructor" name="Instructor" checked />
             <span class="lever"></span>
-            Instructor
+            Trainer
           </label>
         </div>
       </div>
@@ -170,26 +170,36 @@
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="first_name" name="first_name" type="text" class="validate" disabled />
+        <input id="first_name" name="first_name" type="text" class="validate" />
         <label for="first_name"> First Name </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="last_name" name="last_name" type="text" class="validate" disabled />
+        <input id="last_name" name="last_name" type="text" class="validate" />
         <label for="last_name"> Last Name </label>
       </div>
     </div>
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="email" name="email" type="text" class="validate" disabled />
+        <input id="degree" name="degree" type="text" class="validate" />
+        <label for="degree"> Degree </label>
+      </div>
+      <div class="input-field col l6 m12 s12">
+        <input id="position" name="position" type="text" class="validate" />
+        <label for="position"> Position </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col l6 m12 s12">
+        <input id="email" name="email" type="text" class="validate" />
         <label for="email"> Email </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="phone" name="phone" type="text" class="validate" disabled />
+        <input id="phone" name="phone" type="text" class="validate" />
         <label for="phone"> Phone Number</label>
       </div>
     </div>
 
-    <img class="articleImage" src="../[[+image]]" />
+    <!-- <img class="articleImage" src="../[[+image]]" /> -->
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
@@ -209,41 +219,41 @@
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="city" name="city" type="text" class="validate"  disabled/>
+        <input id="city" name="city" type="text" class="validate" />
         <label for="city"> Countery </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="location" name="location" type="text" class="validate"  disabled/>
+        <input id="location" name="location" type="text" class="validate" />
         <label for="location"> City </label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="FacebookLink" name="FacebookLink" type="text" class="validate"  disabled/>
+        <input id="FacebookLink" name="FacebookLink" type="text" class="validate" />
         <label for="FacebookLink"> Facebook Link </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="TwitterLink" name="TwitterLink" type="text" class="validate"  disabled/>
+        <input id="TwitterLink" name="TwitterLink" type="text" class="validate" />
         <label for="TwitterLink"> Twitter Link </label>
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col l6 m12 s12">
-        <input id="InstagramLink" name="InstagramLink" type="text" class="validate"  disabled/>
+        <input id="InstagramLink" name="InstagramLink" type="text" class="validate" />
         <label for="InstagramLink"> Instagram Link </label>
       </div>
       <div class="input-field col l6 m12 s12">
-        <input id="LinkedinLink" name="LinkedinLink" type="text" class="validate"  disabled/>
+        <input id="LinkedinLink" name="LinkedinLink" type="text" class="validate" />
         <label for="LinkedinLink"> Linkedin Link </label>
       </div>
     </div>
 
-    <div class="row" disabled>
+    <div class="row">
       <label for="bio">Bio</label>
       <div class="input-field col s12" >
-        <textarea id="bio" name="bio" class="materialize-textarea" disabled></textarea>
+        <textarea id="bio" name="bio" class="materialize-textarea"></textarea>
       </div>
     </div>
   </form>

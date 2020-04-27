@@ -215,6 +215,27 @@ class MembersHelper extends BaseHelper
                 if ($Instructor != $item->get('Instructor'))
                     $fields['Instructor'] = $Instructor;
             }
+        $fields['FirstName']     = $_POST['first_name'];
+        $fields['LastName']      = $_POST['last_name'];
+        $fields['Email']         = $_POST['email'];
+        $fields['Phone']         = $_POST['phone'];
+        $fields['Bio']           = $_POST['bio'];
+        $fields['Position']      = $_POST['position'];
+        $fields['Degree']        = $_POST['degree'];
+        $fields['City']          = $_POST['city'];
+        $fields['LocationName']  = $_POST['location'];
+        if(isset($_POST['FacebookLink'])){
+            $fields['FacebookLink']  = $_POST['FacebookLink'];
+        }
+        if(isset($_POST['TwitterLink'])){
+            $fields['TwitterLink']   = $_POST['TwitterLink'];
+        }
+        if(isset($_POST['InstagramLink'])){
+            $fields['InstagramLink'] = $_POST['InstagramLink'];
+        }
+        if(isset($_POST['LinkedinLink'])){
+            $fields['LinkedinLink']  = $_POST['LinkedinLink'];
+        }
 
         $item->fromArray($fields);
         return $item->save();

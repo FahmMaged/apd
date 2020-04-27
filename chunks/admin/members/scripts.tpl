@@ -156,6 +156,8 @@
         $("#itemID").val(item.ID);
         $("#first_name").val(item.FirstName);
         $("#last_name").val(item.LastName);
+        $("#degree").val(item.Degree);
+        $("#position").val(item.Position);
         $("#city").val(item.City);
         $("#phone").val(item.Phone);
         $("#email").val(item.Email);

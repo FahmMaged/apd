@@ -18,7 +18,9 @@
           <!-- <a href="#">
             <li><i class=" fa fa-twitter"></i></li>
           </a> -->
-          <a href="https://instagram.com/arabpositivediscipline?igshid=1eb7js7rkijgg">
+          <a
+            href="https://instagram.com/arabpositivediscipline?igshid=1eb7js7rkijgg"
+          >
             <li><i class=" fa fa-instagram"></i></li>
           </a>
           <!-- <a href="#">
@@ -59,14 +61,14 @@
         <div class="l9 s4 m8 col menu">
           <ul>
             <li class="active"><a href="index.php"> [[+home]] </a></li>
-           <li>
+            <li>
               <a href="aboutUs.php"> [[+aboutUs]] </a>
               <ul class="sub_menu">
                 <li><a href="aboutPage.php?id=1"> [[+page1]] </a></li>
                 <li><a href="aboutPage.php?id=2"> [[+page2]] </a></li>
                 <li><a href="aboutPage.php?id=3"> [[+page3]] </a></li>
               </ul>
-            </li> 
+            </li>
             <li><a href="events.php"> [[+events]] </a></li>
             <li>
               <a href="#"> [[+resources]] </a>
@@ -96,7 +98,10 @@
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header">[[+aboutUs]]  <i class="fa fa-chevron-down" style="font-size: 14px;"></i></a>
+          <a class="collapsible-header"
+            >[[+aboutUs]]
+            <i class="fa fa-chevron-down" style="font-size: 14px;"></i
+          ></a>
           <div class="collapsible-body">
             <ul>
               <li><a href="aboutUs.php"> [[+aboutUs]]</a></li>
@@ -112,7 +117,10 @@
     <li class="no-padding">
       <ul class="collapsible collapsible-accordion">
         <li>
-          <a class="collapsible-header"> [[+resources]]  <i class="fa fa-chevron-down" style="font-size: 14px;"></i> </a>
+          <a class="collapsible-header">
+            [[+resources]]
+            <i class="fa fa-chevron-down" style="font-size: 14px;"></i>
+          </a>
           <div class="collapsible-body">
             <ul>
               <li><a href="news.php"> [[+articles]] </a></li>
@@ -559,25 +567,25 @@
           return;
         }
 
-        if ($("#locationID").val() == null || $("#locationID").val() == 0) {
-          if ($("#lang").val() === "ar") {
-            swal({
-              title: "الحقول المطلوبة",
-              text: "لابد من اختيار مدينة",
-              type: "error",
-              confirmButtonText: "غلق"
-            });
-          } else {
-            swal({
-              title: "Required Fields",
-              text: "you should choose city",
-              type: "error",
-              confirmButtonText: "Close"
-            });
-          }
-          isValid = false;
-          return;
-        }
+        // if ($("#locationID").val() == null || $("#locationID").val() == 0) {
+        //   if ($("#lang").val() === "ar") {
+        //     swal({
+        //       title: "الحقول المطلوبة",
+        //       text: "لابد من اختيار مدينة",
+        //       type: "error",
+        //       confirmButtonText: "غلق"
+        //     });
+        //   } else {
+        //     swal({
+        //       title: "Required Fields",
+        //       text: "you should choose city",
+        //       type: "error",
+        //       confirmButtonText: "Close"
+        //     });
+        //   }
+        //   isValid = false;
+        //   return;
+        // }
       });
 
       if (!isValid) return;
