@@ -381,15 +381,24 @@ section{
 .services{
     background: #f9f9f9;
     .services_img{
-        width: 30%;
-        margin-right: 40%;
+        width: 120px;
+        height: 120px !important;
+        margin-right: 0;
         background: #fcfcfc;
         border-radius: 50%;
-            float: right;
+        float: initial;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
             img{
-                max-width: 50%;
-                margin-top: 25px;
+                max-width: 80%;
             }
+    }
+    .show-more{
+        cursor: pointer;
+        color: $main_color1;
+        margin-top: 20px;
     }
     h3{
         font-family: $font-bold;

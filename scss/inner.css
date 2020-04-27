@@ -100,7 +100,7 @@
 /********************** home menu text ***********************/
 /**************************/
 .page_name {
-  height: 220px;
+  height: 350px;
   position: relative;
   overflow: hidden;
   margin-bottom: 50px;
@@ -118,6 +118,12 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media only screen and (max-width: 768px) {
+  .page_name > div {
+    max-height: calc(100% - 5px);
+  }
 }
 
 .page_name > div h1 {
