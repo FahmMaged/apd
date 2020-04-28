@@ -187,7 +187,8 @@ class MembersHelper extends BaseHelper
         if (!empty($_POST['password'])) {
             if (empty($_POST['confirmPassword'])
                 || $_POST['password'] !== $_POST['confirmPassword']) {
-                return UtilityHelper::Response('error', 'Password confirmation is missing or does not match the entered password.');
+                return 0;
+                    // return UtilityHelper::Response('error', 'Password confirmation is missing or does not match the entered password.');
             }
 
             if (!password_verify($_POST['password'], $item->get('Password')))
