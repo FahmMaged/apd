@@ -187,7 +187,7 @@
                 type="text"
                 class="validate"
               />
-              <label for="first_name"> [[+firstName]] </label>
+              <label for="first_name"> [[+firstName]] * </label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input
@@ -196,7 +196,7 @@
                 type="text"
                 class="validate"
               />
-              <label for="last_name"> [[+lastName]] </label>
+              <label for="last_name"> [[+lastName]] *</label>
             </div>
           </div>
           <div class="row">
@@ -212,14 +212,14 @@
           <div class="input-field col l12 m12 s12">
             <div class="file-field input-field">
               <div class="btn">
-                <span>[[+upload]]</span>
+                <span>[[+upload]] *</span>
                 <input type="file" name="image" />
               </div>
               <div class="file-path-wrapper">
                 <input
                   class="file-path validate"
                   type="text"
-                  placeholder="[[+image]]"
+                  placeholder="[[+image]] *"
                 />
               </div>
             </div>
@@ -228,7 +228,7 @@
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <input id="degree" name="degree" type="text" class="validate" />
-              <label for="degree"> [[+degree]] </label>
+              <label for="degree"> [[+degree]] *</label>
             </div>
 
             <div class="input-field col l6 m12 s12">
@@ -238,7 +238,7 @@
                 type="text"
                 class="validate"
               />
-              <label for="position"> [[+position]] </label>
+              <label for="position"> [[+position]] *</label>
             </div>
           </div>
 
@@ -250,7 +250,7 @@
                 type="password"
                 class="validate"
               />
-              <label for="password">[[+password]]</label>
+              <label for="password">[[+password]] *</label>
             </div>
             <div class="input-field col l6 m12 s12">
               <input
@@ -259,14 +259,14 @@
                 type="password"
                 class="validate"
               />
-              <label for="confirmPassword"> [[+confirmPassword]] </label>
+              <label for="confirmPassword"> [[+confirmPassword]] *</label>
             </div>
           </div>
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
               <select id="cityID" name="cityID">
-                <option value="0" disabled selected>[[+country]]</option>
+                <option value="0" disabled selected>[[+country]] *</option>
                 [[+countriesTPL]]
               </select>
             </div>
@@ -307,7 +307,7 @@
                 name="bio"
                 class="materialize-textarea"
               ></textarea>
-              <label for="bio">[[+bio]]</label>
+              <label for="bio">[[+bio]] *</label>
             </div>
           </div>
 
