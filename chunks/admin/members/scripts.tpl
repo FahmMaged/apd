@@ -119,20 +119,30 @@
         contentType: false,
         processData: false,
         success: function(data) {
-          $("#editGL")[0].reset();
-          $("#loadingContainer").hide();
-          $("#editModal").closeModal();
-          swal(
-            {
-              title: "Item Edited",
-              text: "Item has been Edited.",
-              type: "success",
+          if (data == 0) {
+            $("#loadingContainer").hide();
+            swal({
+              title: "Error",
+              text: "Password and confirm password not the same",
+              type: "error",
               confirmButtonText: "Close"
-            },
-            function(isConfirm2) {
-              if (isConfirm2) location.reload();
-            }
-          );
+            });
+          } else {
+            $("#editGL")[0].reset();
+            $("#loadingContainer").hide();
+            $("#editModal").closeModal();
+            swal(
+              {
+                title: "Item Edited",
+                text: "Item has been Edited.",
+                type: "success",
+                confirmButtonText: "Close"
+              },
+              function(isConfirm2) {
+                if (isConfirm2) location.reload();
+              }
+            );
+          }
         },
         error: function(xhr, ajaxOptions, thrownError) {
           console.log(xhr.responseText);
