@@ -226,12 +226,18 @@
           </div>
 
           <div class="row">
-            <div class="input-field col l6 m12 s12">
-              <input id="degree" name="degree" type="text" class="validate" />
+            <div class="input-field col l12 m12 s12">
+              <!-- <input id="degree" name="degree" type="text" class="validate" /> -->
+              <textarea
+                id="degree"
+                name="degree"
+                class="materialize-textarea validate"
+                rows="2"
+              ></textarea>
               <label for="degree"> [[+degree]] *</label>
             </div>
 
-            <div class="input-field col l6 m12 s12">
+            <!-- <div class="input-field col l6 m12 s12">
               <input
                 id="position"
                 name="position"
@@ -239,7 +245,7 @@
                 class="validate"
               />
               <label for="position"> [[+position]] *</label>
-            </div>
+            </div> -->
           </div>
 
           <div class="row">
