@@ -25,7 +25,7 @@ class ServicesHelper extends BaseHelper
 
         if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0)
         {
-             $response = $this->UploadFile($_FILES['picture'],'/../uploads/sliderItems/', $x = 120);
+             $response = $this->UploadFile($_FILES['picture'],'/../uploads/sliderItems/', $x = 32);
              $response = json_decode($response);
 
              if($response->res == 0)
