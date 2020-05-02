@@ -115,6 +115,7 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'FacebookLink'  => $langFile2['FacebookLink'][$lang],
 												'clickHere'     => $langFile2['clickHere'][$lang],
 												'advantage'     => $langFile2['advantage'][$lang],
+												'join'          => $langFile2['join'][$lang],
 												'position'      => $langFile2['position'][$lang],
 												'degree'        => $langFile2['degree'][$lang],
 												'FacebookLink'  => $langFile2['FacebookLink'][$lang],

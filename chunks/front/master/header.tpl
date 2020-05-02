@@ -171,7 +171,7 @@
       </div>
 
       <div class="s12 m6 l6 col">
-        <h2 class="headline ">[[+register]]</h2>
+        <h2 class="headline ">[[+join]]</h2>
         <div class="s12 col center whyModal">
           <a class="waves-effect" href="#modal5">
             <h4>[[+advantage]]<span> [[+clickHere]]</span></h4>

@@ -52,5 +52,6 @@
     "en": "advantage to join",
     "ar": "مميزات العضوية لمعلمين التربية الإيجابية "
   },
-  "upload": { "en": "Upload", "ar": "تحميل" }
+  "upload": { "en": "Upload", "ar": "تحميل" },
+  "join": { "en": "Join us", "ar": "انضم الينا" }
 }
