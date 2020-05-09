@@ -169,8 +169,19 @@
 			<column key="ID" length="" collation="A" null="false" />
 		</index>
 	</object>
+	<object class="EventCategories" table="EventCategories" extends="xPDOObject">
+		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="Title_en" dbtype="varchar" precision="191" phptype="string" null="true" />
+		<field key="Title_ar" dbtype="varchar" precision="191" phptype="string" null="true" />
+		<field key="Sort" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
+
+		<index alias="PRIMARY" name="PRIMARY" primary="true" unique="true" type="BTREE" >
+			<column key="ID" length="" collation="A" null="false" />
+		</index>
+	</object>
 	<object class="Events" table="Events" extends="xPDOObject">
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
+		<field key="CategoryID" dbtype="int" precision="11" phptype="integer" null="false" default="0" />
 		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="false" />
 		<field key="Description_en" dbtype="text" phptype="string" null="true" />
 		<field key="Title_ar" dbtype="varchar" precision="255" phptype="string" null="false" />

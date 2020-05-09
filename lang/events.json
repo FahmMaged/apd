@@ -72,5 +72,13 @@
   "eventDate": {
     "en": "Event Date",
     "ar": "تاريخ الحدث"
+  },
+  "search": {
+    "en": "Search",
+    "ar": "بحث"
+  },
+  "category": {
+    "en": "Category",
+    "ar": " فئة"
   }
 }

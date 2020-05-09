@@ -19,32 +19,15 @@ $head        = new LoadChunk('head', 'front/master', array(
 														   'enLink'    => $enLink
 														   ), '');
 
-// // Arabic months
-// $months = array(
-// 	"January"   => "يناير",
-// 	"February"  => "فبراير",
-// 	"March"     => "مارس",
-// 	"April"     => "أبريل",
-// 	"May"       => "مايو",
-// 	"June"      => "يونيو",
-// 	"July"      => "يوليو",
-// 	"August"    => "أغسطس",
-// 	"September" => "سبتمبر",
-// 	"October"   => "أكتوبر",
-// 	"November"  => "نوفمبر",
-// 	"December"  => "ديسمبر"
-//   );
-//   // Months Select
-//   $optins = "";
-//   $i = 1;
-//   foreach ($months as $en => $ar) {
-//   if ($lang == 'ar') {
-// 		$month = $ar;
-//   } else{
-//    		$month = $en;
-//   }
-//   $options        .= new LoadChunk('option', 'front/events', array("i" => $i++, "month" => $month), '');
-// }
+// Get Categories
+$categoriesTPL = '';
+$categories = $xpdo->getCollection('EventCategories');
+foreach($categories as $cat){
+	$categoriesTPL   .= new LoadChunk('option2', 'front/master', array(
+		'id'    => $cat->get('ID'),
+		'name'  => $cat->get('Title_'.$lang),
+		), '');
+}
 
 $scripts        = new LoadChunk('scripts', 'front/events', array(), '');
 
@@ -60,6 +43,7 @@ $output = new LoadChunk('events', 'front/events', array(
 													   'logged'             => $logged,
 											  		   'scripts'            => $scripts,
 											  		   'hideAdd'            => $hideAdd,
+											  		   'categoriesTPL'      => $categoriesTPL,
 											  		   'headerTitle'        => $langFile['headerTitle'][$lang],
 											  		   'dateText'           => $langFile['dateText'][$lang],
 											  		   'youCanAddEvent'     => $langFile['youCanAddEvent'][$lang],
@@ -73,6 +57,8 @@ $output = new LoadChunk('events', 'front/events', array(
 											  		   'eventDetails'       => $langFile['eventDetails'][$lang],
 											  		   'submit'             => $langFile['submit'][$lang],
 											  		   'eventDate'          => $langFile['eventDate'][$lang],
+											  		   'search'             => $langFile['search'][$lang],
+											  		   'category'           => $langFile['category'][$lang],
 											  		   'mainImage'          => $mainImage->get('Events'),
 											  		   
 										           ), '');

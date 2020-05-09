@@ -6,28 +6,9 @@ if (!AdminUsersHelper::IsLoggedIn())
 {
 	UtilityHelper::RedirectTo('login.php');
 }
+$adminUsersHelper = new AdminUsersHelper();
 
 $adminName = $_SESSION['AdminUser']['FirstName'];
-
-$itemsTpl = '';
-global $xpdo;
-$query = $xpdo->newQuery('EventCategories');
-$query->sortby('Sort', 'ASC');
-$locations = $xpdo->getCollection('EventCategories', $query);
-foreach ($locations as $location) {
-	$itemsTpl .= new LoadChunk('option', 'admin/events', array(
-												'id'   => $location->get('ID'),
-												'name' => $location->get('Title_en'),
-												), '../');
-}
-
-// $select = new LoadChunk('selectOptions', 'admin/events', array(
-// 												'options' => $itemsTpl,
-// 												), '../');
-
-$editSelect = new LoadChunk('editSelectOptions', 'admin/events', array(
-												'options' => $itemsTpl,
-												), '../');
 
 $head    = new LoadChunk('head', 'admin/master', array(), '../');
 
@@ -35,13 +16,9 @@ $header  = new LoadChunk('header', 'admin/master', array(), '../');
 
 $sidebar = new LoadChunk('sidebar', 'admin/master', array('name' => $adminName), '../');
 
+$content = new LoadChunk('main', 'admin/eventCategories', array(), '../');
 
-
-$content = new LoadChunk('events', 'admin/events', array('options'     => $itemsTpl,
-														 'editSelect' => $editSelect
-														), '../');
-
-$extraScripts 	= new LoadChunk('scripts', 'admin/events',array(),'../');
+$extraScripts 	= new LoadChunk('scripts', 'admin/eventCategories',array(),'../');
 
 $footer  = new LoadChunk('footer', 'admin/master', array('extraScripts' => $extraScripts), '../');
 

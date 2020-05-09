@@ -1,7 +1,12 @@
 <script type="text/javascript">
   var currPage = parseInt($("#currPage").val());
+  var categoryID = 0;
   $(document).ready(function() {
     fnGetEvents(currPage);
+
+    $("#categoryID select").on("change", function() {
+      categoryID = $(this).val();
+    });
   });
 
   //get all items
@@ -14,6 +19,7 @@
       data: {
         operation: "getAllEventsFront",
         currentpage: toPage,
+        categoryID: categoryID,
         lang: $("#lang").val()
       },
       success: function(data) {

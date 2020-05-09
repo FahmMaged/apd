@@ -2,6 +2,7 @@
   var currPage = parseInt($("#currPage").val());
   $(document).ready(function() {
     getAll(1, 0);
+    $("select").material_select();
 
     //Initialize datepicker
     $(".datepicker").pickadate({
@@ -45,16 +46,16 @@
           isValid = false;
           return;
         }
-        // if ($("#locationID").val() == null || $("#locationID").val() == 0) {
-        //   swal({
-        //     title: "Required Fields",
-        //     text: "You should select a location",
-        //     type: "error",
-        //     confirmButtonText: "Close"
-        //   });
-        //   isValid = false;
-        //   return;
-        // }
+        if ($("#categoryID").val() == null || $("#categoryID").val() == 0) {
+          swal({
+            title: "Required Fields",
+            text: "You should select a category",
+            type: "error",
+            confirmButtonText: "Close"
+          });
+          isValid = false;
+          return;
+        }
       });
 
       if (!isValid) return;
@@ -89,9 +90,9 @@
       //   }
       //   values.append("inHome", inHome);
 
-      //   var locationID = 0;
-      //   locationID = $("#locationID").val();
-      //   values.append("locationID", locationID);
+      var categoryID = 0;
+      categoryID = $("#categoryID").val();
+      values.append("categoryID", categoryID);
 
       $.ajax({
         url: "../handlers/EventsHandler.php",
@@ -173,9 +174,9 @@
       //   }
       //   values.append("edit_inHome", editInHome);
 
-      //   var editLocationID = 0;
-      //   editLocationID = $("#editLocationID").val();
-      //   values.append("edit_locationID", editLocationID);
+      var editCategoryID1 = 0;
+      editCategoryID1 = $("#editCategoryID").val();
+      values.append("edit_categoryID", editCategoryID1);
 
       $.ajax({
         url: "../handlers/EventsHandler.php",
@@ -331,12 +332,15 @@
           $("#edit_forMembers").prop("checked", true);
         }
 
-        // $("#editLocationID option[value=" + item.LocationID + "]").attr("selected", "selected");
-        // $('#editLocationID').material_select();
         tinyMCE.get("edit_description_en").setContent(item.Description_en);
         tinyMCE.get("edit_description_ar").setContent(item.Description_ar);
 
         $("#edit_publish_date").val(item.PublishDate);
+        $("#editCategoryID option[value=" + item.CategoryID + "]").attr(
+          "selected",
+          "selected"
+        );
+        $("#editCategoryID").material_select();
         Materialize.updateTextFields();
         $("#editNewsModal").openModal();
         $("#addTabsEdit").tabs("select_tab", "TabAREdit");

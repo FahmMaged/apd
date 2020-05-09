@@ -44,7 +44,7 @@ class EventsHelper extends BaseHelper
       $fields['Sort']        = $_POST['sort'];
       // $fields['InHome']      = $_POST['inHome'];
       $fields['IsActive']    = $_POST['isActive'];
-      // $fields['LocationID']  = $_POST['locationID'];
+      $fields['CategoryID']  = $_POST['categoryID'];
       $fields['CreatedOn']   = $createdOn;
       if (!empty($_POST['description_en'])) {
         $fields['Description_en'] = $_POST['description_en'];
@@ -125,7 +125,7 @@ class EventsHelper extends BaseHelper
       $fields['ForMembers']     = $_POST['edit_forMembers'];
       // $fields['InHome']      = $_POST['inHome'];
       $fields['IsActive']    = $_POST['isActive'];
-      // $fields['LocationID']  = $_POST['locationID'];
+      $fields['CategoryID']  = $_POST['categoryID'];
       $fields['CreatedOn']   = $createdOn;
       if (!empty($_POST['description'])) {
         $fields['Description_en'] = $_POST['description'];
@@ -266,7 +266,7 @@ class EventsHelper extends BaseHelper
                       'Sort'         => $_POST['edit_sort'],
                       // 'InHome'       => $_POST['edit_inHome'],
                       'IsActive'     => $_POST['edit_isActive'],
-                      // 'LocationID'   => $_POST['edit_locationID'],
+                      'CategoryID'   => $_POST['edit_categoryID'],
                       'UpdatedOn'    => $updatedOn,
                       'Alias_en'     =>($_POST['edit_alias_en']!="")? $this->urlHelper->getAliasFormat($_POST['edit_alias_en']) : $this->urlHelper->getAliasFormat($_POST['edit_title_en']),
                       'Alias_ar'        =>($_POST['edit_alias_ar']!="")? $this->urlHelper->getAliasFormat($_POST['edit_alias_ar']) : $this->urlHelper->getAliasFormat($_POST['edit_title_ar']),
@@ -441,6 +441,9 @@ class EventsHelper extends BaseHelper
 
       $query1 = $xpdo->newQuery('Events');
       $query1->where(array('IsActive' => 1));
+      if(isset($_POST['categoryID']) && $_POST['categoryID'] != 0){
+        $query1->where(array('CategoryID' => $_POST['categoryID']));
+      }
       // $query->sortby('PublishDate', 'DESC');
       if($logged == 0){
         $query1->where(array('ForMembers' => 0));
@@ -468,6 +471,9 @@ class EventsHelper extends BaseHelper
       $query->where(array('IsActive' => 1));
       if($logged == 0){
         $query->where(array('ForMembers' => 0));
+      }
+      if(isset($_POST['categoryID']) && $_POST['categoryID'] != 0){
+        $query->where(array('CategoryID' => $_POST['categoryID']));
       }
       $query->sortby('PublishDate', 'DESC');
       $query->limit($rowsperpage,$offset);

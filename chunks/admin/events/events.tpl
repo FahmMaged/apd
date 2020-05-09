@@ -142,6 +142,14 @@
           </p>
         </div>
 
+        <div class="input-field col s12" id="hide">
+          <h5>Select Category</h5>
+          <select id="categoryID" name="category" class="[[+class]]">
+            <option value="0" disabled selected>Select Category</option>
+            [[+options]]
+          </select>
+        </div>
+
         <div class="row">
           <div class="input-field col s12">
             <input type="date" class="datepicker" name="publish_date" />
@@ -311,6 +319,14 @@
             <input type="checkbox" class="filled-in" id="edit_isActive" />
             <label for="edit_isActive">Is Active</label>
           </p>
+        </div>
+
+        <div class="input-field col s12" id="editHide">
+          <h5>Select Category</h5>
+          <select id="editCategoryID" name="edit_category" class="[[+class]]">
+            <option value="0" selected>Select Category</option>
+            [[+options]]
+          </select>
         </div>
 
         <div class="row">

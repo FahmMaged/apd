@@ -7,6 +7,7 @@ $xpdo_meta_map['Events']= array (
   'fields' => 
   array (
     'ID' => NULL,
+    'CategoryID' => 0,
     'Title_en' => NULL,
     'Description_en' => NULL,
     'Title_ar' => NULL,
@@ -38,6 +39,14 @@ $xpdo_meta_map['Events']= array (
       'null' => false,
       'index' => 'pk',
       'generated' => 'native',
+    ),
+    'CategoryID' => 
+    array (
+      'dbtype' => 'int',
+      'precision' => '11',
+      'phptype' => 'integer',
+      'null' => false,
+      'default' => 0,
     ),
     'Title_en' => 
     array (

@@ -28,6 +28,24 @@
         </a>
       </div>
     </div>
+
+    <div class="filter">
+      <div class="s12 l5 m5 col input-field " id="categoryID">
+        <select>
+          <option value="0" selected>[[+category]]</option>
+          [[+categoriesTPL]]
+        </select>
+      </div>
+
+      <div class="s12 l2 m2 col input-field ">
+        <a
+          class="waves-effect waves-light btn filterBtn"
+          onclick="fnGetEvents(1)"
+          >[[+search]]</a
+        >
+      </div>
+    </div>
+
     <div class="l12 col no_padding" id="contentContainer"></div>
 
     <div class="s12 center  col" id="pagination"></div>
