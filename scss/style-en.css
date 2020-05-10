@@ -104,5 +104,6 @@ a#btnSend {
 
 .eventsPage #contentContainer > div:nth-child(3n+1) {
   clear: left;
+  position: relative;
 }
 /*# sourceMappingURL=style-en.css.map */
