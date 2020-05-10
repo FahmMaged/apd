@@ -801,6 +801,10 @@ div#modal2 .modal-content > div:nth-child(2) {
   text-decoration: underline;
 }
 
+.dropdown-content li > span > label {
+  right: -12px;
+}
+
 footer {
   background: #418cb5;
   padding: 20px 0px;
@@ -1641,6 +1645,26 @@ section {
 
 .eventsPage #contentContainer > div:nth-child(3n+1) {
   clear: right;
+}
+
+.eventsPage .filter {
+  padding: 8px 20px;
+  background: #fff;
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.06);
+  border: solid 1px #e8e8e8;
+  float: right;
+  width: 100%;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0 10px 50px 0 rgba(0, 0, 0, 0.13);
+  border: solid 1px #e8e8e8;
+}
+
+.eventsPage .filter .filterBtn {
+  width: 80%;
+  margin: 0 auto;
+  display: table;
+  background: #c42035;
 }
 
 .disclaimer {
