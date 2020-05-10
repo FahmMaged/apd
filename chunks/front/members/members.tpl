@@ -10,28 +10,28 @@
 <section class="inner_body instructors">
   <div class="rows">
     <div class="filter">
-      <div class="s12 l5 m5 col input-field " id="cityID">
+      <div class="s12 l3 m3 col input-field " id="cityID">
         <select>
           <option value="0" selected>[[+country]]</option>
           [[+countriesTPL]]
         </select>
       </div>
 
-      <div class="s12 l5 m5 col input-field " id="location2ID">
+      <div class="s12 l3 m3 col input-field " id="location2ID">
         <select>
           <option value="0" selected>[[+city]] </option>
           [[+locationsTPL]]
         </select>
       </div>
 
-      <div class="s12 l5 m5 col input-field " id="categoryID">
+      <div class="s12 l3 m3 col input-field " id="categoryID">
         <select>
           <option value="0" selected>[[+category]]</option>
           [[+categoriesTPL]]
         </select>
       </div>
 
-      <div class="s12 l2 m2 col input-field ">
+      <div class="s12 l3 m3 col input-field ">
         <a
           class="waves-effect waves-light btn filterBtn"
           onclick="fnGetMembers(1)"
