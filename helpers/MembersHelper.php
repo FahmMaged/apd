@@ -28,6 +28,12 @@ class MembersHelper extends BaseHelper
         if (!empty($checkUserExistence))
             return json_encode(array('saved' => 2 ));
 
+        // check categories
+        if(isset($_POST['categoryIDs'])){
+            $categoryIDs = $_POST['categoryIDs'];
+            $categories = implode(',',$categoryIDs);
+        }
+
         $fields['FirstName']     = $_POST['first_name'];
         $fields['LastName']      = $_POST['last_name'];
         $fields['Email']         = $_POST['email'];
@@ -38,6 +44,7 @@ class MembersHelper extends BaseHelper
         $fields['Password']      = password_hash($_POST['password'], PASSWORD_BCRYPT);;
         $fields['City']          = $_POST['cityName'];
         $fields['LocationName']  = $_POST['locationName'];
+        $fields['CategoryIDs']   = $categories;
         $fields['LocationID']    = $_POST['locationID'];
         $fields['CityID']        = $_POST['cityID'];
         $fields['IsActive']      = 0;
@@ -133,7 +140,26 @@ class MembersHelper extends BaseHelper
         }
         $item = $xpdo->getObject('Members', array('ID' => $itemID));
         $itemObj = json_encode($item->toArray());
-        return $itemObj;
+
+        if(!empty($item->get('CategoryIDs'))){
+            $categories = $item->get('CategoryIDs');
+            $categoriesIDs = (explode(",",$categories));
+            $categoriesNames = '';
+            if(!empty($categoriesIDs)){
+                foreach($categoriesIDs as $id){
+                    $datename = $xpdo->getObject('MemberCategories', array('ID' => $id));
+                    $dname = "Not available";
+                    if(!empty($datename)){
+                        $dname = $datename->get('Title_en');
+                    }
+                    
+                    $categoriesNames .= ' '. $dname .',';
+                }
+            }
+            $items = $categoriesNames;
+        }
+        $result =  json_encode(array('all' => $itemObj, 'names' => $items));
+        return $result;
     }
     public function GetMember()
     {
@@ -345,6 +371,12 @@ class MembersHelper extends BaseHelper
           ));
       }
 
+      if(!empty($_POST['categoryID']) ){
+        $query->where(array(
+            'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].'%',
+          ));
+      }
+
       if(!empty($_POST['location'])){
         $query->where(array(
             'LocationID' => $_POST['location'],
@@ -381,6 +413,12 @@ class MembersHelper extends BaseHelper
       if(!empty($_POST['city'])){
         $query->where(array(
             'CityID' => $_POST['city'],
+          ));
+      }
+
+      if(!empty($_POST['categoryID']) ){
+        $query->where(array(
+            'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].',%',
           ));
       }
 

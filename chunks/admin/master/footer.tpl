@@ -1,6 +1,7 @@
 <!-- <script src="js/vendor/jquery.min.js"></script> -->
 <script src="js/vendor/what-input.min.js"></script>
 <script src="js/materialize.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
 <script src="js/clockpicker.js"></script>
 <script src="js/app.js"></script>
 <script src="js/timedropper.js"></script>

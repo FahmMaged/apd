@@ -2,6 +2,7 @@
   var currPage = parseInt($("#currPage").val());
   var locationID = 0;
   var cityID = 0;
+  var categoryID = 0;
   $(document).ready(function() {
     fnGetMembers(1);
 
@@ -11,6 +12,10 @@
 
     $("#cityID select").on("change", function() {
       cityID = $(this).val();
+    });
+
+    $("#categoryID select").on("change", function() {
+      categoryID = $(this).val();
     });
   });
 
@@ -79,6 +84,7 @@
         currentpage: toPage,
         location: locationID,
         city: cityID,
+        categoryID: categoryID,
         lang: $("#lang").val()
       },
       success: function(data) {

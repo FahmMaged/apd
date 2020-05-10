@@ -162,7 +162,10 @@
       type: "POST",
       data: { operation: "get", itemID: currID },
       dataType: "json",
-      success: function(item) {
+      success: function(data) {
+        var item = data.all;
+        item = $.parseJSON(item);
+        var names = data.names;
         $("#itemID").val(item.ID);
         $("#first_name").val(item.FirstName);
         $("#last_name").val(item.LastName);
@@ -174,6 +177,7 @@
         $("#location").val(item.LocationName);
         $("#FacebookLink").val(item.FacebookLink);
         $("#TwitterLink").val(item.TwitterLink);
+        $("#categoriesNames").val(names);
         $("#InstagramLink").val(item.InstagramLink);
         $("#LinkedinLink").val(item.LinkedinLink);
         $("#editModal #editIsActive").prop("checked", item.IsActive);

@@ -55,6 +55,16 @@ foreach($countries as $loc){
 		), '');
 }
 
+// Get categories
+$categoriesTPL = '';
+$categories = $xpdo->getCollection('MemberCategories');
+foreach($categories as $cat){
+	$categoriesTPL   .= new LoadChunk('option2', 'front/master', array(
+		'id'    => $cat->get('ID'),
+		'name'  => $cat->get('Title_'.$lang),
+		), '');
+}
+
 // get dynamic basr url
 if ($_SERVER['HTTP_HOST'] != 'localhost') {
 	$server        = $_SERVER['HTTP_HOST'];
@@ -82,6 +92,7 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'hideLogout'   => $hideLogout,
 												'locationsTPL' => $locationsTPL,
 												'countriesTPL' => $countriesTPL,
+												'categoriesTPL' => $categoriesTPL,
 												'home'      => $langFile['home'][$lang],
 												'aboutUs'   => $langFile['aboutUs'][$lang],
 												'page1'     => $langFile['page1'][$lang],
@@ -100,6 +111,7 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'email'     => $langFile['email'][$lang],
 												'register'  => $langFile2['register'][$lang],
 												'login'     => $langFile2['login'][$lang],
+												'category'  => $langFile2['category'][$lang],
 												'contactUs' => $langFile['contactUs'][$lang],
 												'emailText' => $langFile2['email'][$lang],
 												'phoneNumber' => $langFile2['phoneNumber'][$lang],

@@ -24,6 +24,13 @@
         </select>
       </div>
 
+      <div class="s12 l5 m5 col input-field " id="categoryID">
+        <select>
+          <option value="0" selected>[[+category]]</option>
+          [[+categoriesTPL]]
+        </select>
+      </div>
+
       <div class="s12 l2 m2 col input-field ">
         <a
           class="waves-effect waves-light btn filterBtn"

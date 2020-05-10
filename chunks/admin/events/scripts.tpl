@@ -2,7 +2,7 @@
   var currPage = parseInt($("#currPage").val());
   $(document).ready(function() {
     getAll(1, 0);
-    $("select").material_select();
+    // $("select").formSelect();
 
     //Initialize datepicker
     $(".datepicker").pickadate({

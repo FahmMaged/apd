@@ -110,7 +110,7 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <button id="btnSend" class="btn left redBtn">[[+submit]]</button>
+          <button id="btnEventSend" class="btn left redBtn">[[+submit]]</button>
         </div>
       </div>
     </form>
@@ -123,7 +123,7 @@
 
 <script>
   //save button in the add News modal
-  $("#btnSend").click(function(event) {
+  $("#btnEventSend").click(function(event) {
     event.preventDefault();
 
     isValid = true;

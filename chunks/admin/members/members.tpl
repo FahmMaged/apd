@@ -251,6 +251,13 @@
     </div>
 
     <div class="row">
+        <div class="input-field col l12 m12 s12">
+          <input id="categoriesNames" name="categoriesNames" type="text" class="validate" disabled/>
+          <label for="categoriesNames"> Categories </label>
+        </div>
+      </div>
+
+    <div class="row">
       <label for="bio">Bio</label>
       <div class="input-field col s12" >
         <textarea id="bio" name="bio" class="materialize-textarea"></textarea>

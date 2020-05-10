@@ -148,12 +148,17 @@
           <input type="hidden" name="operation" value="login" />
           <div class="row">
             <div class="input-field col l12 m12 s12">
-              <input id="email" name="email" type="email" class="validate" />
+              <input
+                id="loginEmail"
+                name="email"
+                type="email"
+                class="validate"
+              />
               <label for="email">[[+emailText]] </label>
             </div>
             <div class="input-field col l12 m12 s12">
               <input
-                id="password"
+                id="loginPassword"
                 name="password"
                 type="password"
                 class="validate"
@@ -282,6 +287,13 @@
                 [[+locationsTPL]]
               </select>
             </div>
+          </div>
+
+          <div class="input-field col l6 m12 s12">
+            <select multiple id="categoryID" name="categoryIDs[]">
+              <option value="0" disabled selected>[[+category]]</option>
+              [[+categoriesTPL]]
+            </select>
           </div>
 
           <div class="row">
@@ -429,8 +441,8 @@
           url: "handlers/MembersHandler.php",
           type: "POST",
           data: {
-            email: $("#email").val(),
-            password: $("#password").val(),
+            email: $("#loginEmail").val(),
+            password: $("#loginPassword").val(),
             operation: "login"
           },
           cache: false,
@@ -534,6 +546,7 @@
       //form validations
       $("#register .validate").each(function() {
         if ($.trim($(this).val()) == "") {
+          console.log("this: ", this);
           if ($("#lang").val() === "ar") {
             swal({
               title: "الحقول المطلوبة",
@@ -608,7 +621,7 @@
 
       var values = new FormData($(this)[0]);
       var city = 0;
-      city = $("#city option:selected").text();
+      city = $("#cityID option:selected").text();
       values.append("cityName", city);
 
       var location = 0;
