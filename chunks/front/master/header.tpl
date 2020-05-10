@@ -229,7 +229,14 @@
               </div>
             </div>
           </div>
-
+          <div class="row">
+          <div class="input-field col l12 m12 s12">
+            <select multiple id="categoryID" name="categoryIDs[]">
+              <option value="0" disabled selected>[[+category]]</option>
+              [[+categoriesTPL]]
+            </select>
+          </div>
+        </div>
           <div class="row">
             <div class="input-field col l12 m12 s12">
               <!-- <input id="degree" name="degree" type="text" class="validate" /> -->
@@ -289,12 +296,7 @@
             </div>
           </div>
 
-          <div class="input-field col l6 m12 s12">
-            <select multiple id="categoryID" name="categoryIDs[]">
-              <option value="0" disabled selected>[[+category]]</option>
-              [[+categoriesTPL]]
-            </select>
-          </div>
+          
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
