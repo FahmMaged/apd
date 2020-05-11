@@ -81,6 +81,17 @@
       class="tooltipped"
       data-position="right"
       data-delay="50"
+      data-tooltip="Event Categories"
+    >
+      <a href="eventCategories.php">
+        <i class="material-icons">location_on</i>
+        <p class="menu-links">Event Categories</p>
+      </a>
+    </li>
+    <li
+      class="tooltipped"
+      data-position="right"
+      data-delay="50"
       data-tooltip="Events"
     >
       <a href="events.php">
@@ -174,6 +185,17 @@
       <a href="members.php">
         <i class="material-icons">supervised_user_circle</i>
         <p class="menu-links">Users</p>
+      </a>
+    </li>
+    <li
+      class="tooltipped"
+      data-position="right"
+      data-delay="50"
+      data-tooltip="Users Categories"
+    >
+      <a href="memberCategories.php">
+        <i class="material-icons">location_on</i>
+        <p class="menu-links">Users Categories</p>
       </a>
     </li>
     <li
