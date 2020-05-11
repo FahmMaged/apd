@@ -30,14 +30,14 @@
     </div>
 
     <div class="filter">
-      <div class="s12 l5 m5 col input-field " id="categoryID">
+      <div class="s12 l9 m9 col input-field " id="categoryID">
         <select>
           <option value="0" selected>[[+category]]</option>
           [[+categoriesTPL]]
         </select>
       </div>
 
-      <div class="s12 l2 m2 col input-field ">
+      <div class="s12 l3 m3 col input-field ">
         <a
           class="waves-effect waves-light btn filterBtn"
           onclick="fnGetEvents(1)"
