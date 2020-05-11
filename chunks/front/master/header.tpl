@@ -230,13 +230,13 @@
             </div>
           </div>
           <div class="row">
-          <div class="input-field col l12 m12 s12">
-            <select multiple id="categoryID" name="categoryIDs[]">
-              <option value="0" disabled selected>[[+category]]</option>
-              [[+categoriesTPL]]
-            </select>
+            <div class="input-field col l12 m12 s12">
+              <select multiple id="categoryID" name="categoryIDs[]">
+                <option value="0" disabled selected>[[+category]] *</option>
+                [[+categoriesTPL]]
+              </select>
+            </div>
           </div>
-        </div>
           <div class="row">
             <div class="input-field col l12 m12 s12">
               <!-- <input id="degree" name="degree" type="text" class="validate" /> -->
@@ -295,8 +295,6 @@
               </select>
             </div>
           </div>
-
-          
 
           <div class="row">
             <div class="input-field col l6 m12 s12">
@@ -588,25 +586,25 @@
           return;
         }
 
-        // if ($("#locationID").val() == null || $("#locationID").val() == 0) {
-        //   if ($("#lang").val() === "ar") {
-        //     swal({
-        //       title: "الحقول المطلوبة",
-        //       text: "لابد من اختيار مدينة",
-        //       type: "error",
-        //       confirmButtonText: "غلق"
-        //     });
-        //   } else {
-        //     swal({
-        //       title: "Required Fields",
-        //       text: "you should choose city",
-        //       type: "error",
-        //       confirmButtonText: "Close"
-        //     });
-        //   }
-        //   isValid = false;
-        //   return;
-        // }
+        if ($("#categoryID").val() == null || $("#categoryID").val() == 0) {
+          if ($("#lang").val() === "ar") {
+            swal({
+              title: "الحقول المطلوبة",
+              text: "لابد من اختيار قسم",
+              type: "error",
+              confirmButtonText: "غلق"
+            });
+          } else {
+            swal({
+              title: "Required Fields",
+              text: "you should choose city",
+              type: "error",
+              confirmButtonText: "Close"
+            });
+          }
+          isValid = false;
+          return;
+        }
       });
 
       if (!isValid) return;

@@ -40,7 +40,7 @@ $output = new LoadChunk('contactUs', 'front/contactUs', array(
 											  		   'title1'             => $langFile['title1'][$lang],
 											  		   'send'              => $langFile['send'][$lang],
 											  		   'theAddress'        => $langFile['theAddress'][$lang],
-											  		   'mainImage'          => $mainImage->get('ContactUs'),
+											  		   'mainImage'         => $mainImage->get('ContactUs'),
 											  		   
 										           ), '');
 $output = $urlHelper->changeToAlias($output);

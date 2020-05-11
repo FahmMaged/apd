@@ -255,7 +255,19 @@
           <input id="categoriesNames" name="categoriesNames" type="text" class="validate" disabled/>
           <label for="categoriesNames"> Categories </label>
         </div>
+    </div>
+
+    <div class="file-field input-field col s12">
+      <div class="btn blue darken-2">
+        <span>
+          Image
+        </span>
+        <input name="picture" type="file" />
       </div>
+      <div class="file-path-wrapper">
+        <input class="file-path" type="text" />
+      </div>
+    </div>
 
     <div class="row">
       <label for="bio">Bio</label>

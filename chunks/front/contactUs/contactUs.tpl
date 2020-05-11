@@ -11,14 +11,13 @@
       </div>
     </div> -->
   </div>
-  <img src="images/pexels-photo-1157557.jpeg" />
+  <img src="[[+mainImage]]" />
 </section>
 <!-- ==============================================    End Body     =============================================== -->
 <section class="inner_body">
   <div class="rows">
     <div class="l12 col no_padding">
       <div class="contact_us ">
-        
         <div class="l12 m12 s12 col contact_form">
           <form class="col s12" id="addGLI">
             <div class="row">
@@ -98,8 +97,6 @@
             <!---- <li class="center  "><span><i class="fa fa-fax" aria-hidden="true"></i>Fax :</span>   </li> -->
           </ul>
         </div>
-
-
       </div>
     </div>
   </div>

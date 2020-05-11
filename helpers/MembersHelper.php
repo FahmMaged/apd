@@ -264,6 +264,23 @@ class MembersHelper extends BaseHelper
             $fields['LinkedinLink']  = $_POST['LinkedinLink'];
         }
 
+        if(isset($_FILES['picture']) && $_FILES['picture']['size'] > 0){
+        
+            $response = $this->UploadFile($_FILES['picture'],'/../uploads/members/', $x = 500);
+            $response = json_decode($response);
+
+            if($response->res == 0)
+            {
+             return UtilityHelper::Response('error',$response->message);
+            }
+            else{
+               if (!empty($item->get('File')) ) {
+                 unlink('../'.$item->get('File'));
+               }
+              $fields['File'] = $response->message;
+            }
+       }
+
         $item->fromArray($fields);
         return $item->save();
 
