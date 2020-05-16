@@ -1,6 +1,6 @@
  <!-- alert widget -->
-<div class="col s12 m4 singleArticle">
-  <div class="card medium priv-card hoverable">
+<div class="col s12 m2 singleArticle">
+  <div class="card medium priv-card hoverable" style="height: 250px;">
     <div class="card-image articleImage" style="min-height:45%;">
 
       <a id="openEditArticle" onclick="fnOpenEdit([[+currID]]);" class="btn-floating btn-large waves-effect waves-light blue float-edit edit-btn [[+editFlag]]"><i class="material-icons">edit</i></a>
