@@ -30,8 +30,14 @@ class MembersHelper extends BaseHelper
 
         // check categories
         if(isset($_POST['categoryIDs'])){
+            
             $categoryIDs = $_POST['categoryIDs'];
-            $categories = implode(',',$categoryIDs);
+            
+            if(sizeof($categoryIDs) == 1){
+                $categories = ",".$categoryIDs[0];
+            } else{
+                $categories = implode(',',$categoryIDs);
+            }
         }
 
         $fields['FirstName']     = $_POST['first_name'];
@@ -77,6 +83,18 @@ class MembersHelper extends BaseHelper
         }
 
         $item->fromArray($fields);
+
+        // if ($item->save()) {
+        //     $categoryIDs		=	(isset($_POST['categoryIDs']))? $_POST['categoryIDs'] : 0;
+        //         if($categoryIDs != 0){
+        //             foreach($categoryIDs as $id){
+        //                 $memberCategory =	 $xpdo->newObject('MembersCategories');
+        //                 $memberCategory	->fromArray(array('MemberID' =>	$item->get('ID') ,	'CategoryID' =>	$id));
+        //                 $memberCategory	->save();
+        //             }
+        //         }
+        // }
+
         // return $item->save();
         return json_encode(array('saved' => $item->save() ));
     }
@@ -390,7 +408,8 @@ class MembersHelper extends BaseHelper
 
       if(!empty($_POST['categoryID']) ){
         $query->where(array(
-            'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].'%',
+            'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].',%',
+            'OR:CategoryIDs:LIKE' => ',%'.$_POST['categoryID'].'%'
           ));
       }
 
@@ -436,6 +455,7 @@ class MembersHelper extends BaseHelper
       if(!empty($_POST['categoryID']) ){
         $query->where(array(
             'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].',%',
+            'OR:CategoryIDs:LIKE' => ',%'.$_POST['categoryID'].'%'
           ));
       }
 
