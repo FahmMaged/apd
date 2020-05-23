@@ -287,3 +287,19 @@
   </div>
   <!-- Edit Item End -->
 </div>
+<style>
+.btn-floating.btn-large {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    bottom: 50px !important;
+    right: 20px;
+}
+.btn-floating.btn-large i {
+    line-height: 25px;
+    font-size: 12px;
+}
+a#openEditArticle {
+    bottom: 5px !important;
+}
+</style>

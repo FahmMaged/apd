@@ -87,3 +87,9 @@ a#btnSend {
     clear: left;
     position: relative;
 }
+
+@media only screen and (max-width: 768px){
+.the_slider .slider .slides li .caption {
+    left: 5% !important;
+}
+}
