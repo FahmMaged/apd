@@ -409,7 +409,7 @@ class MembersHelper extends BaseHelper
       if(!empty($_POST['categoryID']) ){
         $query->where(array(
             'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].',%',
-            'OR:CategoryIDs:LIKE' => ',%'.$_POST['categoryID'].'%'
+            'OR:CategoryIDs:LIKE' => '%,'.$_POST['categoryID'].'%'
           ));
       }
 
@@ -455,7 +455,7 @@ class MembersHelper extends BaseHelper
       if(!empty($_POST['categoryID']) ){
         $query->where(array(
             'CategoryIDs:LIKE' => '%'.$_POST['categoryID'].',%',
-            'OR:CategoryIDs:LIKE' => ',%'.$_POST['categoryID'].'%'
+            'OR:CategoryIDs:LIKE' => '%,'.$_POST['categoryID'].'%'
           ));
       }
 
