@@ -1747,6 +1747,7 @@ section {
   background: #c42035;
   -webkit-box-shadow: initial !important;
           box-shadow: initial !important;
+  display: none !important;
 }
 
 .newsDetails .articleDetailsInfo {
@@ -2032,5 +2033,9 @@ section {
   background: #c42035;
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+#contentContainer > div.l3:nth-child(4n+1) {
+  clear: right;
 }
 /*# sourceMappingURL=style.css.map */

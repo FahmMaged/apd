@@ -1,8 +1,7 @@
 <div class="l4 m4 s12 col animated   fadeInRight">
   <div class="news_box">
-    <a href="eventsDetails.php?id=[[+id]]&alias=[[+alias]]"
-      ><div class="news_img" style="background-image: url('[[+image]]');"></div
-    ></a>
+    <a href="eventsDetails.php?id=[[+id]]&alias=[[+alias]]">
+      <div class="news_img" style="background-image: url('[[+image]]');"></div></a>
     <div class="clearfix"></div>
     <div class="l2 m2 s3 col date">
       <h3>[[+day]]</h3>
