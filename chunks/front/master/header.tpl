@@ -425,8 +425,8 @@
           }
         })
           .done(function(data) {
-            console.log(data);
-            // data = $.parseJSON(data);
+            // console.log(data);
+            data = $.parseJSON(data);
             var message;
             var title;
 
@@ -442,7 +442,7 @@
               swal({
                 title: title,
                 text: message,
-                type: "error",
+                type: "Success",
                 confirmButtonText: "Close"
               });
             } else {

@@ -438,7 +438,7 @@ class MembersHelper extends BaseHelper
                 $mail = new PHPMailer;
                 $mail->CharSet = 'UTF-8';
                 $mail->SMTPDebug = 0;                           
-                $mail->isSMTP();        
+                // $mail->isSMTP();        
                 $mail->Host = "smtp.gmail.com";
                 $mail->SMTPAuth = true;                               // Enable SMTP authentication
                 $mail->Username = 'apdegypt.noreply@gmail.com';                 // SMTP username
