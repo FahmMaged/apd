@@ -441,7 +441,7 @@
               swal({
                 title: title,
                 text: message,
-                type: "Success",
+                type: "success",
                 confirmButtonText: "Close"
               });
             } else {
@@ -756,3 +756,4 @@
       });
     });
   </script>
+</div>
