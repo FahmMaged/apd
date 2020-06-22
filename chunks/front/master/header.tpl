@@ -431,7 +431,6 @@
             var title;
 
             if (data.res == 1) {
-              window.location = "index.php";
               if ($("#lang").val() == "en") {
                 message = data.message_en;
                 title = "Success";
@@ -757,3 +756,4 @@
       });
     });
   </script>
+</div>

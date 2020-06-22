@@ -456,8 +456,8 @@ class MembersHelper extends BaseHelper
                      'message_en' => 'An email has been sent to you with instructions on how to reset your password.',
                      'message_ar' => 'تم إرسال بريد إلكتروني إليك مع تعليمات حول كيفية إعادة تعيين كلمة المرور الخاصة بك.'));
                 }
-            
-            
+            } else{
+                return json_encode(array('res' => 0, 'message_en' => 'Email not exist', 'message_ar' => 'البريد الالكتروني غير موجود' ));
             }
         }
     }
