@@ -442,6 +442,11 @@
 			<column key="ID" length="" collation="A" null="false" />
 		</index>
 	</object>
+	<object class="PasswordResetTemp" table="PasswordResetTemp" extends="xPDOObject">
+		<field key="email" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="key" dbtype="varchar" precision="250" phptype="string" null="false" />
+		<field key="expDate" dbtype="datetime" phptype="datetime" null="false" />
+	</object>
 	<object class="Pdfs" table="Pdfs" extends="xPDOObject">
 		<field key="ID" dbtype="int" precision="11" phptype="integer" null="false" index="pk"  generated="native" />
 		<field key="Title_en" dbtype="varchar" precision="255" phptype="string" null="true" />

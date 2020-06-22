@@ -36,6 +36,9 @@ if(isset($_POST['operation']))
 		case 'logout':
             echo $membersHelper->Logout();
 			break;
+		case 'forgetPassword':
+            echo $membersHelper->ForgetPassword();
+			break;
 			
 		case 'getAllMembersFront':
             echo $membersHelper->GetAllMembersFront();

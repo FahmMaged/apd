@@ -173,6 +173,11 @@
             </div>
           </div>
         </form>
+        <div class="input-field col s12" hidden>
+          <a id="forgetPassword" class="btn left redBtn">
+            Forget Password
+          </a>
+        </div>
       </div>
 
       <div class="s12 m6 l6 col">
@@ -403,37 +408,72 @@
       if (langu == "ar") $("#langLink").text("English");
       else $("#langLink").text("عربي");
 
+      $("#forgetPassword").click(function(event) {
+        forgetPassword();
+      });
+
+      // Forget Password
+      function forgetPassword() {
+        $("#loadingContainer").show();
+
+        $.ajax({
+          url: "handlers/MembersHandler.php",
+          type: "POST",
+          data: {
+            operation: "forgetPassword",
+            email: $("#loginEmail").val()
+          }
+        })
+          .done(function(data) {
+            console.log(data);
+            // data = $.parseJSON(data);
+            var message;
+            var title;
+
+            if (data.res == 1) {
+              window.location = "index.php";
+              if ($("#lang").val() == "en") {
+                message = data.message_en;
+                title = "Success";
+              } else {
+                message = data.message_ar;
+                title = "تم";
+              }
+              swal({
+                title: title,
+                text: message,
+                type: "error",
+                confirmButtonText: "Close"
+              });
+            } else {
+              if ($("#lang").val() == "en") {
+                message = data.message_en;
+                title = "Error";
+              } else {
+                message = data.message_ar;
+                title = "خطأ";
+              }
+              swal({
+                title: title,
+                text: message,
+                type: "error",
+                confirmButtonText: "Close"
+              });
+              $("#loadingContainer").hide();
+            }
+            $("#modal2").modal("close");
+          })
+          .fail(function() {
+            console.log("error");
+          })
+          .always(function() {
+            $("#loadingContainer").hide();
+          });
+      }
+
       // Login Function
       $("#login").submit(function(event) {
         event.preventDefault();
-
-        // if (
-        //   $("#email").val() == "" ||
-        //   $("#email").val() == undefined ||
-        //   $("#email").val() == null
-        // ) {
-        //   swal({
-        //     title: "Required Field is Missing",
-        //     text: "Email addess is a required field",
-        //     type: "error",
-        //     confirmButtonText: "close"
-        //   });
-        //   return;
-        // }
-
-        // if (
-        //   $("#password").val() == "" ||
-        //   $("#password").val() == undefined ||
-        //   $("#password").val() == null
-        // ) {
-        //   swal({
-        //     title: "Required Field is Missing",
-        //     text: "Password is a required field",
-        //     type: "error",
-        //     confirmButtonText: "close"
-        //   });
-        //   return;
-        // }
 
         $("#loadingContainer").show();
 

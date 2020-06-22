@@ -3,6 +3,11 @@ if (!isset($_SESSION)) session_start();
 require_once('AdminUsersHelper.php');
 require_once('PasswordHelper.php');
 require_once('URLHelper.php');
+use PHPMailer\PHPMailer\PHPMailer;
+require_once "vendor/vendor/autoload.php";
+require_once "vendor/vendor/phpmailer/phpmailer/src/PHPMailer.php";
+//PHPMailer Object
+$mail = new PHPMailer;
 class MembersHelper extends BaseHelper
 {
     public function __construct()
@@ -382,6 +387,79 @@ class MembersHelper extends BaseHelper
     public static function IsLoggedIn()
     {
         return isset($_SESSION['User']);
+    }
+
+    public static function ForgetPassword() {
+        $email    = $_POST['email'];
+
+        $email = filter_var($email, FILTER_SANITIZE_EMAIL);
+        $email = filter_var($email, FILTER_VALIDATE_EMAIL);
+        if (!$email) {
+            return json_encode(array('res' => 0, 'message_en' => 'Invalid Email.', 'message_ar' => 'البريد الالكتروني غير صالح' ));
+        } else{
+            
+            global $xpdo;
+            date_default_timezone_set('Africa/Cairo');
+            $exist = $xpdo->getObject("Members", array("Email" => $email));
+            if($exist){
+                $expFormat = mktime(
+                    date("H"), date("i"), date("s"), date("m") ,date("d")+1, date("Y")
+                    );
+                $expDate = date("Y-m-d H:i:s",$expFormat);
+                $key = md5(2418*2+$email);
+                $addKey = substr(md5(uniqid(rand(),1)),3,10);
+                $key = $key . $addKey;
+                $item = $xpdo->newObject('PasswordResetTemp');
+                $fields['email']    = $email;
+                $fields['key']      = $key;
+                $fields['expDate']  = $expDate;
+                
+                $item->fromArray($fields);
+                // print_r($item->fromArray($fields));
+                // exit;
+                $item->save();
+
+                $output='<p>Dear user,</p>';
+                $output.='<p>Please click on the following link to reset your password.</p>';
+                $output.='<p>-------------------------------------------------------------</p>';
+                $output.='<p><a href="https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset" target="_blank">
+                https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset</a></p>';		
+                $output.='<p>-------------------------------------------------------------</p>';
+                $output.='<p>Please be sure to copy the entire link into your browser.
+                The link will expire after 1 day for security reason.</p>';
+                $output.='<p>If you did not request this forgotten password email, no action 
+                is needed, your password will not be reset. However, you may want to log into 
+                your account and change your security password as someone may have guessed it.</p>';   	
+                $output.='<p>Thanks,</p>';
+                $output.='<p>apdegypt Team</p>';
+                $body = $output; 
+                $subject = "Password Recovery - apdegypt.com";
+
+                $mail = new PHPMailer;
+                $mail->CharSet = 'UTF-8';
+                $mail->SMTPDebug = 0;                           
+                $mail->isSMTP();        
+                $mail->Host = "smtp.gmail.com";
+                $mail->SMTPAuth = true;                               // Enable SMTP authentication
+                $mail->Username = 'apdegypt.noreply@gmail.com';                 // SMTP username
+                $mail->Password = 'apdegypt@2020';                           // SMTP password
+                $mail->SMTPSecure = 'tls';                    
+                $mail->Port = 587;                    
+                $mail->From = "apdegypt.noreply@gmail.com";
+                $mail->FromName = "APD Egypt";
+                $mail->addAddress("$email", "APD Egypt");
+                $mail->isHTML(true);
+                $mail->Subject = $subject;
+                $mail->Body = $body;
+                if($mail->send()){
+                    return json_encode(array('res' => 1,
+                     'message_en' => 'An email has been sent to you with instructions on how to reset your password.',
+                     'message_ar' => 'تم إرسال بريد إلكتروني إليك مع تعليمات حول كيفية إعادة تعيين كلمة المرور الخاصة بك.'));
+                }
+            
+            
+            }
+        }
     }
 
     // Front Functions
