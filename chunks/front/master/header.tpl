@@ -408,6 +408,9 @@
       if (langu == "ar") $("#langLink").text("English");
       else $("#langLink").text("عربي");
 
+      if (langu == "ar") $("#forgetPassword").text("نسيت كلمة السر");
+      else $("#forgetPassword").text("Forget Password");
+
       $("#forgetPassword").click(function(event) {
         forgetPassword();
       });
@@ -429,34 +432,39 @@
             data = $.parseJSON(data);
             var message;
             var title;
+            var confirmButtonText;
 
             if (data.res == 1) {
               if ($("#lang").val() == "en") {
                 message = data.message_en;
                 title = "Success";
+                confirmButtonText = "Close";
               } else {
                 message = data.message_ar;
                 title = "تم";
+                confirmButtonText = "اغلاق";
               }
               swal({
                 title: title,
                 text: message,
                 type: "success",
-                confirmButtonText: "Close"
+                confirmButtonText: confirmButtonText
               });
             } else {
               if ($("#lang").val() == "en") {
                 message = data.message_en;
                 title = "Error";
+                confirmButtonText = "Close";
               } else {
                 message = data.message_ar;
                 title = "خطأ";
+                confirmButtonText = "اغلاق";
               }
               swal({
                 title: title,
                 text: message,
                 type: "error",
-                confirmButtonText: "Close"
+                confirmButtonText: confirmButtonText
               });
               $("#loadingContainer").hide();
             }
@@ -756,4 +764,3 @@
       });
     });
   </script>
-</div>
