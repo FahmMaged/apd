@@ -419,7 +419,7 @@ class MembersHelper extends BaseHelper
                 // print_r($item->fromArray($fields));
                 // exit;
                 $item->save();
-                if($lang = 'en'){
+                if($lang == 'en'){
                     $output='<p>Dear user,</p>';
                     $output.='<p>Please click on the following link to reset your password.</p>';
                     $output.='<p>-------------------------------------------------------------</p>';
