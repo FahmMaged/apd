@@ -391,6 +391,7 @@ class MembersHelper extends BaseHelper
 
     public static function ForgetPassword() {
         $email    = $_POST['email'];
+        $lang    = $_POST['lang'];
 
         $email = filter_var($email, FILTER_SANITIZE_EMAIL);
         $email = filter_var($email, FILTER_VALIDATE_EMAIL);
@@ -418,20 +419,33 @@ class MembersHelper extends BaseHelper
                 // print_r($item->fromArray($fields));
                 // exit;
                 $item->save();
-
-                $output='<p>Dear user,</p>';
-                $output.='<p>Please click on the following link to reset your password.</p>';
-                $output.='<p>-------------------------------------------------------------</p>';
-                $output.='<p><a href="https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset" target="_blank">
-                https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset</a></p>';		
-                $output.='<p>-------------------------------------------------------------</p>';
-                $output.='<p>Please be sure to copy the entire link into your browser.
-                The link will expire after 1 day for security reason.</p>';
-                $output.='<p>If you did not request this forgotten password email, no action 
-                is needed, your password will not be reset. However, you may want to log into 
-                your account and change your security password as someone may have guessed it.</p>';   	
-                $output.='<p>Thanks,</p>';
-                $output.='<p>apdegypt Team</p>';
+                if($lang = 'en'){
+                    $output='<p>Dear user,</p>';
+                    $output.='<p>Please click on the following link to reset your password.</p>';
+                    $output.='<p>-------------------------------------------------------------</p>';
+                    $output.='<p><a href="https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset" target="_blank">
+                    https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset</a></p>';		
+                    $output.='<p>-------------------------------------------------------------</p>';
+                    $output.='<p>Please be sure to copy the entire link into your browser.
+                    The link will expire after 1 day for security reason.</p>';
+                    $output.='<p>If you did not request this forgotten password email, no action 
+                    is needed, your password will not be reset. However, you may want to log into 
+                    your account and change your security password as someone may have guessed it.</p>';   	
+                    $output.='<p>Thanks,</p>';
+                    $output.='<p>apdegypt Team</p>';
+                } else {
+                    $output='<p>عزيزي المستخدم,</p>';
+                    $output.='<p>يرجى النقر على الرابط التالي لإعادة تعيين كلمة المرور الخاصة بك.</p>';
+                    $output.='<p>-------------------------------------------------------------</p>';
+                    $output.='<p><a href="https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset" target="_blank">
+                    https://apdegypt.com/reset-password.php?key='.$key.'&email='.$email.'&action=reset</a></p>';		
+                    $output.='<p>-------------------------------------------------------------</p>';
+                    $output.='<p>يرجى التأكد من نسخ الرابط بالكامل في متصفحك. ستنتهي صلاحية الرابط بعد يوم واحد لأسباب أمنية.</p>';
+                    $output.='<p>إذا لم تطلب البريد الإلكتروني لكلمة المرور المنسية هذه ، فلا داعي لاتخاذ أي إجراء ، فلن تتم إعادة تعيين كلمة المرور الخاصة بك. ومع ذلك ، قد ترغب في تسجيل الدخول إلى حسابك وتغيير كلمة مرور الأمان الخاصة بك كما قد يكون شخص قد خمنها.</p>';   	
+                    $output.='<p>شكرا,</p>';
+                    $output.='<p>فريق apdegypt</p>';
+                }
+                
                 $body = $output; 
                 $subject = "Password Recovery - apdegypt.com";
 

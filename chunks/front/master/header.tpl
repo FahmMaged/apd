@@ -424,7 +424,8 @@
           type: "POST",
           data: {
             operation: "forgetPassword",
-            email: $("#loginEmail").val()
+            email: $("#loginEmail").val(),
+            lang: $("#lang").val()
           }
         })
           .done(function(data) {
