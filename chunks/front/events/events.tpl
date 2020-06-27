@@ -19,9 +19,16 @@
     <div class="l12 s12 m12 col no_padding" [[+hideAdd]]>
       <div class="disclaimer">
         <p>[[+youCanAddEvent]]</p>
-        <a
+        <!-- <a
           href="#"
           data-target="modal22"
+          class="waves-effect waves-light btn about_btn"
+        >
+          [[+addEvent]]
+        </a>-->
+        <a
+        target="_blank"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdCpXQ8vCANBGmcbuLU8XQQyFVO-yDhieVTS4ltN4vam3gKDA/viewform?vc=0&c=0&w=1"
           class="waves-effect waves-light btn about_btn"
         >
           [[+addEvent]]

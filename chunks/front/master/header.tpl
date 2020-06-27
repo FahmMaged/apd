@@ -168,16 +168,19 @@
           </div>
 
           <div class="row">
-            <div class="input-field col s12">
-              <button id="submit" class="btn left redBtn">[[+login]]</button>
+            <div class="input-field col s12 m6 l6">
+              <button id="submit" class="btn right redBtn">[[+login]]</button>
             </div>
+
+            <div class="input-field col s12 m6 l6" >
+              <a id="forgetPassword" style="cursor: pointer;" class=" left ">
+                Forget Password
+              </a>
+            </div>
+
           </div>
         </form>
-        <div class="input-field col s12" hidden>
-          <a id="forgetPassword" class="btn left redBtn">
-            Forget Password
-          </a>
-        </div>
+        
       </div>
 
       <div class="s12 m6 l6 col">
