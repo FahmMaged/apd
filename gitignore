@@ -4,5 +4,6 @@
 /lang
 /.gitlab-ci.yml
 /chuncks/front/master/head
+/config/DBConfig.php
 
 
