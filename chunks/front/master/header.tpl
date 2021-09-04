@@ -169,7 +169,7 @@
 
           <div class="row">
             <div class="input-field col s12 m6 l6">
-              <button id="submit" class="btn right redBtn">[[+login]]</button>
+              <button id="submit" class="btn right redBtn">[[+loginButton]]</button>
             </div>
 
             <div class="input-field col s12 m6 l6" >

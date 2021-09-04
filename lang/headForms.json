@@ -24,6 +24,7 @@
     "ar": "نبذة عنك"
   },
   "login": { "en": "Login", "ar": "تسجيل دخول" },
+  "loginButton": { "en": "Login", "ar": "تسجيل الدخول" },
   "password": {
     "en": "Password",
     "ar": "كلمة المرور"

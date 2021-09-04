@@ -115,6 +115,7 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'contactUs' => $langFile['contactUs'][$lang],
 												'emailText' => $langFile2['email'][$lang],
 												'phoneNumber' => $langFile2['phoneNumber'][$lang],
+												'loginButton' => $langFile2['loginButton'][$lang],
 												'firstName'   => $langFile2['firstName'][$lang],
 												'lastName'    => $langFile2['lastName'][$lang],
 												'bio'         => $langFile2['bio'][$lang],

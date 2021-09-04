@@ -130,7 +130,11 @@ class HomeHelper extends BaseHelper
             "Dec" => "ديسمبر"
         );
         $currentDate  = date("Y-m-d");
+        $logged     = (isset($_POST['logged'])) ? $_POST['logged'] : 0;
         $query = $xpdo->newQuery('News');
+        if($logged == 0){
+            $query->where(array('ForMembers' => 0));
+          }
         $query->where(array(
             'InHome'         => 1,
             'IsActive'       => 1,

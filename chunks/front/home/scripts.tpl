@@ -63,7 +63,8 @@
       type: "POST",
       data: {
         operation: "getNewsSection",
-        lang: $("#lang").val()
+        lang: $("#lang").val(),
+        logged: $("#logged").val()
       },
       success: function(data) {
         var data = JSON.parse(data);

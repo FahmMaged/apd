@@ -25,6 +25,7 @@ $scripts        = new LoadChunk('scripts', 'front/home', array(), '');
 $output = new LoadChunk('home', 'front/home', array(
 											  		   'head'               => $head,
 													   'header'             => $header,
+													   'logged'             => $logged,
 													   'scripts'            => $scripts,
 											  		   'footer'             => $footer,
 										           ), '');
