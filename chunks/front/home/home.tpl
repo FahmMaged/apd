@@ -1,5 +1,5 @@
 [[+head]] [[+header]]
-
+<input type="hidden" id="logged" name="logged" value="[[+logged]]" />
 <div id="sliderContainer"></div>
 <!-- <div id="sliderVideo"></div> -->
 <!-- [[+sliderVideoTpl]] -->

@@ -1,6 +1,5 @@
 
 <section class="news sections ">
-    <input type="hidden" id="logged" name="logged" value="[[+logged]]" />
     <div class="rows">
         <h1 class="headline">  <span> [[+newsTitle]] </h1>
         <h2  class="headline2">  [[+newsSubTitle]] </h2>
