@@ -38,13 +38,13 @@ class BaseHelper
         }
 
         $timestamp = time();
-
+        
         if (is_uploaded_file($file['tmp_name'])) {
             $handle = new upload($file);
 
             if ($handle->uploaded) {
                 $handle->file_name_body_pre = $timestamp . '-';
-                $handle->file_safe_name     = true;
+                $handle->file_safe_name     = false;
                 $handle->image_resize       = true;
                 $handle->image_x            = $x;
                 $handle->jpeg_quality       = 85;
