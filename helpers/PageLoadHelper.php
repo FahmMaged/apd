@@ -110,6 +110,7 @@ $header      = new LoadChunk('header', 'front/master', array(
 												'videos'    => $langFile['videos'][$lang],
 												'email'     => $langFile['email'][$lang],
 												'register'  => $langFile2['register'][$lang],
+												'registerButton'  => $langFile2['registerButton'][$lang],
 												'login'     => $langFile2['login'][$lang],
 												'category'  => $langFile2['category'][$lang],
 												'contactUs' => $langFile['contactUs'][$lang],

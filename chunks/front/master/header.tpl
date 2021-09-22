@@ -340,7 +340,7 @@
           <div class="row">
             <div class="input-field col s12">
               <button id="btnSend" class="btn left redBtn">
-                [[+register]]
+                [[+registerButton]]
               </button>
             </div>
           </div>
