@@ -6,7 +6,7 @@
 		=============================================== -->
     <meta charset="utf-8" />
     <!--<base href="http://[[+baseUrl]]/" />-->
-    <base href="http://localhost/TEST/apd/" />
+    <base href="http://localhost/Apd/apd/" />
     <title>[[+pageTitle]]</title>
     <meta name="Arab Positive Discipline" content="" />
     <meta name="Arab Positive Discipline" content="Arab Positive Discipline" />

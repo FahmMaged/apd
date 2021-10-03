@@ -168,9 +168,19 @@
           </div>
 
           <div class="row">
-            <div class="input-field col s12 m6 l6">
-              <button id="submit" class="btn right redBtn">[[+loginButton]]</button>
+            <div class="input-field col s12 m12 l12" >
+              <div style="position: relative;overflow: hidden;">
+                <span style=" float: left;" for="rememberMe">تذكرني  </span>
+
+              <input style="float: left; position: relative;opacity: 1;z-index: initial; left: initial;    margin-top: 5px;
+              margin-left: 5px;" type="checkbox" value="lsRememberMe" id="rememberMe"> 
             </div>
+            </div>
+
+            <div class="input-field col s12 m6 l6">
+              <button id="submit" class="btn right redBtn">[[+login]]</button>
+            </div>
+            
 
             <div class="input-field col s12 m6 l6" >
               <a id="forgetPassword" style="cursor: pointer;" class=" left ">
@@ -234,6 +244,7 @@
                   type="text"
                   placeholder="[[+image]] *"
                 />
+                <p> لا يسمح بحجم صور اكبر من 1 ميجا</p>
               </div>
             </div>
           </div>
@@ -340,7 +351,7 @@
           <div class="row">
             <div class="input-field col s12">
               <button id="btnSend" class="btn left redBtn">
-                [[+registerButton]]
+                [[+register]]
               </button>
             </div>
           </div>
@@ -482,6 +493,18 @@
           });
       }
 
+      const rmCheck = document.getElementById("rememberMe"),
+    emailInput = document.getElementById("loginEmail");
+
+if (localStorage.checkbox && localStorage.checkbox !== "") {
+  rmCheck.setAttribute("checked", "checked");
+  emailInput.value = localStorage.username;
+} else {
+  rmCheck.removeAttribute("checked");
+  emailInput.value = "";
+}
+
+ 
       // Login Function
       $("#login").submit(function(event) {
         event.preventDefault();
@@ -536,6 +559,15 @@
           }
         });
       });
+
+      if (rmCheck.checked && emailInput.value !== "") {
+    localStorage.username = emailInput.value;
+    localStorage.checkbox = rmCheck.value;
+  } else {
+    localStorage.username = "";
+    localStorage.checkbox = "";
+  }
+
     });
 
     // Change Lang
